@@ -4,7 +4,7 @@
 #define MAILER_URL "localhost/mailer.php"
 #include <mailer>
 new i, car = 1;
-new a[60], name [255], vehicles [20];
+new a[60], name[255], vehicles[20], salt[15];
 new	Float:x, Float:y, Float:z;
 
 
@@ -96,16 +96,11 @@ public OnGameModeExit()
 
 public OnPlayerConnect(playerid)
 {
-	new status = 0;
-if (!status)
-	{
-		ShowPlayerDialog(playerid, PASSWORD_DIALOG_CREATE, DIALOG_STYLE_INPUT, "Создание аккаунта", "Вы не зарегестрированы!\nПридумайте пароль для вашего аккаунта!", "Принять", "Выход");
-		return 0;
-	}
-	else
-	{
-		ShowPlayerDialog(playerid, PASSWORD_DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Вход", "Аккаунт зарегестрирован!\nВведите пароль!", "Принять", "Выход");
-	}
+	GetPlayerName(playerid, playerInfo[playerid][pName], MAX_PLAYER_NAME+1);
+	new query[512];
+	mysql_format(database, query, sizeof(query), "SELECT `Password`, `salt` FROM `users` WHERE `Name`='%e'", playerInfo[playerid][pName]);
+	mysql_tquery(database, query, "CheckAccount", "i", playerid);
+
 //SetTimerEx("CheckName", 50, false, "i", playerid);
 //new string[255];
 //if(mysql_errno() !=0) return SendClientMessage(playerid, -1, "Подключение к БД не удалось. Переподключение...");
@@ -466,18 +461,21 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	            {
 					SendClientMessage(playerid, 0x008000, "Вы были отключены. Для выхода введите /(q)uit");
 					kick(playerid);
-					return 0;
 				}
 				if (!strlen(inputtext)) //Если пустое поле ввода
 				{
 					ShowPlayerDialog(playerid, PASSWORD_DIALOG_CREATE, DIALOG_STYLE_INPUT, "Создание аккаунта", "Вы не зарегестрированы!\nПридумайте пароль для вашего аккаунта!", "Принять", "Выход");
-					return 1;
 				}
 				else
 				{
-				    strmid(playerInfo[playerid][pPassword], inputtext, 0, strlen(inputtext));
 					ShowPlayerDialog(playerid, MAIL_DIALOG_CREATE, DIALOG_STYLE_INPUT, "Создание аккаунта", "Введите ваш E-mail.\nОн необходим для восстановления доступа к аккаунту.", "Принять", "Назад");
-					return 1;
+					//strmid(playerInfo[playerid][pPassword], inputtext, 0, strlen(inputtext), 31);
+					for(new i = 0; i < 14; i++)
+					{
+						salt[i] = random(79) + 44;
+					}
+					salt[14] = 3;
+					SHA256_PassHash(inputtext, salt, playerInfo[playerid][pPassword], 30);
 				}
 			}
 			case MAIL_DIALOG_CREATE:
@@ -485,13 +483,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(!response)
 				{
 					ShowPlayerDialog(playerid, PASSWORD_DIALOG_CREATE, DIALOG_STYLE_INPUT, "Создание аккаунта", "Вы не зарегестрированы!\nПридумайте пароль для вашего аккаунта!", "Принять", "Выход");
-					return 1;
 				}
 				else
 				{
-					strmid(playerInfo[playerid][pEmail], inputtext, 0, strlen(inputtext));
 					ShowPlayerDialog(playerid, SEX_DIALOG_CREATE, DIALOG_STYLE_MSGBOX, "Создание аккаунта", "Вы мужчина или женщина?", "Мужчина", "Женщина");
-					return 1;
+					strmid(playerInfo[playerid][pEmail], inputtext, 0, strlen(inputtext), 50);
 				}
 			}
 			case SEX_DIALOG_CREATE:
@@ -499,13 +495,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(!response)
 				{
 					SendClientMessage(playerid, 0x008000, "Ок - вы женщина");
-					strmid(playerInfo[playerid][pSex], "Female", 0, 5);
+					strmid(playerInfo[playerid][pSex], "Female", 0, 5, 9);
 					playerInfo[playerid][pSkin] = 77;
 				}
 				else
 				{
 					SendClientMessage(playerid, 0x008000, "Ок - вы мужчина");
-					strmid(playerInfo[playerid][pSex], "Male", 0, 3);
+					strmid(playerInfo[playerid][pSex], "Male", 0, 3, 9);
 					playerInfo[playerid][pSkin] = 137;
 				}
 				playerInfo[playerid][pLevel] = 1;
@@ -514,6 +510,11 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				playerInfo[playerid][posZ] = 25;
  				playerInfo[playerid][FaceAngle] = 10;
 				CreateNewAccount(playerid);
+				return 1;
+			}
+			case PASSWORD_DIALOG_LOGIN:
+			{
+				
 			}
 		}
 return 0;
@@ -585,10 +586,11 @@ stock CreateNewAccount(playerid)
 {
   	      new string[512], str[MAX_PLAYER_NAME+144], textMail[512];
 	      mysql_format(database, string, sizeof(string),
-		  "INSERT INTO `users` (`Name`, `Password`, `Email`, `Level`, `Sex`, `Skin`) VALUES \
-		  ('%s', '%s', '%s', '%d', '%s', '%d')",
+		  "INSERT INTO `users` (`Name`, `Password`,`salt`, `Email`, `Level`, `Sex`, `Skin`) VALUES \
+		  ('%s', '%s', '%s', '%s', '%d', '%s', '%d')",
 		  playerInfo[playerid][pName],
 		  playerInfo[playerid][pPassword],
+		  salt,
 		  playerInfo[playerid][pEmail],
 		  playerInfo[playerid][pLevel],
 		  playerInfo[playerid][pSex],
@@ -631,23 +633,6 @@ mysql_tquery(database, string, "FindPlayer", "i", playerid);
 return 1;
 }
 
-
-public FindPlayer(playerid)
-{
-new rows;
-cache_get_row_count(rows);
-if(!rows)
-{
-ShowPlayerLoginDialog(playerid, 1, 0);
-}
-else
-{
-ShowPlayerLoginDialog(playerid, 4, 1);
-}
-
-}
-
-
 public UploadPlayerAccount(playerid, inputtext[])
 {
 	new rows;
@@ -676,11 +661,24 @@ public UploadPlayerAccount(playerid, inputtext[])
 	//	SpawnPlayer(playerid);
 }
 }
-//stock CheckRegAccount(playerid){
-//new CheckName [MAX_PLAYERS];
-//cache_get_value_name(0, "Name", CheckName);
-//if(CheckName ==
-//}
+
+forward public CheckAccount(playerid);
+
+public CheckAccount(playerid)
+{
+	
+	if (cache_get_row_count(database))
+	{
+		cache_get_value_index(0, 0, playerInfo[playerid][pPassword], 31);
+		cache_get_value_index(0, 1, salt, 15);
+		ShowPlayerDialog(playerid, PASSWORD_DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Вход", "Аккаунт зарегестрирован!\nВведите пароль!", "Принять", "Выход");
+	}
+	else
+	{
+		ShowPlayerDialog(playerid, PASSWORD_DIALOG_CREATE, DIALOG_STYLE_INPUT, "Создание аккаунта", "Вы не зарегестрированы!\nПридумайте пароль для вашего аккаунта!", "Принять", "Выход");
+	}
+
+}
 
 
 stock spawnPlayer (playerid)

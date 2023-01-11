@@ -2410,3 +2410,1756 @@ v0.3.7-R2, (C)2005-2015 SA-MP Team
 [17:57:56] [connection] incoming connection: 127.0.0.1:61441 id: 0
 [17:57:57] [join] Vlad_Capone has joined the server (0:127.0.0.1)
 [17:58:04] [part] Vlad_Capone has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:27:42] 
+[23:27:42] Server Plugins
+[23:27:42] --------------
+[23:27:42]  Loading plugin: mysql
+[23:27:42]  >> plugin.mysql: R41-4 successfully loaded.
+[23:27:42]   Loaded.
+[23:27:42]  Loading plugin: streamer
+[23:27:42] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[23:27:42]   Loaded.
+[23:27:42]  Loading plugin: sscanf
+[23:27:42] 
+
+[23:27:42]  ===============================
+
+[23:27:42]       sscanf plugin loaded.     
+
+[23:27:42]          Version:  2.8.3        
+
+[23:27:42]   (c) 2018 Alex "Y_Less" Cole  
+
+[23:27:42]  ===============================
+
+[23:27:42]   Loaded.
+[23:27:42]  Loaded 3 plugins.
+
+[23:27:42] 
+[23:27:42] Filterscripts
+[23:27:42] ---------------
+[23:27:42]   Loading filterscript 'gl_actions.amx'...
+[23:27:42]   Loading filterscript 'gl_realtime.amx'...
+[23:27:42]   Loading filterscript 'gl_property.amx'...
+[23:27:42] 
+-----------------------------------
+[23:27:42] Grand Larceny Property Filterscript		
+[23:27:42] -----------------------------------
+
+[23:27:42]   Loading filterscript 'gl_mapicon.amx'...
+[23:27:42]   Loading filterscript 'ls_elevator.amx'...
+[23:27:42]   Loading filterscript 'attachments.amx'...
+[23:27:42]   Loading filterscript 'skinchanger.amx'...
+[23:27:42] 
+--Admin Player Skin Changer Loaded
+
+[23:27:42]   Loading filterscript 'vspawner.amx'...
+[23:27:42] 
+--Admin Vehicle Spawner Loaded
+
+[23:27:42]   Loading filterscript 'ls_mall.amx'...
+[23:27:42]   Loading filterscript 'ls_beachside.amx'...
+[23:27:42] 
+
+[23:27:42]   |---------------------------------------------------
+[23:27:42]   |--- LS BeachSide Filterscript
+[23:27:42]   |--  Script v1.03
+[23:27:42]   |--  19th April 2015
+[23:27:42]   |---------------------------------------------------
+[23:27:42]   |--  LS BeachSide Building Elevator created
+[23:27:42]   |---------------------------------------------------
+[23:27:42]   Loaded 10 filterscripts.
+
+[23:27:42] Reading File: blank
+[23:27:42] Reading File: properties/houses.txt
+[23:27:42] Reading File: properties/businesses.txt
+[23:27:42] Reading File: properties/banks.txt
+[23:27:42] Reading File: properties/police.txt
+[23:27:42] 
+----------------------------------
+[23:27:42] Testing
+[23:27:42] ----------------------------------
+
+[23:27:42] Подключение к базе данных успешно
+[23:27:42] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:28:54] 
+[23:28:54] Server Plugins
+[23:28:54] --------------
+[23:28:54]  Loading plugin: mysql
+[23:28:54]  >> plugin.mysql: R41-4 successfully loaded.
+[23:28:54]   Loaded.
+[23:28:54]  Loading plugin: streamer
+[23:28:54] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[23:28:54]   Loaded.
+[23:28:54]  Loading plugin: sscanf
+[23:28:54] 
+
+[23:28:54]  ===============================
+
+[23:28:54]       sscanf plugin loaded.     
+
+[23:28:54]          Version:  2.8.3        
+
+[23:28:54]   (c) 2018 Alex "Y_Less" Cole  
+
+[23:28:54]  ===============================
+
+[23:28:54]   Loaded.
+[23:28:54]  Loaded 3 plugins.
+
+[23:28:54] 
+[23:28:54] Filterscripts
+[23:28:54] ---------------
+[23:28:54]   Loading filterscript 'gl_actions.amx'...
+[23:28:54]   Loading filterscript 'gl_realtime.amx'...
+[23:28:54]   Loading filterscript 'gl_property.amx'...
+[23:28:54] 
+-----------------------------------
+[23:28:54] Grand Larceny Property Filterscript		
+[23:28:54] -----------------------------------
+
+[23:28:54]   Loading filterscript 'gl_mapicon.amx'...
+[23:28:54]   Loading filterscript 'ls_elevator.amx'...
+[23:28:54]   Loading filterscript 'attachments.amx'...
+[23:28:54]   Loading filterscript 'skinchanger.amx'...
+[23:28:54] 
+--Admin Player Skin Changer Loaded
+
+[23:28:54]   Loading filterscript 'vspawner.amx'...
+[23:28:54] 
+--Admin Vehicle Spawner Loaded
+
+[23:28:54]   Loading filterscript 'ls_mall.amx'...
+[23:28:54]   Loading filterscript 'ls_beachside.amx'...
+[23:28:54] 
+
+[23:28:54]   |---------------------------------------------------
+[23:28:54]   |--- LS BeachSide Filterscript
+[23:28:54]   |--  Script v1.03
+[23:28:54]   |--  19th April 2015
+[23:28:54]   |---------------------------------------------------
+[23:28:54]   |--  LS BeachSide Building Elevator created
+[23:28:54]   |---------------------------------------------------
+[23:28:54]   Loaded 10 filterscripts.
+
+[23:28:54] Reading File: blank
+[23:28:54] Reading File: properties/houses.txt
+[23:28:54] Reading File: properties/businesses.txt
+[23:28:54] Reading File: properties/banks.txt
+[23:28:54] Reading File: properties/police.txt
+[23:28:54] 
+----------------------------------
+[23:28:54] Testing
+[23:28:54] ----------------------------------
+
+[23:28:54] Подключение к базе данных успешно
+[23:28:54] Number of vehicle models: 0
+[23:28:56] [connection] 127.0.0.1:55547 requests connection cookie.
+[23:28:57] [connection] incoming connection: 127.0.0.1:55547 id: 0
+[23:28:58] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+[23:29:22] [part] Vlad_Capone has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:34:03] 
+[23:34:03] Server Plugins
+[23:34:03] --------------
+[23:34:03]  Loading plugin: mysql
+[23:34:03]  >> plugin.mysql: R41-4 successfully loaded.
+[23:34:03]   Loaded.
+[23:34:03]  Loading plugin: streamer
+[23:34:03] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[23:34:03]   Loaded.
+[23:34:03]  Loading plugin: sscanf
+[23:34:03] 
+
+[23:34:03]  ===============================
+
+[23:34:03]       sscanf plugin loaded.     
+
+[23:34:03]          Version:  2.8.3        
+
+[23:34:03]   (c) 2018 Alex "Y_Less" Cole  
+
+[23:34:03]  ===============================
+
+[23:34:03]   Loaded.
+[23:34:03]  Loaded 3 plugins.
+
+[23:34:03] 
+[23:34:03] Filterscripts
+[23:34:03] ---------------
+[23:34:03]   Loading filterscript 'gl_actions.amx'...
+[23:34:03]   Loading filterscript 'gl_realtime.amx'...
+[23:34:03]   Loading filterscript 'gl_property.amx'...
+[23:34:03] 
+-----------------------------------
+[23:34:03] Grand Larceny Property Filterscript		
+[23:34:03] -----------------------------------
+
+[23:34:03]   Loading filterscript 'gl_mapicon.amx'...
+[23:34:03]   Loading filterscript 'ls_elevator.amx'...
+[23:34:03]   Loading filterscript 'attachments.amx'...
+[23:34:03]   Loading filterscript 'skinchanger.amx'...
+[23:34:03] 
+--Admin Player Skin Changer Loaded
+
+[23:34:03]   Loading filterscript 'vspawner.amx'...
+[23:34:03] 
+--Admin Vehicle Spawner Loaded
+
+[23:34:03]   Loading filterscript 'ls_mall.amx'...
+[23:34:03]   Loading filterscript 'ls_beachside.amx'...
+[23:34:03] 
+
+[23:34:03]   |---------------------------------------------------
+[23:34:03]   |--- LS BeachSide Filterscript
+[23:34:03]   |--  Script v1.03
+[23:34:03]   |--  19th April 2015
+[23:34:03]   |---------------------------------------------------
+[23:34:03]   |--  LS BeachSide Building Elevator created
+[23:34:03]   |---------------------------------------------------
+[23:34:03]   Loaded 10 filterscripts.
+
+[23:34:03] Reading File: blank
+[23:34:03] Reading File: properties/houses.txt
+[23:34:03] Reading File: properties/businesses.txt
+[23:34:03] Reading File: properties/banks.txt
+[23:34:03] Reading File: properties/police.txt
+[23:34:03] 
+----------------------------------
+[23:34:03] Testing
+[23:34:03] ----------------------------------
+
+[23:34:03] Подключение к базе данных успешно
+[23:34:03] Number of vehicle models: 0
+[23:34:23] [connection] 127.0.0.1:61276 requests connection cookie.
+[23:34:24] [connection] incoming connection: 127.0.0.1:61276 id: 0
+[23:34:24] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+[23:34:52] [part] Vlad_Capone has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:42:31] 
+[23:42:31] Server Plugins
+[23:42:31] --------------
+[23:42:31]  Loading plugin: mysql
+[23:42:31]  >> plugin.mysql: R41-4 successfully loaded.
+[23:42:31]   Loaded.
+[23:42:31]  Loading plugin: streamer
+[23:42:31] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[23:42:31]   Loaded.
+[23:42:31]  Loading plugin: sscanf
+[23:42:31] 
+
+[23:42:31]  ===============================
+
+[23:42:31]       sscanf plugin loaded.     
+
+[23:42:31]          Version:  2.8.3        
+
+[23:42:31]   (c) 2018 Alex "Y_Less" Cole  
+
+[23:42:31]  ===============================
+
+[23:42:31]   Loaded.
+[23:42:31]  Loaded 3 plugins.
+
+[23:42:31] 
+[23:42:31] Filterscripts
+[23:42:31] ---------------
+[23:42:31]   Loading filterscript 'gl_actions.amx'...
+[23:42:31]   Loading filterscript 'gl_realtime.amx'...
+[23:42:31]   Loading filterscript 'gl_property.amx'...
+[23:42:31] 
+-----------------------------------
+[23:42:31] Grand Larceny Property Filterscript		
+[23:42:31] -----------------------------------
+
+[23:42:31]   Loading filterscript 'gl_mapicon.amx'...
+[23:42:31]   Loading filterscript 'ls_elevator.amx'...
+[23:42:31]   Loading filterscript 'attachments.amx'...
+[23:42:31]   Loading filterscript 'skinchanger.amx'...
+[23:42:31] 
+--Admin Player Skin Changer Loaded
+
+[23:42:31]   Loading filterscript 'vspawner.amx'...
+[23:42:31] 
+--Admin Vehicle Spawner Loaded
+
+[23:42:31]   Loading filterscript 'ls_mall.amx'...
+[23:42:31]   Loading filterscript 'ls_beachside.amx'...
+[23:42:31] 
+
+[23:42:31]   |---------------------------------------------------
+[23:42:31]   |--- LS BeachSide Filterscript
+[23:42:31]   |--  Script v1.03
+[23:42:31]   |--  19th April 2015
+[23:42:31]   |---------------------------------------------------
+[23:42:31]   |--  LS BeachSide Building Elevator created
+[23:42:31]   |---------------------------------------------------
+[23:42:31]   Loaded 10 filterscripts.
+
+[23:42:31] Reading File: blank
+[23:42:31] Reading File: properties/houses.txt
+[23:42:31] Reading File: properties/businesses.txt
+[23:42:31] Reading File: properties/banks.txt
+[23:42:31] Reading File: properties/police.txt
+[23:42:31] 
+----------------------------------
+[23:42:31] Testing
+[23:42:31] ----------------------------------
+
+[23:42:31] Подключение к базе данных успешно
+[23:42:31] Number of vehicle models: 0
+[23:42:53] [connection] 127.0.0.1:55259 requests connection cookie.
+[23:42:54] [connection] incoming connection: 127.0.0.1:55259 id: 0
+[23:42:54] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:51:30] 
+[23:51:30] Server Plugins
+[23:51:30] --------------
+[23:51:30]  Loading plugin: mysql
+[23:51:30]  >> plugin.mysql: R41-4 successfully loaded.
+[23:51:30]   Loaded.
+[23:51:30]  Loading plugin: streamer
+[23:51:30] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[23:51:30]   Loaded.
+[23:51:30]  Loading plugin: sscanf
+[23:51:30] 
+
+[23:51:30]  ===============================
+
+[23:51:30]       sscanf plugin loaded.     
+
+[23:51:30]          Version:  2.8.3        
+
+[23:51:30]   (c) 2018 Alex "Y_Less" Cole  
+
+[23:51:30]  ===============================
+
+[23:51:30]   Loaded.
+[23:51:30]  Loaded 3 plugins.
+
+[23:51:30] 
+[23:51:30] Filterscripts
+[23:51:30] ---------------
+[23:51:30]   Loading filterscript 'gl_actions.amx'...
+[23:51:30]   Loading filterscript 'gl_realtime.amx'...
+[23:51:30]   Loading filterscript 'gl_property.amx'...
+[23:51:30] 
+-----------------------------------
+[23:51:30] Grand Larceny Property Filterscript		
+[23:51:30] -----------------------------------
+
+[23:51:30]   Loading filterscript 'gl_mapicon.amx'...
+[23:51:30]   Loading filterscript 'ls_elevator.amx'...
+[23:51:30]   Loading filterscript 'attachments.amx'...
+[23:51:30]   Loading filterscript 'skinchanger.amx'...
+[23:51:30] 
+--Admin Player Skin Changer Loaded
+
+[23:51:30]   Loading filterscript 'vspawner.amx'...
+[23:51:30] 
+--Admin Vehicle Spawner Loaded
+
+[23:51:30]   Loading filterscript 'ls_mall.amx'...
+[23:51:30]   Loading filterscript 'ls_beachside.amx'...
+[23:51:30] 
+
+[23:51:30]   |---------------------------------------------------
+[23:51:30]   |--- LS BeachSide Filterscript
+[23:51:30]   |--  Script v1.03
+[23:51:30]   |--  19th April 2015
+[23:51:30]   |---------------------------------------------------
+[23:51:30]   |--  LS BeachSide Building Elevator created
+[23:51:30]   |---------------------------------------------------
+[23:51:30]   Loaded 10 filterscripts.
+
+[23:51:30] Reading File: blank
+[23:51:30] Reading File: properties/houses.txt
+[23:51:30] Reading File: properties/businesses.txt
+[23:51:30] Reading File: properties/banks.txt
+[23:51:30] Reading File: properties/police.txt
+[23:51:30] 
+----------------------------------
+[23:51:30] Testing
+[23:51:30] ----------------------------------
+
+[23:51:30] Подключение к базе данных успешно
+[23:51:30] Number of vehicle models: 0
+[23:51:44] [connection] 127.0.0.1:57896 requests connection cookie.
+[23:51:45] [connection] incoming connection: 127.0.0.1:57896 id: 0
+[23:51:45] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+[23:52:01] [part] Vlad_Capone has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:57:25] 
+[23:57:25] Server Plugins
+[23:57:25] --------------
+[23:57:25]  Loading plugin: mysql
+[23:57:25]  >> plugin.mysql: R41-4 successfully loaded.
+[23:57:25]   Loaded.
+[23:57:25]  Loading plugin: streamer
+[23:57:25] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[23:57:25]   Loaded.
+[23:57:25]  Loading plugin: sscanf
+[23:57:25] 
+
+[23:57:25]  ===============================
+
+[23:57:25]       sscanf plugin loaded.     
+
+[23:57:25]          Version:  2.8.3        
+
+[23:57:25]   (c) 2018 Alex "Y_Less" Cole  
+
+[23:57:25]  ===============================
+
+[23:57:25]   Loaded.
+[23:57:25]  Loaded 3 plugins.
+
+[23:57:25] 
+[23:57:25] Filterscripts
+[23:57:25] ---------------
+[23:57:25]   Loading filterscript 'gl_actions.amx'...
+[23:57:25]   Loading filterscript 'gl_realtime.amx'...
+[23:57:25]   Loading filterscript 'gl_property.amx'...
+[23:57:25] 
+-----------------------------------
+[23:57:25] Grand Larceny Property Filterscript		
+[23:57:25] -----------------------------------
+
+[23:57:25]   Loading filterscript 'gl_mapicon.amx'...
+[23:57:25]   Loading filterscript 'ls_elevator.amx'...
+[23:57:25]   Loading filterscript 'attachments.amx'...
+[23:57:25]   Loading filterscript 'skinchanger.amx'...
+[23:57:25] 
+--Admin Player Skin Changer Loaded
+
+[23:57:25]   Loading filterscript 'vspawner.amx'...
+[23:57:25] 
+--Admin Vehicle Spawner Loaded
+
+[23:57:25]   Loading filterscript 'ls_mall.amx'...
+[23:57:25]   Loading filterscript 'ls_beachside.amx'...
+[23:57:25] 
+
+[23:57:25]   |---------------------------------------------------
+[23:57:25]   |--- LS BeachSide Filterscript
+[23:57:25]   |--  Script v1.03
+[23:57:25]   |--  19th April 2015
+[23:57:25]   |---------------------------------------------------
+[23:57:25]   |--  LS BeachSide Building Elevator created
+[23:57:25]   |---------------------------------------------------
+[23:57:25]   Loaded 10 filterscripts.
+
+[23:57:25] Reading File: blank
+[23:57:25] Reading File: properties/houses.txt
+[23:57:25] Reading File: properties/businesses.txt
+[23:57:25] Reading File: properties/banks.txt
+[23:57:25] Reading File: properties/police.txt
+[23:57:25] 
+----------------------------------
+[23:57:25] Testing
+[23:57:25] ----------------------------------
+
+[23:57:25] Подключение к базе данных успешно
+[23:57:25] Number of vehicle models: 0
+[23:57:45] [connection] 127.0.0.1:59785 requests connection cookie.
+[23:57:46] [connection] incoming connection: 127.0.0.1:59785 id: 0
+[23:57:47] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+[23:58:03] [part] Vlad_Capone has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:58:48] 
+[23:58:48] Server Plugins
+[23:58:48] --------------
+[23:58:48]  Loading plugin: mysql
+[23:58:48]  >> plugin.mysql: R41-4 successfully loaded.
+[23:58:48]   Loaded.
+[23:58:48]  Loading plugin: streamer
+[23:58:48] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[23:58:48]   Loaded.
+[23:58:48]  Loading plugin: sscanf
+[23:58:48] 
+
+[23:58:48]  ===============================
+
+[23:58:48]       sscanf plugin loaded.     
+
+[23:58:48]          Version:  2.8.3        
+
+[23:58:48]   (c) 2018 Alex "Y_Less" Cole  
+
+[23:58:48]  ===============================
+
+[23:58:48]   Loaded.
+[23:58:48]  Loaded 3 plugins.
+
+[23:58:48] 
+[23:58:48] Filterscripts
+[23:58:48] ---------------
+[23:58:48]   Loading filterscript 'gl_actions.amx'...
+[23:58:48]   Loading filterscript 'gl_realtime.amx'...
+[23:58:48]   Loading filterscript 'gl_property.amx'...
+[23:58:48] 
+-----------------------------------
+[23:58:48] Grand Larceny Property Filterscript		
+[23:58:48] -----------------------------------
+
+[23:58:48]   Loading filterscript 'gl_mapicon.amx'...
+[23:58:48]   Loading filterscript 'ls_elevator.amx'...
+[23:58:48]   Loading filterscript 'attachments.amx'...
+[23:58:48]   Loading filterscript 'skinchanger.amx'...
+[23:58:48] 
+--Admin Player Skin Changer Loaded
+
+[23:58:48]   Loading filterscript 'vspawner.amx'...
+[23:58:48] 
+--Admin Vehicle Spawner Loaded
+
+[23:58:48]   Loading filterscript 'ls_mall.amx'...
+[23:58:48]   Loading filterscript 'ls_beachside.amx'...
+[23:58:48] 
+
+[23:58:48]   |---------------------------------------------------
+[23:58:48]   |--- LS BeachSide Filterscript
+[23:58:48]   |--  Script v1.03
+[23:58:48]   |--  19th April 2015
+[23:58:48]   |---------------------------------------------------
+[23:58:48]   |--  LS BeachSide Building Elevator created
+[23:58:48]   |---------------------------------------------------
+[23:58:48]   Loaded 10 filterscripts.
+
+[23:58:48] Reading File: blank
+[23:58:48] Reading File: properties/houses.txt
+[23:58:48] Reading File: properties/businesses.txt
+[23:58:48] Reading File: properties/banks.txt
+[23:58:48] Reading File: properties/police.txt
+[23:58:48] 
+----------------------------------
+[23:58:48] Testing
+[23:58:48] ----------------------------------
+
+[23:58:48] Подключение к базе данных успешно
+[23:58:48] Number of vehicle models: 0
+[23:59:09] [connection] 127.0.0.1:63890 requests connection cookie.
+[23:59:10] [connection] incoming connection: 127.0.0.1:63890 id: 0
+[23:59:10] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+[23:59:54] [part] Vlad_Capone has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:06:53] 
+[00:06:53] Server Plugins
+[00:06:53] --------------
+[00:06:53]  Loading plugin: mysql
+[00:06:53]  >> plugin.mysql: R41-4 successfully loaded.
+[00:06:53]   Loaded.
+[00:06:53]  Loading plugin: streamer
+[00:06:53] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[00:06:53]   Loaded.
+[00:06:53]  Loading plugin: sscanf
+[00:06:53] 
+
+[00:06:53]  ===============================
+
+[00:06:53]       sscanf plugin loaded.     
+
+[00:06:53]          Version:  2.8.3        
+
+[00:06:53]   (c) 2018 Alex "Y_Less" Cole  
+
+[00:06:53]  ===============================
+
+[00:06:53]   Loaded.
+[00:06:53]  Loaded 3 plugins.
+
+[00:06:53] 
+[00:06:53] Filterscripts
+[00:06:53] ---------------
+[00:06:53]   Loading filterscript 'gl_actions.amx'...
+[00:06:53]   Loading filterscript 'gl_realtime.amx'...
+[00:06:53]   Loading filterscript 'gl_property.amx'...
+[00:06:53] 
+-----------------------------------
+[00:06:53] Grand Larceny Property Filterscript		
+[00:06:53] -----------------------------------
+
+[00:06:53]   Loading filterscript 'gl_mapicon.amx'...
+[00:06:53]   Loading filterscript 'ls_elevator.amx'...
+[00:06:53]   Loading filterscript 'attachments.amx'...
+[00:06:53]   Loading filterscript 'skinchanger.amx'...
+[00:06:53] 
+--Admin Player Skin Changer Loaded
+
+[00:06:53]   Loading filterscript 'vspawner.amx'...
+[00:06:53] 
+--Admin Vehicle Spawner Loaded
+
+[00:06:53]   Loading filterscript 'ls_mall.amx'...
+[00:06:53]   Loading filterscript 'ls_beachside.amx'...
+[00:06:53] 
+
+[00:06:53]   |---------------------------------------------------
+[00:06:53]   |--- LS BeachSide Filterscript
+[00:06:53]   |--  Script v1.03
+[00:06:53]   |--  19th April 2015
+[00:06:53]   |---------------------------------------------------
+[00:06:53]   |--  LS BeachSide Building Elevator created
+[00:06:53]   |---------------------------------------------------
+[00:06:53]   Loaded 10 filterscripts.
+
+[00:06:53] Reading File: blank
+[00:06:53] Reading File: properties/houses.txt
+[00:06:53] Reading File: properties/businesses.txt
+[00:06:53] Reading File: properties/banks.txt
+[00:06:53] Reading File: properties/police.txt
+[00:06:53] 
+----------------------------------
+[00:06:53] Testing
+[00:06:53] ----------------------------------
+
+[00:06:53] Подключение к базе данных успешно
+[00:06:53] Number of vehicle models: 0
+[00:07:15] [connection] 127.0.0.1:52565 requests connection cookie.
+[00:07:16] [connection] incoming connection: 127.0.0.1:52565 id: 0
+[00:07:16] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+[00:07:42] [part] Vlad_Capone has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:09:17] 
+[00:09:17] Server Plugins
+[00:09:17] --------------
+[00:09:17]  Loading plugin: mysql
+[00:09:17]  >> plugin.mysql: R41-4 successfully loaded.
+[00:09:17]   Loaded.
+[00:09:17]  Loading plugin: streamer
+[00:09:17] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[00:09:17]   Loaded.
+[00:09:17]  Loading plugin: sscanf
+[00:09:17] 
+
+[00:09:17]  ===============================
+
+[00:09:17]       sscanf plugin loaded.     
+
+[00:09:17]          Version:  2.8.3        
+
+[00:09:17]   (c) 2018 Alex "Y_Less" Cole  
+
+[00:09:17]  ===============================
+
+[00:09:17]   Loaded.
+[00:09:17]  Loaded 3 plugins.
+
+[00:09:17] 
+[00:09:17] Filterscripts
+[00:09:17] ---------------
+[00:09:17]   Loading filterscript 'gl_actions.amx'...
+[00:09:17]   Loading filterscript 'gl_realtime.amx'...
+[00:09:17]   Loading filterscript 'gl_property.amx'...
+[00:09:17] 
+-----------------------------------
+[00:09:17] Grand Larceny Property Filterscript		
+[00:09:17] -----------------------------------
+
+[00:09:17]   Loading filterscript 'gl_mapicon.amx'...
+[00:09:17]   Loading filterscript 'ls_elevator.amx'...
+[00:09:17]   Loading filterscript 'attachments.amx'...
+[00:09:17]   Loading filterscript 'skinchanger.amx'...
+[00:09:17] 
+--Admin Player Skin Changer Loaded
+
+[00:09:17]   Loading filterscript 'vspawner.amx'...
+[00:09:17] 
+--Admin Vehicle Spawner Loaded
+
+[00:09:17]   Loading filterscript 'ls_mall.amx'...
+[00:09:17]   Loading filterscript 'ls_beachside.amx'...
+[00:09:17] 
+
+[00:09:17]   |---------------------------------------------------
+[00:09:17]   |--- LS BeachSide Filterscript
+[00:09:17]   |--  Script v1.03
+[00:09:17]   |--  19th April 2015
+[00:09:17]   |---------------------------------------------------
+[00:09:17]   |--  LS BeachSide Building Elevator created
+[00:09:17]   |---------------------------------------------------
+[00:09:17]   Loaded 10 filterscripts.
+
+[00:09:17] Reading File: blank
+[00:09:17] Reading File: properties/houses.txt
+[00:09:17] Reading File: properties/businesses.txt
+[00:09:17] Reading File: properties/banks.txt
+[00:09:17] Reading File: properties/police.txt
+[00:09:17] 
+----------------------------------
+[00:09:17] Testing
+[00:09:17] ----------------------------------
+
+[00:09:17] Подключение к базе данных успешно
+[00:09:17] Number of vehicle models: 0
+[00:09:40] [connection] 127.0.0.1:49924 requests connection cookie.
+[00:09:41] [connection] incoming connection: 127.0.0.1:49924 id: 0
+[00:09:41] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+[00:09:51] [part] Vlad_Capone has left the server (0:2)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:19:06] 
+[00:19:06] Server Plugins
+[00:19:06] --------------
+[00:19:06]  Loading plugin: mysql
+[00:19:06]  >> plugin.mysql: R41-4 successfully loaded.
+[00:19:06]   Loaded.
+[00:19:06]  Loading plugin: streamer
+[00:19:06] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[00:19:06]   Loaded.
+[00:19:06]  Loading plugin: sscanf
+[00:19:06] 
+
+[00:19:06]  ===============================
+
+[00:19:06]       sscanf plugin loaded.     
+
+[00:19:06]          Version:  2.8.3        
+
+[00:19:06]   (c) 2018 Alex "Y_Less" Cole  
+
+[00:19:06]  ===============================
+
+[00:19:06]   Loaded.
+[00:19:06]  Loaded 3 plugins.
+
+[00:19:06] 
+[00:19:06] Filterscripts
+[00:19:06] ---------------
+[00:19:06]   Loading filterscript 'gl_actions.amx'...
+[00:19:06]   Loading filterscript 'gl_realtime.amx'...
+[00:19:06]   Loading filterscript 'gl_property.amx'...
+[00:19:06] 
+-----------------------------------
+[00:19:06] Grand Larceny Property Filterscript		
+[00:19:06] -----------------------------------
+
+[00:19:06]   Loading filterscript 'gl_mapicon.amx'...
+[00:19:06]   Loading filterscript 'ls_elevator.amx'...
+[00:19:06]   Loading filterscript 'attachments.amx'...
+[00:19:06]   Loading filterscript 'skinchanger.amx'...
+[00:19:06] 
+--Admin Player Skin Changer Loaded
+
+[00:19:06]   Loading filterscript 'vspawner.amx'...
+[00:19:06] 
+--Admin Vehicle Spawner Loaded
+
+[00:19:06]   Loading filterscript 'ls_mall.amx'...
+[00:19:06]   Loading filterscript 'ls_beachside.amx'...
+[00:19:06] 
+
+[00:19:06]   |---------------------------------------------------
+[00:19:06]   |--- LS BeachSide Filterscript
+[00:19:06]   |--  Script v1.03
+[00:19:06]   |--  19th April 2015
+[00:19:06]   |---------------------------------------------------
+[00:19:06]   |--  LS BeachSide Building Elevator created
+[00:19:06]   |---------------------------------------------------
+[00:19:06]   Loaded 10 filterscripts.
+
+[00:19:06] Reading File: blank
+[00:19:06] Reading File: properties/houses.txt
+[00:19:06] Reading File: properties/businesses.txt
+[00:19:06] Reading File: properties/banks.txt
+[00:19:06] Reading File: properties/police.txt
+[00:19:06] 
+----------------------------------
+[00:19:06] Testing
+[00:19:06] ----------------------------------
+
+[00:19:06] Подключение к базе данных успешно
+[00:19:06] Number of vehicle models: 0
+[00:19:28] [connection] 127.0.0.1:53448 requests connection cookie.
+[00:19:29] [connection] incoming connection: 127.0.0.1:53448 id: 0
+[00:19:29] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+[00:19:41] [part] Vlad_Capone has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:50:37] 
+[00:50:37] Server Plugins
+[00:50:37] --------------
+[00:50:37]  Loading plugin: mysql
+[00:50:37]  >> plugin.mysql: R41-4 successfully loaded.
+[00:50:37]   Loaded.
+[00:50:37]  Loading plugin: streamer
+[00:50:37] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[00:50:37]   Loaded.
+[00:50:37]  Loading plugin: sscanf
+[00:50:37] 
+
+[00:50:37]  ===============================
+
+[00:50:37]       sscanf plugin loaded.     
+
+[00:50:37]          Version:  2.8.3        
+
+[00:50:37]   (c) 2018 Alex "Y_Less" Cole  
+
+[00:50:37]  ===============================
+
+[00:50:37]   Loaded.
+[00:50:37]  Loaded 3 plugins.
+
+[00:50:37] 
+[00:50:37] Filterscripts
+[00:50:37] ---------------
+[00:50:37]   Loading filterscript 'gl_actions.amx'...
+[00:50:37]   Loading filterscript 'gl_realtime.amx'...
+[00:50:37]   Loading filterscript 'gl_property.amx'...
+[00:50:37] 
+-----------------------------------
+[00:50:37] Grand Larceny Property Filterscript		
+[00:50:37] -----------------------------------
+
+[00:50:37]   Loading filterscript 'gl_mapicon.amx'...
+[00:50:37]   Loading filterscript 'ls_elevator.amx'...
+[00:50:37]   Loading filterscript 'attachments.amx'...
+[00:50:37]   Loading filterscript 'skinchanger.amx'...
+[00:50:37] 
+--Admin Player Skin Changer Loaded
+
+[00:50:37]   Loading filterscript 'vspawner.amx'...
+[00:50:37] 
+--Admin Vehicle Spawner Loaded
+
+[00:50:37]   Loading filterscript 'ls_mall.amx'...
+[00:50:37]   Loading filterscript 'ls_beachside.amx'...
+[00:50:37] 
+
+[00:50:37]   |---------------------------------------------------
+[00:50:37]   |--- LS BeachSide Filterscript
+[00:50:37]   |--  Script v1.03
+[00:50:37]   |--  19th April 2015
+[00:50:37]   |---------------------------------------------------
+[00:50:37]   |--  LS BeachSide Building Elevator created
+[00:50:37]   |---------------------------------------------------
+[00:50:37]   Loaded 10 filterscripts.
+
+[00:50:37] Reading File: blank
+[00:50:37] Reading File: properties/houses.txt
+[00:50:37] Reading File: properties/businesses.txt
+[00:50:37] Reading File: properties/banks.txt
+[00:50:37] Reading File: properties/police.txt
+[00:50:37] 
+----------------------------------
+[00:50:37] Testing
+[00:50:37] ----------------------------------
+
+[00:50:37] Подключение к базе данных успешно
+[00:50:37] Number of vehicle models: 0
+[00:50:57] [connection] 127.0.0.1:50275 requests connection cookie.
+[00:50:58] [connection] incoming connection: 127.0.0.1:50275 id: 0
+[00:50:58] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:53:18] 
+[00:53:18] Server Plugins
+[00:53:18] --------------
+[00:53:18]  Loading plugin: mysql
+[00:53:18]  >> plugin.mysql: R41-4 successfully loaded.
+[00:53:18]   Loaded.
+[00:53:18]  Loading plugin: streamer
+[00:53:18] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[00:53:18]   Loaded.
+[00:53:18]  Loading plugin: sscanf
+[00:53:18] 
+
+[00:53:18]  ===============================
+
+[00:53:18]       sscanf plugin loaded.     
+
+[00:53:18]          Version:  2.8.3        
+
+[00:53:18]   (c) 2018 Alex "Y_Less" Cole  
+
+[00:53:18]  ===============================
+
+[00:53:18]   Loaded.
+[00:53:18]  Loaded 3 plugins.
+
+[00:53:18] 
+[00:53:18] Filterscripts
+[00:53:18] ---------------
+[00:53:18]   Loading filterscript 'gl_actions.amx'...
+[00:53:18]   Loading filterscript 'gl_realtime.amx'...
+[00:53:18]   Loading filterscript 'gl_property.amx'...
+[00:53:18] 
+-----------------------------------
+[00:53:18] Grand Larceny Property Filterscript		
+[00:53:18] -----------------------------------
+
+[00:53:18]   Loading filterscript 'gl_mapicon.amx'...
+[00:53:18]   Loading filterscript 'ls_elevator.amx'...
+[00:53:18]   Loading filterscript 'attachments.amx'...
+[00:53:18]   Loading filterscript 'skinchanger.amx'...
+[00:53:18] 
+--Admin Player Skin Changer Loaded
+
+[00:53:18]   Loading filterscript 'vspawner.amx'...
+[00:53:18] 
+--Admin Vehicle Spawner Loaded
+
+[00:53:18]   Loading filterscript 'ls_mall.amx'...
+[00:53:18]   Loading filterscript 'ls_beachside.amx'...
+[00:53:18] 
+
+[00:53:18]   |---------------------------------------------------
+[00:53:18]   |--- LS BeachSide Filterscript
+[00:53:18]   |--  Script v1.03
+[00:53:18]   |--  19th April 2015
+[00:53:18]   |---------------------------------------------------
+[00:53:18]   |--  LS BeachSide Building Elevator created
+[00:53:18]   |---------------------------------------------------
+[00:53:18]   Loaded 10 filterscripts.
+
+[00:53:18] Reading File: blank
+[00:53:18] Reading File: properties/houses.txt
+[00:53:18] Reading File: properties/businesses.txt
+[00:53:18] Reading File: properties/banks.txt
+[00:53:18] Reading File: properties/police.txt
+[00:53:18] 
+----------------------------------
+[00:53:18] Testing
+[00:53:18] ----------------------------------
+
+[00:53:18] Подключение к базе данных успешно
+[00:53:18] Number of vehicle models: 0
+[00:53:34] [connection] 127.0.0.1:55712 requests connection cookie.
+[00:53:35] [connection] incoming connection: 127.0.0.1:55712 id: 0
+[00:53:35] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+[00:57:45] [part] Vlad_Capone has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[01:18:06] 
+[01:18:06] Server Plugins
+[01:18:06] --------------
+[01:18:06]  Loading plugin: mysql
+[01:18:06]  >> plugin.mysql: R41-4 successfully loaded.
+[01:18:06]   Loaded.
+[01:18:06]  Loading plugin: streamer
+[01:18:06] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[01:18:06]   Loaded.
+[01:18:06]  Loading plugin: sscanf
+[01:18:06] 
+
+[01:18:06]  ===============================
+
+[01:18:06]       sscanf plugin loaded.     
+
+[01:18:06]          Version:  2.8.3        
+
+[01:18:06]   (c) 2018 Alex "Y_Less" Cole  
+
+[01:18:06]  ===============================
+
+[01:18:06]   Loaded.
+[01:18:06]  Loaded 3 plugins.
+
+[01:18:06] 
+[01:18:06] Filterscripts
+[01:18:06] ---------------
+[01:18:06]   Loading filterscript 'gl_actions.amx'...
+[01:18:06]   Loading filterscript 'gl_realtime.amx'...
+[01:18:06]   Loading filterscript 'gl_property.amx'...
+[01:18:06] 
+-----------------------------------
+[01:18:06] Grand Larceny Property Filterscript		
+[01:18:06] -----------------------------------
+
+[01:18:06]   Loading filterscript 'gl_mapicon.amx'...
+[01:18:06]   Loading filterscript 'ls_elevator.amx'...
+[01:18:06]   Loading filterscript 'attachments.amx'...
+[01:18:06]   Loading filterscript 'skinchanger.amx'...
+[01:18:06] 
+--Admin Player Skin Changer Loaded
+
+[01:18:06]   Loading filterscript 'vspawner.amx'...
+[01:18:06] 
+--Admin Vehicle Spawner Loaded
+
+[01:18:06]   Loading filterscript 'ls_mall.amx'...
+[01:18:06]   Loading filterscript 'ls_beachside.amx'...
+[01:18:06] 
+
+[01:18:06]   |---------------------------------------------------
+[01:18:06]   |--- LS BeachSide Filterscript
+[01:18:06]   |--  Script v1.03
+[01:18:06]   |--  19th April 2015
+[01:18:06]   |---------------------------------------------------
+[01:18:06]   |--  LS BeachSide Building Elevator created
+[01:18:06]   |---------------------------------------------------
+[01:18:06]   Loaded 10 filterscripts.
+
+[01:18:06] Reading File: blank
+[01:18:06] Reading File: properties/houses.txt
+[01:18:06] Reading File: properties/businesses.txt
+[01:18:06] Reading File: properties/banks.txt
+[01:18:06] Reading File: properties/police.txt
+[01:18:06] 
+----------------------------------
+[01:18:06] Testing
+[01:18:06] ----------------------------------
+
+[01:18:06] Подключение к базе данных успешно
+[01:18:06] Number of vehicle models: 0
+[01:18:25] [connection] 127.0.0.1:53128 requests connection cookie.
+[01:18:26] [connection] incoming connection: 127.0.0.1:53128 id: 0
+[01:18:26] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+[01:18:39] [part] Vlad_Capone has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[01:19:59] 
+[01:19:59] Server Plugins
+[01:19:59] --------------
+[01:19:59]  Loading plugin: mysql
+[01:19:59]  >> plugin.mysql: R41-4 successfully loaded.
+[01:19:59]   Loaded.
+[01:19:59]  Loading plugin: streamer
+[01:19:59] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[01:19:59]   Loaded.
+[01:19:59]  Loading plugin: sscanf
+[01:19:59] 
+
+[01:19:59]  ===============================
+
+[01:19:59]       sscanf plugin loaded.     
+
+[01:19:59]          Version:  2.8.3        
+
+[01:19:59]   (c) 2018 Alex "Y_Less" Cole  
+
+[01:19:59]  ===============================
+
+[01:19:59]   Loaded.
+[01:19:59]  Loaded 3 plugins.
+
+[01:19:59] 
+[01:19:59] Filterscripts
+[01:19:59] ---------------
+[01:19:59]   Loading filterscript 'gl_actions.amx'...
+[01:19:59]   Loading filterscript 'gl_realtime.amx'...
+[01:19:59]   Loading filterscript 'gl_property.amx'...
+[01:19:59] 
+-----------------------------------
+[01:19:59] Grand Larceny Property Filterscript		
+[01:19:59] -----------------------------------
+
+[01:19:59]   Loading filterscript 'gl_mapicon.amx'...
+[01:19:59]   Loading filterscript 'ls_elevator.amx'...
+[01:19:59]   Loading filterscript 'attachments.amx'...
+[01:19:59]   Loading filterscript 'skinchanger.amx'...
+[01:19:59] 
+--Admin Player Skin Changer Loaded
+
+[01:19:59]   Loading filterscript 'vspawner.amx'...
+[01:19:59] 
+--Admin Vehicle Spawner Loaded
+
+[01:19:59]   Loading filterscript 'ls_mall.amx'...
+[01:19:59]   Loading filterscript 'ls_beachside.amx'...
+[01:19:59] 
+
+[01:19:59]   |---------------------------------------------------
+[01:19:59]   |--- LS BeachSide Filterscript
+[01:19:59]   |--  Script v1.03
+[01:19:59]   |--  19th April 2015
+[01:19:59]   |---------------------------------------------------
+[01:19:59]   |--  LS BeachSide Building Elevator created
+[01:19:59]   |---------------------------------------------------
+[01:19:59]   Loaded 10 filterscripts.
+
+[01:19:59] Reading File: blank
+[01:19:59] Reading File: properties/houses.txt
+[01:19:59] Reading File: properties/businesses.txt
+[01:19:59] Reading File: properties/banks.txt
+[01:19:59] Reading File: properties/police.txt
+[01:19:59] 
+----------------------------------
+[01:19:59] Testing
+[01:19:59] ----------------------------------
+
+[01:19:59] Подключение к базе данных успешно
+[01:19:59] Number of vehicle models: 0
+[01:20:19] [connection] 127.0.0.1:56403 requests connection cookie.
+[01:20:20] [connection] incoming connection: 127.0.0.1:56403 id: 0
+[01:20:21] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+[01:20:30] [part] Vlad_Capone has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[01:21:05] 
+[01:21:05] Server Plugins
+[01:21:05] --------------
+[01:21:05]  Loading plugin: mysql
+[01:21:05]  >> plugin.mysql: R41-4 successfully loaded.
+[01:21:05]   Loaded.
+[01:21:05]  Loading plugin: streamer
+[01:21:05] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[01:21:05]   Loaded.
+[01:21:05]  Loading plugin: sscanf
+[01:21:05] 
+
+[01:21:05]  ===============================
+
+[01:21:05]       sscanf plugin loaded.     
+
+[01:21:05]          Version:  2.8.3        
+
+[01:21:05]   (c) 2018 Alex "Y_Less" Cole  
+
+[01:21:05]  ===============================
+
+[01:21:05]   Loaded.
+[01:21:05]  Loaded 3 plugins.
+
+[01:21:05] 
+[01:21:05] Filterscripts
+[01:21:05] ---------------
+[01:21:05]   Loading filterscript 'gl_actions.amx'...
+[01:21:05]   Loading filterscript 'gl_realtime.amx'...
+[01:21:05]   Loading filterscript 'gl_property.amx'...
+[01:21:05] 
+-----------------------------------
+[01:21:05] Grand Larceny Property Filterscript		
+[01:21:05] -----------------------------------
+
+[01:21:05]   Loading filterscript 'gl_mapicon.amx'...
+[01:21:05]   Loading filterscript 'ls_elevator.amx'...
+[01:21:05]   Loading filterscript 'attachments.amx'...
+[01:21:05]   Loading filterscript 'skinchanger.amx'...
+[01:21:05] 
+--Admin Player Skin Changer Loaded
+
+[01:21:05]   Loading filterscript 'vspawner.amx'...
+[01:21:05] 
+--Admin Vehicle Spawner Loaded
+
+[01:21:05]   Loading filterscript 'ls_mall.amx'...
+[01:21:05]   Loading filterscript 'ls_beachside.amx'...
+[01:21:05] 
+
+[01:21:05]   |---------------------------------------------------
+[01:21:05]   |--- LS BeachSide Filterscript
+[01:21:05]   |--  Script v1.03
+[01:21:05]   |--  19th April 2015
+[01:21:05]   |---------------------------------------------------
+[01:21:05]   |--  LS BeachSide Building Elevator created
+[01:21:05]   |---------------------------------------------------
+[01:21:05]   Loaded 10 filterscripts.
+
+[01:21:05] Reading File: blank
+[01:21:05] Reading File: properties/houses.txt
+[01:21:05] Reading File: properties/businesses.txt
+[01:21:05] Reading File: properties/banks.txt
+[01:21:05] Reading File: properties/police.txt
+[01:21:05] 
+----------------------------------
+[01:21:05] Testing
+[01:21:05] ----------------------------------
+
+[01:21:05] Подключение к базе данных успешно
+[01:21:05] Number of vehicle models: 0
+[01:21:25] [connection] 127.0.0.1:59355 requests connection cookie.
+[01:21:26] [connection] incoming connection: 127.0.0.1:59355 id: 0
+[01:21:26] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+[01:21:44] [part] Vlad_Capone has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[01:23:07] 
+[01:23:07] Server Plugins
+[01:23:07] --------------
+[01:23:07]  Loading plugin: mysql
+[01:23:07]  >> plugin.mysql: R41-4 successfully loaded.
+[01:23:07]   Loaded.
+[01:23:07]  Loading plugin: streamer
+[01:23:07] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[01:23:07]   Loaded.
+[01:23:07]  Loading plugin: sscanf
+[01:23:07] 
+
+[01:23:07]  ===============================
+
+[01:23:07]       sscanf plugin loaded.     
+
+[01:23:07]          Version:  2.8.3        
+
+[01:23:07]   (c) 2018 Alex "Y_Less" Cole  
+
+[01:23:07]  ===============================
+
+[01:23:07]   Loaded.
+[01:23:07]  Loaded 3 plugins.
+
+[01:23:07] 
+[01:23:07] Filterscripts
+[01:23:07] ---------------
+[01:23:07]   Loading filterscript 'gl_actions.amx'...
+[01:23:07]   Loading filterscript 'gl_realtime.amx'...
+[01:23:07]   Loading filterscript 'gl_property.amx'...
+[01:23:07] 
+-----------------------------------
+[01:23:07] Grand Larceny Property Filterscript		
+[01:23:07] -----------------------------------
+
+[01:23:07]   Loading filterscript 'gl_mapicon.amx'...
+[01:23:07]   Loading filterscript 'ls_elevator.amx'...
+[01:23:07]   Loading filterscript 'attachments.amx'...
+[01:23:07]   Loading filterscript 'skinchanger.amx'...
+[01:23:07] 
+--Admin Player Skin Changer Loaded
+
+[01:23:07]   Loading filterscript 'vspawner.amx'...
+[01:23:07] 
+--Admin Vehicle Spawner Loaded
+
+[01:23:07]   Loading filterscript 'ls_mall.amx'...
+[01:23:07]   Loading filterscript 'ls_beachside.amx'...
+[01:23:07] 
+
+[01:23:07]   |---------------------------------------------------
+[01:23:07]   |--- LS BeachSide Filterscript
+[01:23:07]   |--  Script v1.03
+[01:23:07]   |--  19th April 2015
+[01:23:07]   |---------------------------------------------------
+[01:23:07]   |--  LS BeachSide Building Elevator created
+[01:23:07]   |---------------------------------------------------
+[01:23:07]   Loaded 10 filterscripts.
+
+[01:23:07] Reading File: blank
+[01:23:07] Reading File: properties/houses.txt
+[01:23:07] Reading File: properties/businesses.txt
+[01:23:07] Reading File: properties/banks.txt
+[01:23:07] Reading File: properties/police.txt
+[01:23:07] 
+----------------------------------
+[01:23:07] Testing
+[01:23:07] ----------------------------------
+
+[01:23:07] Подключение к базе данных успешно
+[01:23:07] Number of vehicle models: 0
+[01:23:27] [connection] 127.0.0.1:56483 requests connection cookie.
+[01:23:28] [connection] incoming connection: 127.0.0.1:56483 id: 0
+[01:23:28] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+[01:23:40] [part] Vlad_Capone has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[01:32:24] 
+[01:32:24] Server Plugins
+[01:32:24] --------------
+[01:32:24]  Loading plugin: mysql
+[01:32:24]  >> plugin.mysql: R41-4 successfully loaded.
+[01:32:24]   Loaded.
+[01:32:24]  Loading plugin: streamer
+[01:32:24] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[01:32:24]   Loaded.
+[01:32:24]  Loading plugin: sscanf
+[01:32:24] 
+
+[01:32:24]  ===============================
+
+[01:32:24]       sscanf plugin loaded.     
+
+[01:32:24]          Version:  2.8.3        
+
+[01:32:24]   (c) 2018 Alex "Y_Less" Cole  
+
+[01:32:24]  ===============================
+
+[01:32:24]   Loaded.
+[01:32:24]  Loaded 3 plugins.
+
+[01:32:24] 
+[01:32:24] Filterscripts
+[01:32:24] ---------------
+[01:32:24]   Loading filterscript 'gl_actions.amx'...
+[01:32:25]   Loading filterscript 'gl_realtime.amx'...
+[01:32:25]   Loading filterscript 'gl_property.amx'...
+[01:32:25] 
+-----------------------------------
+[01:32:25] Grand Larceny Property Filterscript		
+[01:32:25] -----------------------------------
+
+[01:32:25]   Loading filterscript 'gl_mapicon.amx'...
+[01:32:25]   Loading filterscript 'ls_elevator.amx'...
+[01:32:25]   Loading filterscript 'attachments.amx'...
+[01:32:25]   Loading filterscript 'skinchanger.amx'...
+[01:32:25] 
+--Admin Player Skin Changer Loaded
+
+[01:32:25]   Loading filterscript 'vspawner.amx'...
+[01:32:25] 
+--Admin Vehicle Spawner Loaded
+
+[01:32:25]   Loading filterscript 'ls_mall.amx'...
+[01:32:25]   Loading filterscript 'ls_beachside.amx'...
+[01:32:25] 
+
+[01:32:25]   |---------------------------------------------------
+[01:32:25]   |--- LS BeachSide Filterscript
+[01:32:25]   |--  Script v1.03
+[01:32:25]   |--  19th April 2015
+[01:32:25]   |---------------------------------------------------
+[01:32:25]   |--  LS BeachSide Building Elevator created
+[01:32:25]   |---------------------------------------------------
+[01:32:25]   Loaded 10 filterscripts.
+
+[01:32:25] Reading File: blank
+[01:32:25] Reading File: properties/houses.txt
+[01:32:25] Reading File: properties/businesses.txt
+[01:32:25] Reading File: properties/banks.txt
+[01:32:25] Reading File: properties/police.txt
+[01:32:25] 
+----------------------------------
+[01:32:25] Testing
+[01:32:25] ----------------------------------
+
+[01:32:25] Подключение к базе данных успешно
+[01:32:25] Number of vehicle models: 0
+[01:32:45] [connection] 127.0.0.1:53322 requests connection cookie.
+[01:32:46] [connection] incoming connection: 127.0.0.1:53322 id: 0
+[01:32:46] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[01:36:10] 
+[01:36:10] Server Plugins
+[01:36:10] --------------
+[01:36:10]  Loading plugin: mysql
+[01:36:10]  >> plugin.mysql: R41-4 successfully loaded.
+[01:36:10]   Loaded.
+[01:36:10]  Loading plugin: streamer
+[01:36:10] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[01:36:10]   Loaded.
+[01:36:10]  Loading plugin: sscanf
+[01:36:10] 
+
+[01:36:10]  ===============================
+
+[01:36:10]       sscanf plugin loaded.     
+
+[01:36:10]          Version:  2.8.3        
+
+[01:36:10]   (c) 2018 Alex "Y_Less" Cole  
+
+[01:36:10]  ===============================
+
+[01:36:10]   Loaded.
+[01:36:10]  Loaded 3 plugins.
+
+[01:36:10] 
+[01:36:10] Filterscripts
+[01:36:10] ---------------
+[01:36:10]   Loading filterscript 'gl_actions.amx'...
+[01:36:10]   Loading filterscript 'gl_realtime.amx'...
+[01:36:10]   Loading filterscript 'gl_property.amx'...
+[01:36:10] 
+-----------------------------------
+[01:36:10] Grand Larceny Property Filterscript		
+[01:36:10] -----------------------------------
+
+[01:36:10]   Loading filterscript 'gl_mapicon.amx'...
+[01:36:10]   Loading filterscript 'ls_elevator.amx'...
+[01:36:10]   Loading filterscript 'attachments.amx'...
+[01:36:10]   Loading filterscript 'skinchanger.amx'...
+[01:36:10] 
+--Admin Player Skin Changer Loaded
+
+[01:36:10]   Loading filterscript 'vspawner.amx'...
+[01:36:10] 
+--Admin Vehicle Spawner Loaded
+
+[01:36:10]   Loading filterscript 'ls_mall.amx'...
+[01:36:10]   Loading filterscript 'ls_beachside.amx'...
+[01:36:10] 
+
+[01:36:10]   |---------------------------------------------------
+[01:36:10]   |--- LS BeachSide Filterscript
+[01:36:10]   |--  Script v1.03
+[01:36:10]   |--  19th April 2015
+[01:36:10]   |---------------------------------------------------
+[01:36:10]   |--  LS BeachSide Building Elevator created
+[01:36:10]   |---------------------------------------------------
+[01:36:10]   Loaded 10 filterscripts.
+
+[01:36:10] Reading File: blank
+[01:36:10] Reading File: properties/houses.txt
+[01:36:10] Reading File: properties/businesses.txt
+[01:36:10] Reading File: properties/banks.txt
+[01:36:10] Reading File: properties/police.txt
+[01:36:10] 
+----------------------------------
+[01:36:10] Testing
+[01:36:10] ----------------------------------
+
+[01:36:10] Подключение к базе данных успешно
+[01:36:10] Number of vehicle models: 0
+[01:36:12] [connection] 127.0.0.1:49841 requests connection cookie.
+[01:36:13] [connection] incoming connection: 127.0.0.1:49841 id: 0
+[01:36:13] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+[01:36:13] (null)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[01:37:25] 
+[01:37:25] Server Plugins
+[01:37:25] --------------
+[01:37:25]  Loading plugin: mysql
+[01:37:25]  >> plugin.mysql: R41-4 successfully loaded.
+[01:37:25]   Loaded.
+[01:37:25]  Loading plugin: streamer
+[01:37:25] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[01:37:25]   Loaded.
+[01:37:25]  Loading plugin: sscanf
+[01:37:25] 
+
+[01:37:25]  ===============================
+
+[01:37:25]       sscanf plugin loaded.     
+
+[01:37:25]          Version:  2.8.3        
+
+[01:37:25]   (c) 2018 Alex "Y_Less" Cole  
+
+[01:37:25]  ===============================
+
+[01:37:25]   Loaded.
+[01:37:25]  Loaded 3 plugins.
+
+[01:37:25] 
+[01:37:25] Filterscripts
+[01:37:25] ---------------
+[01:37:25]   Loading filterscript 'gl_actions.amx'...
+[01:37:25]   Loading filterscript 'gl_realtime.amx'...
+[01:37:25]   Loading filterscript 'gl_property.amx'...
+[01:37:25] 
+-----------------------------------
+[01:37:25] Grand Larceny Property Filterscript		
+[01:37:25] -----------------------------------
+
+[01:37:25]   Loading filterscript 'gl_mapicon.amx'...
+[01:37:25]   Loading filterscript 'ls_elevator.amx'...
+[01:37:25]   Loading filterscript 'attachments.amx'...
+[01:37:25]   Loading filterscript 'skinchanger.amx'...
+[01:37:25] 
+--Admin Player Skin Changer Loaded
+
+[01:37:25]   Loading filterscript 'vspawner.amx'...
+[01:37:25] 
+--Admin Vehicle Spawner Loaded
+
+[01:37:25]   Loading filterscript 'ls_mall.amx'...
+[01:37:25]   Loading filterscript 'ls_beachside.amx'...
+[01:37:25] 
+
+[01:37:25]   |---------------------------------------------------
+[01:37:25]   |--- LS BeachSide Filterscript
+[01:37:25]   |--  Script v1.03
+[01:37:25]   |--  19th April 2015
+[01:37:25]   |---------------------------------------------------
+[01:37:25]   |--  LS BeachSide Building Elevator created
+[01:37:25]   |---------------------------------------------------
+[01:37:25]   Loaded 10 filterscripts.
+
+[01:37:25] Reading File: blank
+[01:37:25] Reading File: properties/houses.txt
+[01:37:25] Reading File: properties/businesses.txt
+[01:37:25] Reading File: properties/banks.txt
+[01:37:25] Reading File: properties/police.txt
+[01:37:25] 
+----------------------------------
+[01:37:25] Testing
+[01:37:25] ----------------------------------
+
+[01:37:25] Подключение к базе данных успешно
+[01:37:25] Number of vehicle models: 0
+[01:37:44] [connection] 127.0.0.1:57900 requests connection cookie.
+[01:37:45] [connection] incoming connection: 127.0.0.1:57900 id: 0
+[01:37:45] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+[01:37:45] A6FF8A67EDB5696B98F4ED81A12D2
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[01:38:59] 
+[01:38:59] Server Plugins
+[01:38:59] --------------
+[01:38:59]  Loading plugin: mysql
+[01:38:59]  >> plugin.mysql: R41-4 successfully loaded.
+[01:38:59]   Loaded.
+[01:38:59]  Loading plugin: streamer
+[01:38:59] 
+
+*** Streamer Plugin v2.9.1 by Incognito loaded ***
+
+[01:38:59]   Loaded.
+[01:38:59]  Loading plugin: sscanf
+[01:38:59] 
+
+[01:38:59]  ===============================
+
+[01:38:59]       sscanf plugin loaded.     
+
+[01:38:59]          Version:  2.8.3        
+
+[01:38:59]   (c) 2018 Alex "Y_Less" Cole  
+
+[01:38:59]  ===============================
+
+[01:38:59]   Loaded.
+[01:38:59]  Loaded 3 plugins.
+
+[01:38:59] 
+[01:38:59] Filterscripts
+[01:38:59] ---------------
+[01:38:59]   Loading filterscript 'gl_actions.amx'...
+[01:38:59]   Loading filterscript 'gl_realtime.amx'...
+[01:38:59]   Loading filterscript 'gl_property.amx'...
+[01:38:59] 
+-----------------------------------
+[01:38:59] Grand Larceny Property Filterscript		
+[01:38:59] -----------------------------------
+
+[01:38:59]   Loading filterscript 'gl_mapicon.amx'...
+[01:38:59]   Loading filterscript 'ls_elevator.amx'...
+[01:38:59]   Loading filterscript 'attachments.amx'...
+[01:38:59]   Loading filterscript 'skinchanger.amx'...
+[01:38:59] 
+--Admin Player Skin Changer Loaded
+
+[01:38:59]   Loading filterscript 'vspawner.amx'...
+[01:38:59] 
+--Admin Vehicle Spawner Loaded
+
+[01:38:59]   Loading filterscript 'ls_mall.amx'...
+[01:38:59]   Loading filterscript 'ls_beachside.amx'...
+[01:38:59] 
+
+[01:38:59]   |---------------------------------------------------
+[01:38:59]   |--- LS BeachSide Filterscript
+[01:38:59]   |--  Script v1.03
+[01:38:59]   |--  19th April 2015
+[01:38:59]   |---------------------------------------------------
+[01:38:59]   |--  LS BeachSide Building Elevator created
+[01:38:59]   |---------------------------------------------------
+[01:38:59]   Loaded 10 filterscripts.
+
+[01:38:59] Reading File: blank
+[01:38:59] Reading File: properties/houses.txt
+[01:38:59] Reading File: properties/businesses.txt
+[01:38:59] Reading File: properties/banks.txt
+[01:38:59] Reading File: properties/police.txt
+[01:38:59] 
+----------------------------------
+[01:38:59] Testing
+[01:38:59] ----------------------------------
+
+[01:38:59] Подключение к базе данных успешно
+[01:38:59] Number of vehicle models: 0
+[01:39:15] [connection] 127.0.0.1:64853 requests connection cookie.
+[01:39:16] [connection] incoming connection: 127.0.0.1:64853 id: 0
+[01:39:16] [join] Vlad_Capone has joined the server (0:127.0.0.1)
+[01:39:16] A6FF8A67EDB5696B98F4ED81A12D24
