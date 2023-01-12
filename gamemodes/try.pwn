@@ -45,12 +45,12 @@ enum pInfo
 	AdmLevel,
 	pFrac,
 	pRank,
-	pGang
+	pGang,
+	logged
 }
 //***********************************************************************************************************************************************
 new playerInfo [MAX_PLAYERS][pInfo]; //переменная обращающаяся к массиву информации игрока
 new MYSQL:database;
-new gPlayerLogged[MAX_PLAYERS];
 
 main()
 {
@@ -105,27 +105,20 @@ public OnPlayerConnect(playerid)
 		new query[512], str;
 	mysql_format(database, query, sizeof(query), "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s' LIMIT 1", playerInfo[playerid][pName]);
 	mysql_tquery(database, query, "CheckAccount", "i", playerid);
-//SetTimerEx("CheckName", 50, false, "i", playerid);
-//new string[255];
-//if(mysql_errno() !=0) return SendClientMessage(playerid, -1, "Подключение к БД не удалось. Переподключение...");
-// GangZoneShowForPlayer(playerid, i, 0x0000FFFF);
 	return 1;
 }
 
 public OnPlayerDisconnect(playerid, reason)
 {
-//if(gPlayerLogged [playerid] == 1){
-//SaveAccount(playerid);
-//}
+	if (playerInfo[playerid][logged])
+	{
+	SaveAccount(playerid);
+	}
 	return 1;
 }
 
 public OnPlayerSpawn(playerid)
 {
-		//	SetPlayerSkin(playerid, playerInfo[playerid][pSkin]);
-		//	SetPlayerPos(playerid, playerInfo[playerid][posX], playerInfo[playerid][posY], playerInfo[playerid][posZ]);
-		//	SetPlayerFacingAngle(playerid, playerInfo[playerid][FaceAngle]);
-		//	SetPlayerScore(playerid, playerInfo[playerid][pLevel]);
 		SetPlayerScore(playerid, playerInfo[playerid][pLevel]);
 		SetPlayerSkin(playerid, playerInfo[playerid][pSkin]);
 		SetPlayerPos(playerid, playerInfo[playerid][posX], playerInfo[playerid][posY], playerInfo[playerid][posZ]);
@@ -518,6 +511,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				playerInfo[playerid][posZ] = 25;
  				playerInfo[playerid][FaceAngle] = 10;
 				playerInfo[playerid][pHealth] = 55;
+				playerInfo[playerid][logged] = 1;
 				CreateNewAccount(playerid);
 				return 1;
 			}
@@ -576,22 +570,22 @@ return 1;
 
 
 
-
 stock SaveAccount(playerid)
 {
-GetPlayerPos(playerid, x, y, z);
+GetPlayerPos(playerid, playerInfo[playerid][posX], playerInfo[playerid][posY], playerInfo[playerid][posZ]);
 GetPlayerFacingAngle(playerid, playerInfo[playerid][FaceAngle]);
-playerInfo[playerid][posX] = x;
-playerInfo[playerid][posY] = y;
-playerInfo[playerid][posZ] = z;
-new query_string[512] = "UPDATE `users` SET";
-		format(query_string, sizeof(query_string), "%s `Level` = '%d',", query_string, playerInfo[playerid][pLevel]);
-		format(query_string, sizeof(query_string), "%s `Skin` = '%d',", query_string, playerInfo[playerid][pSkin]);
-  		format(query_string, sizeof(query_string), "%s `x` = '%f',", query_string, playerInfo[playerid][posX]);
-  		format(query_string, sizeof(query_string), "%s `y` = '%f',", query_string, playerInfo[playerid][posY]);
-  		format(query_string, sizeof(query_string), "%s `z` = '%f',", query_string, playerInfo[playerid][posZ]);
-  		format(query_string, sizeof(query_string), "%s `FaceAngle` = '%f'", query_string, playerInfo[playerid][FaceAngle]);
-  		format(query_string, sizeof(query_string), "%s WHERE `Name` = '%s'", query_string, playerInfo[playerid][pName]);
+new query_string[512];
+
+		mysql_format(database, query_string, sizeof(query_string), "UPDATE `users` SET `Level` = '%i', `Skin` = '%i', `x` = '%f', `y` = '%f', `z` = '%f', `FaceAngle` = '%f', `Health` = '%i', `Armor` = '%i' WHERE `Name` = '%s'",
+																	playerInfo[playerid][pLevel],
+																	playerInfo[playerid][pSkin],
+																	playerInfo[playerid][posX],
+																	playerInfo[playerid][posY],
+																	playerInfo[playerid][posZ],
+																	playerInfo[playerid][FaceAngle],
+																	playerInfo[playerid][pHealth],
+																	playerInfo[playerid][pArmor],
+																	playerInfo[playerid][pName]);
 		mysql_tquery(database, query_string);
 }
 
@@ -652,16 +646,18 @@ forward public UploadPlayerAccount(playerid);
 
 public UploadPlayerAccount(playerid)
 {
+		cache_get_value_name(0, "Name", playerInfo[playerid][pName]);
 		cache_get_value_name_int(0, "Level", playerInfo[playerid][pLevel]);
 		cache_get_value_name(0, "Sex", playerInfo[playerid][pSex]);
 		cache_get_value_name_int(0, "Skin", playerInfo[playerid][pSkin]);
-		cache_get_value_name_int(0, "x", playerInfo[playerid][posX]);
-		cache_get_value_name_int(0, "y", playerInfo[playerid][posY]);
-		cache_get_value_name_int(0, "z", playerInfo[playerid][posZ]);
-		cache_get_value_name_int(0, "FaceAngle", playerInfo[playerid][FaceAngle]);
+		cache_get_value_name_float(0, "x", playerInfo[playerid][posX]);
+		cache_get_value_name_float(0, "y", playerInfo[playerid][posY]);
+		cache_get_value_name_float(0, "z", playerInfo[playerid][posZ]);
+		cache_get_value_name_float(0, "FaceAngle", playerInfo[playerid][FaceAngle]);
 		cache_get_value_name_int(0, "AdmLevel", playerInfo[playerid][AdmLevel]);
 		cache_get_value_name_int(0, "Health", playerInfo[playerid][pHealth]);
 		cache_get_value_name_int(0, "Armor", playerInfo[playerid][pArmor]);
+		playerInfo[playerid][logged] = 1;
 	return 1;
 
 }

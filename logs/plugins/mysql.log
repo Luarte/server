@@ -1,179 +1,1443 @@
-[17:21:41] [INFO] changed log level from 'warning, error' to 'debug, info, warning, error'
-[17:21:41] [DEBUG] mysql_connect("127.0.0.1", "root", "*****", "sampbd", 0)
-[17:21:41] [DEBUG] CHandleManager::Create(this=0x587c58, host='127.0.0.1', user='root', pass='****', db='sampbd', options=0x57e880)
-[17:21:41] [INFO] Creating new connection handle...
-[17:21:41] [WARNING] mysql_connect: no password specified
-[17:21:41] [DEBUG] CConnection::CConnection(this=0x58ca50, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x57e880)
-[17:21:41] [DEBUG] CConnection::CConnection - new connection = 0x561bb8
-[17:21:41] [DEBUG] CConnection::CConnection(this=0x3f87020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x57e880)
-[17:21:41] [DEBUG] CConnection::CConnection - new connection = 0x5b5a30
-[17:21:41] [DEBUG] CThreadedConnection::WorkerFunc(this=0x3f87020, connection=0x3f87020)
-[17:21:41] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x3f87020, connection=0x3f87020)
-[17:21:41] [DEBUG] CConnectionPool::CConnectionPool(size=2, this=0x58cc10)
-[17:21:41] [DEBUG] CConnection::CConnection(this=0x4157020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x57e880)
-[17:21:41] [DEBUG] CConnection::CConnection - new connection = 0x5c16e8
-[17:21:41] [DEBUG] CThreadedConnection::WorkerFunc(this=0x4157020, connection=0x4157020)
-[17:21:41] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x4157020, connection=0x4157020)
-[17:21:41] [DEBUG] CConnection::CConnection(this=0x432a020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x57e880)
-[17:21:41] [DEBUG] CConnection::CConnection - new connection = 0x5c1ad0
-[17:21:41] [DEBUG] CThreadedConnection::WorkerFunc(this=0x432a020, connection=0x432a020)
-[17:21:41] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x432a020, connection=0x432a020)
-[17:21:41] [INFO] Connection handle with id '1' successfully created.
-[17:21:41] [DEBUG] CHandleManager::Create - new handle = 0x595550
-[17:21:41] [DEBUG] mysql_connect: return value: '1'
-[17:21:41] [DEBUG] mysql_errno(1)
-[17:21:41] [DEBUG] CHandle::GetErrorId(this=0x595550)
-[17:21:41] [DEBUG] CConnection::GetError(this=0x58ca50, connection=0x561bb8)
-[17:21:41] [DEBUG] CHandle::GetErrorId - return value: true, error id: '0', error msg: ''
-[17:21:41] [DEBUG] mysql_errno: return value: '0'
-[17:22:02] [DEBUG] mysql_format(1, 0x03E3B548, 512, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s' LIMIT 1")
-[17:22:02] [DEBUG] mysql_format: return value: '158'
-[17:22:02] [DEBUG] mysql_tquery(1, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1", "CheckAccount", "i")
-[17:22:02] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='CheckAccount', format='i', params=0x3e3b52c, param_offset=5)
-[17:22:02] [DEBUG] CCallback::Create - callback index for 'CheckAccount': 0
-[17:22:02] [DEBUG] processing specifier 'i' with parameter index 0
-[17:22:02] [DEBUG] retrieved and pushed value '0'
-[17:22:02] [INFO] Callback 'CheckAccount' set up for delayed execution.
-[17:22:02] [DEBUG] created delayed callback with 1 parameter
-[17:22:02] [DEBUG] CHandle::Execute(this=0x595550, type=1, query=0x5b6e48)
-[17:22:02] [DEBUG] CHandle::Execute - return value: true
-[17:22:02] [DEBUG] mysql_tquery: return value: '1'
-[17:22:02] [DEBUG] CConnection::Execute(query=0x5b6e48, this=0x3f87020, connection=0x5b5a30)
-[17:22:02] [DEBUG] CQuery::Execute(this=0x5b6e48, connection=0x5b5a30)
-[17:22:02] [INFO] query "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1" successfully executed within 0.346 milliseconds
-[17:22:02] [DEBUG] CResultSet::Create(connection=0x5b5a30, query_str='SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1')
-[17:22:02] [DEBUG] created new resultset '0x596a28'
-[17:22:02] [DEBUG] fetched MySQL result '0x5be018'
-[17:22:02] [DEBUG] allocated 132 bytes for PAWN result
-[17:22:02] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=0, num_params=1)
-[17:22:02] [INFO] Executing callback 'CheckAccount' with 1 parameter...
-[17:22:02] [DEBUG] processing internal specifier 'c'
-[17:22:02] [DEBUG] pushed value '0' onto AMX stack
-[17:22:02] [DEBUG] executing AMX callback with index '0'
-[17:22:02] [DEBUG] cache_get_row_count(0x03E3BDAC)
-[17:22:02] [DEBUG] cache_get_row_count: return value: '1'
-[17:22:02] [DEBUG] cache_get_value_index(0, 0, 0x03DA8D1C, 32)
-[17:22:02] [DEBUG] cache_get_value_index: assigned value: 'D941D47EFFC2AB4D74AFDB72C0F874'
-[17:22:02] [DEBUG] cache_get_value_index: return value: '1'
-[17:22:02] [DEBUG] cache_get_value_index(0, 1, 0x03DA8E8C, 16)
-[17:22:02] [DEBUG] cache_get_value_index: assigned value: '^@IBzg2_dib^_RX'
-[17:22:02] [DEBUG] cache_get_value_index: return value: '1'
-[17:22:02] [DEBUG] AMX callback executed with error '0'
-[17:22:02] [INFO] Callback successfully executed.
-[17:22:10] [DEBUG] mysql_format(1, 0x03E3AD2C, 512, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s'")
-[17:22:10] [DEBUG] mysql_format: return value: '139'
-[17:22:10] [DEBUG] mysql_tquery(1, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'", "UploadPlayerAccount", "i")
-[17:22:10] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='UploadPlayerAccount', format='i', params=0x3e3ad14, param_offset=5)
-[17:22:10] [DEBUG] CCallback::Create - callback index for 'UploadPlayerAccount': 44
-[17:22:10] [DEBUG] processing specifier 'i' with parameter index 0
-[17:22:10] [DEBUG] retrieved and pushed value '0'
-[17:22:10] [INFO] Callback 'UploadPlayerAccount' set up for delayed execution.
-[17:22:10] [DEBUG] created delayed callback with 1 parameter
-[17:22:10] [DEBUG] CHandle::Execute(this=0x595550, type=1, query=0x5cf2f8)
-[17:22:10] [DEBUG] CHandle::Execute - return value: true
-[17:22:10] [DEBUG] mysql_tquery: return value: '1'
-[17:22:10] [DEBUG] CConnection::Execute(query=0x5cf2f8, this=0x3f87020, connection=0x5b5a30)
-[17:22:10] [DEBUG] CQuery::Execute(this=0x5cf2f8, connection=0x5b5a30)
-[17:22:10] [INFO] query "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'" successfully executed within 0.240 milliseconds
-[17:22:10] [DEBUG] CResultSet::Create(connection=0x5b5a30, query_str='SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'')
-[17:22:10] [DEBUG] created new resultset '0x5969f0'
-[17:22:10] [DEBUG] fetched MySQL result '0x5be788'
-[17:22:10] [DEBUG] allocated 84 bytes for PAWN result
-[17:22:10] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=44, num_params=1)
-[17:22:10] [INFO] Executing callback 'UploadPlayerAccount' with 1 parameter...
-[17:22:10] [DEBUG] processing internal specifier 'c'
-[17:22:10] [DEBUG] pushed value '0' onto AMX stack
-[17:22:10] [DEBUG] executing AMX callback with index '44'
-[17:22:10] [DEBUG] cache_get_value_name_int(0, "Level", 0x03DA8ED0)
-[17:22:10] [DEBUG] cache_get_value_name_int: assigned value: '1'
-[17:22:10] [DEBUG] cache_get_value_name_int: return value: '1'
-[17:22:10] [DEBUG] cache_get_value_name_int(0, "Sex", 0x03DA8E64)
-[17:22:10] [ERROR] cache_get_value_name_int: value 'Male' is not a number
-[17:22:10] [DEBUG] cache_get_value_name_int(0, "Skin", 0x03DA8ED4)
-[17:22:10] [DEBUG] cache_get_value_name_int: assigned value: '137'
-[17:22:10] [DEBUG] cache_get_value_name_int: return value: '1'
-[17:22:10] [DEBUG] cache_get_value_name_int(0, "x", 0x03DA8EDC)
-[17:22:10] [DEBUG] cache_get_value_name_int: assigned value: '0'
-[17:22:10] [DEBUG] cache_get_value_name_int: return value: '1'
-[17:22:10] [DEBUG] cache_get_value_name_int(0, "y", 0x03DA8EE0)
-[17:22:10] [DEBUG] cache_get_value_name_int: assigned value: '0'
-[17:22:10] [DEBUG] cache_get_value_name_int: return value: '1'
-[17:22:10] [DEBUG] cache_get_value_name_int(0, "z", 0x03DA8EE4)
-[17:22:10] [DEBUG] cache_get_value_name_int: assigned value: '0'
-[17:22:10] [DEBUG] cache_get_value_name_int: return value: '1'
-[17:22:10] [DEBUG] cache_get_value_name_int(0, "FaceAngle", 0x03DA8EE8)
-[17:22:10] [DEBUG] cache_get_value_name_int: assigned value: '0'
-[17:22:10] [DEBUG] cache_get_value_name_int: return value: '1'
-[17:22:10] [DEBUG] cache_get_value_name_int(0, "AdmLevel", 0x03DA8EEC)
-[17:22:10] [DEBUG] cache_get_value_name_int: assigned value: '0'
-[17:22:10] [DEBUG] cache_get_value_name_int: return value: '1'
-[17:22:10] [DEBUG] cache_get_value_name_int(0, "Health", 0x03DA8EC8)
-[17:22:10] [DEBUG] cache_get_value_name_int: assigned value: '55'
-[17:22:10] [DEBUG] cache_get_value_name_int: return value: '1'
-[17:22:10] [DEBUG] cache_get_value_name_int(0, "Armor", 0x03DA8ECC)
-[17:22:10] [DEBUG] cache_get_value_name_int: assigned value: '0'
-[17:22:10] [DEBUG] cache_get_value_name_int: return value: '1'
-[17:22:10] [DEBUG] AMX callback executed with error '0'
-[17:22:10] [INFO] Callback successfully executed.
-[17:25:18] [INFO] changed log level from 'warning, error' to 'debug, info, warning, error'
-[17:25:18] [DEBUG] mysql_connect("127.0.0.1", "root", "*****", "sampbd", 0)
-[17:25:18] [DEBUG] CHandleManager::Create(this=0x7b6b98, host='127.0.0.1', user='root', pass='****', db='sampbd', options=0x7ac6d0)
-[17:25:18] [INFO] Creating new connection handle...
-[17:25:18] [WARNING] mysql_connect: no password specified
-[17:25:18] [DEBUG] CConnection::CConnection(this=0x7bc8b8, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x7ac6d0)
-[17:25:18] [DEBUG] CConnection::CConnection - new connection = 0x791bb8
-[17:25:18] [DEBUG] CConnection::CConnection(this=0x3f9f020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x7ac6d0)
-[17:25:18] [DEBUG] CConnection::CConnection - new connection = 0x7e7740
-[17:25:18] [DEBUG] CThreadedConnection::WorkerFunc(this=0x3f9f020, connection=0x3f9f020)
-[17:25:18] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x3f9f020, connection=0x3f9f020)
-[17:25:18] [DEBUG] CConnectionPool::CConnectionPool(size=2, this=0x7bcc78)
-[17:25:18] [DEBUG] CConnection::CConnection(this=0x4171020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x7ac6d0)
-[17:25:18] [DEBUG] CConnection::CConnection - new connection = 0x800ed8
-[17:25:18] [DEBUG] CThreadedConnection::WorkerFunc(this=0x4171020, connection=0x4171020)
-[17:25:18] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x4171020, connection=0x4171020)
-[17:25:18] [DEBUG] CConnection::CConnection(this=0x4346020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x7ac6d0)
-[17:25:18] [DEBUG] CConnection::CConnection - new connection = 0x800708
-[17:25:18] [DEBUG] CThreadedConnection::WorkerFunc(this=0x4346020, connection=0x4346020)
-[17:25:18] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x4346020, connection=0x4346020)
-[17:25:18] [INFO] Connection handle with id '1' successfully created.
-[17:25:18] [DEBUG] CHandleManager::Create - new handle = 0x7c4288
-[17:25:18] [DEBUG] mysql_connect: return value: '1'
-[17:25:18] [DEBUG] mysql_errno(1)
-[17:25:18] [DEBUG] CHandle::GetErrorId(this=0x7c4288)
-[17:25:18] [DEBUG] CConnection::GetError(this=0x7bc8b8, connection=0x791bb8)
-[17:25:18] [DEBUG] CHandle::GetErrorId - return value: true, error id: '0', error msg: ''
-[17:25:18] [DEBUG] mysql_errno: return value: '0'
-[17:25:38] [DEBUG] mysql_format(1, 0x03E44434, 512, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s' LIMIT 1")
-[17:25:38] [DEBUG] mysql_format: return value: '158'
-[17:25:38] [DEBUG] mysql_tquery(1, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1", "CheckAccount", "i")
-[17:25:38] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='CheckAccount', format='i', params=0x3e44418, param_offset=5)
-[17:25:38] [DEBUG] CCallback::Create - callback index for 'CheckAccount': 0
-[17:25:38] [DEBUG] processing specifier 'i' with parameter index 0
-[17:25:38] [DEBUG] retrieved and pushed value '0'
-[17:25:38] [INFO] Callback 'CheckAccount' set up for delayed execution.
-[17:25:38] [DEBUG] created delayed callback with 1 parameter
-[17:25:38] [DEBUG] CHandle::Execute(this=0x7c4288, type=1, query=0x8146f8)
-[17:25:38] [DEBUG] CHandle::Execute - return value: true
-[17:25:38] [DEBUG] mysql_tquery: return value: '1'
-[17:25:38] [DEBUG] CConnection::Execute(query=0x8146f8, this=0x3f9f020, connection=0x7e7740)
-[17:25:38] [DEBUG] CQuery::Execute(this=0x8146f8, connection=0x7e7740)
-[17:25:38] [INFO] query "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1" successfully executed within 0.476 milliseconds
-[17:25:38] [DEBUG] CResultSet::Create(connection=0x7e7740, query_str='SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1')
-[17:25:38] [DEBUG] created new resultset '0x818b40'
-[17:25:38] [DEBUG] fetched MySQL result '0x7ca808'
-[17:25:38] [DEBUG] allocated 132 bytes for PAWN result
-[17:25:38] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=0, num_params=1)
-[17:25:38] [INFO] Executing callback 'CheckAccount' with 1 parameter...
-[17:25:38] [DEBUG] processing internal specifier 'c'
-[17:25:38] [DEBUG] pushed value '0' onto AMX stack
-[17:25:38] [DEBUG] executing AMX callback with index '0'
-[17:25:38] [DEBUG] cache_get_row_count(0x03E44C98)
-[17:25:38] [DEBUG] cache_get_row_count: return value: '1'
-[17:25:38] [DEBUG] cache_get_value_index(0, 0, 0x03DB1C5C, 32)
-[17:25:38] [DEBUG] cache_get_value_index: assigned value: 'D941D47EFFC2AB4D74AFDB72C0F874'
-[17:25:38] [DEBUG] cache_get_value_index: return value: '1'
-[17:25:38] [DEBUG] cache_get_value_index(0, 1, 0x03DB1DCC, 16)
-[17:25:38] [DEBUG] cache_get_value_index: assigned value: '^@IBzg2_dib^_RX'
-[17:25:38] [DEBUG] cache_get_value_index: return value: '1'
-[17:25:38] [DEBUG] AMX callback executed with error '0'
-[17:25:38] [INFO] Callback successfully executed.
+[01:29:41] [INFO] changed log level from 'warning, error' to 'debug, info, warning, error'
+[01:29:41] [DEBUG] mysql_connect("127.0.0.1", "root", "*****", "sampbd", 0)
+[01:29:41] [DEBUG] CHandleManager::Create(this=0x68a1a8, host='127.0.0.1', user='root', pass='****', db='sampbd', options=0x67c408)
+[01:29:41] [INFO] Creating new connection handle...
+[01:29:41] [WARNING] mysql_connect: no password specified
+[01:29:41] [DEBUG] CConnection::CConnection(this=0x68ff00, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x67c408)
+[01:29:41] [DEBUG] CConnection::CConnection - new connection = 0x69f578
+[01:29:41] [DEBUG] CConnection::CConnection(this=0x3f8d020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x67c408)
+[01:29:41] [DEBUG] CConnection::CConnection - new connection = 0x661f40
+[01:29:41] [DEBUG] CThreadedConnection::WorkerFunc(this=0x3f8d020, connection=0x3f8d020)
+[01:29:41] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x3f8d020, connection=0x3f8d020)
+[01:29:41] [DEBUG] CConnectionPool::CConnectionPool(size=2, this=0x68fd40)
+[01:29:41] [DEBUG] CConnection::CConnection(this=0x4157020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x67c408)
+[01:29:41] [DEBUG] CConnection::CConnection - new connection = 0x6ba780
+[01:29:41] [DEBUG] CThreadedConnection::WorkerFunc(this=0x4157020, connection=0x4157020)
+[01:29:41] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x4157020, connection=0x4157020)
+[01:29:41] [DEBUG] CConnection::CConnection(this=0x4322020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x67c408)
+[01:29:41] [DEBUG] CConnection::CConnection - new connection = 0x6ced98
+[01:29:41] [DEBUG] CThreadedConnection::WorkerFunc(this=0x4322020, connection=0x4322020)
+[01:29:41] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x4322020, connection=0x4322020)
+[01:29:41] [INFO] Connection handle with id '1' successfully created.
+[01:29:41] [DEBUG] CHandleManager::Create - new handle = 0x660c98
+[01:29:41] [DEBUG] mysql_connect: return value: '1'
+[01:29:41] [DEBUG] mysql_errno(1)
+[01:29:41] [DEBUG] CHandle::GetErrorId(this=0x660c98)
+[01:29:41] [DEBUG] CConnection::GetError(this=0x68ff00, connection=0x69f578)
+[01:29:41] [DEBUG] CHandle::GetErrorId - return value: true, error id: '0', error msg: ''
+[01:29:41] [DEBUG] mysql_errno: return value: '0'
+[01:30:01] [DEBUG] mysql_format(1, 0x03E38894, 512, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s' LIMIT 1")
+[01:30:01] [DEBUG] mysql_format: return value: '158'
+[01:30:01] [DEBUG] mysql_tquery(1, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1", "CheckAccount", "i")
+[01:30:01] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='CheckAccount', format='i', params=0x3e38878, param_offset=5)
+[01:30:01] [DEBUG] CCallback::Create - callback index for 'CheckAccount': 0
+[01:30:01] [DEBUG] processing specifier 'i' with parameter index 0
+[01:30:01] [DEBUG] retrieved and pushed value '0'
+[01:30:01] [INFO] Callback 'CheckAccount' set up for delayed execution.
+[01:30:01] [DEBUG] created delayed callback with 1 parameter
+[01:30:01] [DEBUG] CHandle::Execute(this=0x660c98, type=1, query=0x69fdc0)
+[01:30:01] [DEBUG] CHandle::Execute - return value: true
+[01:30:01] [DEBUG] mysql_tquery: return value: '1'
+[01:30:01] [DEBUG] CConnection::Execute(query=0x69fdc0, this=0x3f8d020, connection=0x661f40)
+[01:30:01] [DEBUG] CQuery::Execute(this=0x69fdc0, connection=0x661f40)
+[01:30:01] [INFO] query "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1" successfully executed within 0.486 milliseconds
+[01:30:01] [DEBUG] CResultSet::Create(connection=0x661f40, query_str='SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1')
+[01:30:01] [DEBUG] created new resultset '0x69a0e8'
+[01:30:01] [DEBUG] fetched MySQL result '0x6612f8'
+[01:30:01] [DEBUG] allocated 132 bytes for PAWN result
+[01:30:01] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=0, num_params=1)
+[01:30:01] [INFO] Executing callback 'CheckAccount' with 1 parameter...
+[01:30:01] [DEBUG] processing internal specifier 'c'
+[01:30:01] [DEBUG] pushed value '0' onto AMX stack
+[01:30:01] [DEBUG] executing AMX callback with index '0'
+[01:30:01] [DEBUG] cache_get_row_count(0x03E390F8)
+[01:30:01] [DEBUG] cache_get_row_count: return value: '1'
+[01:30:01] [DEBUG] cache_get_value_index(0, 0, 0x03DA5EDC, 32)
+[01:30:01] [DEBUG] cache_get_value_index: assigned value: 'D941D47EFFC2AB4D74AFDB72C0F874'
+[01:30:01] [DEBUG] cache_get_value_index: return value: '1'
+[01:30:01] [DEBUG] cache_get_value_index(0, 1, 0x03DA604C, 16)
+[01:30:01] [DEBUG] cache_get_value_index: assigned value: '^@IBzg2_dib^_RX'
+[01:30:01] [DEBUG] cache_get_value_index: return value: '1'
+[01:30:01] [DEBUG] AMX callback executed with error '0'
+[01:30:01] [INFO] Callback successfully executed.
+[01:30:35] [DEBUG] mysql_format(1, 0x03E38078, 512, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s'")
+[01:30:35] [DEBUG] mysql_format: return value: '139'
+[01:30:35] [DEBUG] mysql_tquery(1, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'", "UploadPlayerAccount", "i")
+[01:30:35] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='UploadPlayerAccount', format='i', params=0x3e38060, param_offset=5)
+[01:30:35] [DEBUG] CCallback::Create - callback index for 'UploadPlayerAccount': 44
+[01:30:35] [DEBUG] processing specifier 'i' with parameter index 0
+[01:30:35] [DEBUG] retrieved and pushed value '0'
+[01:30:35] [INFO] Callback 'UploadPlayerAccount' set up for delayed execution.
+[01:30:35] [DEBUG] created delayed callback with 1 parameter
+[01:30:35] [DEBUG] CHandle::Execute(this=0x660c98, type=1, query=0x69fbf8)
+[01:30:35] [DEBUG] CHandle::Execute - return value: true
+[01:30:35] [DEBUG] mysql_tquery: return value: '1'
+[01:30:35] [DEBUG] CConnection::Execute(query=0x69fbf8, this=0x3f8d020, connection=0x661f40)
+[01:30:35] [DEBUG] CQuery::Execute(this=0x69fbf8, connection=0x661f40)
+[01:30:35] [INFO] query "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'" successfully executed within 0.292 milliseconds
+[01:30:35] [DEBUG] CResultSet::Create(connection=0x661f40, query_str='SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'')
+[01:30:35] [DEBUG] created new resultset '0x69a158'
+[01:30:35] [DEBUG] fetched MySQL result '0x661380'
+[01:30:35] [DEBUG] allocated 84 bytes for PAWN result
+[01:30:35] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=44, num_params=1)
+[01:30:35] [INFO] Executing callback 'UploadPlayerAccount' with 1 parameter...
+[01:30:35] [DEBUG] processing internal specifier 'c'
+[01:30:35] [DEBUG] pushed value '0' onto AMX stack
+[01:30:35] [DEBUG] executing AMX callback with index '44'
+[01:30:35] [DEBUG] cache_get_value_name(0, "Name", 0x03DA5E7C, 1)
+[01:30:35] [ERROR] cache_get_value_name: field 'Name' not found
+[01:30:35] [DEBUG] cache_get_value_name_int(0, "Level", 0x03DA6090)
+[01:30:35] [DEBUG] cache_get_value_name_int: assigned value: '1'
+[01:30:35] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:30:35] [DEBUG] cache_get_value_name(0, "Sex", 0x03DA6024, 1)
+[01:30:35] [DEBUG] cache_get_value_name: assigned value: 'Male'
+[01:30:35] [DEBUG] cache_get_value_name: return value: '1'
+[01:30:35] [DEBUG] cache_get_value_name_int(0, "Skin", 0x03DA6094)
+[01:30:35] [DEBUG] cache_get_value_name_int: assigned value: '137'
+[01:30:35] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:30:35] [DEBUG] cache_get_value_name_int(0, "x", 0x03DA609C)
+[01:30:35] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:30:35] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:30:35] [DEBUG] cache_get_value_name_int(0, "y", 0x03DA60A0)
+[01:30:35] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:30:35] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:30:35] [DEBUG] cache_get_value_name_int(0, "z", 0x03DA60A4)
+[01:30:35] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:30:35] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:30:35] [DEBUG] cache_get_value_name_int(0, "FaceAngle", 0x03DA60A8)
+[01:30:35] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:30:35] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:30:35] [DEBUG] cache_get_value_name_int(0, "AdmLevel", 0x03DA60AC)
+[01:30:35] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:30:35] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:30:35] [DEBUG] cache_get_value_name_int(0, "Health", 0x03DA6088)
+[01:30:35] [DEBUG] cache_get_value_name_int: assigned value: '55'
+[01:30:35] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:30:35] [DEBUG] cache_get_value_name_int(0, "Armor", 0x03DA608C)
+[01:30:35] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:30:35] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:30:35] [DEBUG] AMX callback executed with error '0'
+[01:30:35] [INFO] Callback successfully executed.
+[01:31:03] [DEBUG] mysql_format(1, 0x03E388E0, 512, "UPDATE `users` SET `Level` = '%i', `Skin` = '%i', `x` = '%f', `y` = '%f', `z` = '%f', `FaceAngle` = '%f', `Health` = '%i', `Armor` = '%i' WHERE `Name` = '%s'")
+[01:31:03] [DEBUG] mysql_format: return value: '195'
+[01:31:03] [DEBUG] mysql_tquery(1, "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '216.960281', `y` = '-78.982727', `z` = '1.578125', `FaceAngle` = '271.012329', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'", "", "")
+[01:31:03] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='', format='', params=0x3e388cc, param_offset=5)
+[01:31:03] [DEBUG] CHandle::Execute(this=0x660c98, type=1, query=0x6a09a0)
+[01:31:03] [DEBUG] CHandle::Execute - return value: true
+[01:31:03] [DEBUG] mysql_tquery: return value: '1'
+[01:31:03] [DEBUG] CConnection::Execute(query=0x6a09a0, this=0x3f8d020, connection=0x661f40)
+[01:31:03] [DEBUG] CQuery::Execute(this=0x6a09a0, connection=0x661f40)
+[01:31:03] [INFO] query "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '216.960281', `y` = '-78.982727', `z` = '1.578125', `FaceAngle` = '271.012329', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'" successfully executed within 29.271 milliseconds
+[01:31:03] [DEBUG] CResultSet::Create(connection=0x661f40, query_str='UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '216.960281', `y` = '-78.982727', `z` = '1.578125', `FaceAngle` = '271.012329', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'')
+[01:31:03] [DEBUG] created new resultset '0x69a2a8'
+[01:31:03] [DEBUG] fetched MySQL result '0x0'
+[01:31:55] [DEBUG] mysql_format(1, 0x03E38894, 512, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s' LIMIT 1")
+[01:31:55] [DEBUG] mysql_format: return value: '158'
+[01:31:55] [DEBUG] mysql_tquery(1, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1", "CheckAccount", "i")
+[01:31:55] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='CheckAccount', format='i', params=0x3e38878, param_offset=5)
+[01:31:55] [DEBUG] CCallback::Create - callback index for 'CheckAccount': 0
+[01:31:55] [DEBUG] processing specifier 'i' with parameter index 0
+[01:31:55] [DEBUG] retrieved and pushed value '0'
+[01:31:55] [INFO] Callback 'CheckAccount' set up for delayed execution.
+[01:31:55] [DEBUG] created delayed callback with 1 parameter
+[01:31:55] [DEBUG] CHandle::Execute(this=0x660c98, type=1, query=0x6a04e0)
+[01:31:55] [DEBUG] CHandle::Execute - return value: true
+[01:31:55] [DEBUG] mysql_tquery: return value: '1'
+[01:31:55] [DEBUG] CConnection::Execute(query=0x6a04e0, this=0x3f8d020, connection=0x661f40)
+[01:31:55] [DEBUG] CQuery::Execute(this=0x6a04e0, connection=0x661f40)
+[01:31:55] [INFO] query "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1" successfully executed within 0.464 milliseconds
+[01:31:55] [DEBUG] CResultSet::Create(connection=0x661f40, query_str='SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1')
+[01:31:55] [DEBUG] created new resultset '0x69a468'
+[01:31:55] [DEBUG] fetched MySQL result '0x660d20'
+[01:31:55] [DEBUG] allocated 156 bytes for PAWN result
+[01:31:55] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=0, num_params=1)
+[01:31:55] [INFO] Executing callback 'CheckAccount' with 1 parameter...
+[01:31:55] [DEBUG] processing internal specifier 'c'
+[01:31:55] [DEBUG] pushed value '0' onto AMX stack
+[01:31:55] [DEBUG] executing AMX callback with index '0'
+[01:31:55] [DEBUG] cache_get_row_count(0x03E390F8)
+[01:31:55] [DEBUG] cache_get_row_count: return value: '1'
+[01:31:55] [DEBUG] cache_get_value_index(0, 0, 0x03DA5EDC, 32)
+[01:31:55] [DEBUG] cache_get_value_index: assigned value: 'D941D47EFFC2AB4D74AFDB72C0F874'
+[01:31:55] [DEBUG] cache_get_value_index: return value: '1'
+[01:31:55] [DEBUG] cache_get_value_index(0, 1, 0x03DA604C, 16)
+[01:31:55] [DEBUG] cache_get_value_index: assigned value: '^@IBzg2_dib^_RX'
+[01:31:55] [DEBUG] cache_get_value_index: return value: '1'
+[01:31:55] [DEBUG] AMX callback executed with error '0'
+[01:31:55] [INFO] Callback successfully executed.
+[01:32:10] [DEBUG] mysql_format(1, 0x03E38078, 512, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s'")
+[01:32:10] [DEBUG] mysql_format: return value: '139'
+[01:32:10] [DEBUG] mysql_tquery(1, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'", "UploadPlayerAccount", "i")
+[01:32:10] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='UploadPlayerAccount', format='i', params=0x3e38060, param_offset=5)
+[01:32:10] [DEBUG] CCallback::Create - callback index for 'UploadPlayerAccount': 44
+[01:32:10] [DEBUG] processing specifier 'i' with parameter index 0
+[01:32:10] [DEBUG] retrieved and pushed value '0'
+[01:32:10] [INFO] Callback 'UploadPlayerAccount' set up for delayed execution.
+[01:32:10] [DEBUG] created delayed callback with 1 parameter
+[01:32:10] [DEBUG] CHandle::Execute(this=0x660c98, type=1, query=0x6a0908)
+[01:32:10] [DEBUG] CHandle::Execute - return value: true
+[01:32:10] [DEBUG] mysql_tquery: return value: '1'
+[01:32:10] [DEBUG] CConnection::Execute(query=0x6a0908, this=0x3f8d020, connection=0x661f40)
+[01:32:10] [DEBUG] CQuery::Execute(this=0x6a0908, connection=0x661f40)
+[01:32:10] [INFO] query "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'" successfully executed within 0.241 milliseconds
+[01:32:10] [DEBUG] CResultSet::Create(connection=0x661f40, query_str='SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'')
+[01:32:10] [DEBUG] created new resultset '0x69a580'
+[01:32:10] [DEBUG] fetched MySQL result '0x6612f8'
+[01:32:10] [DEBUG] allocated 108 bytes for PAWN result
+[01:32:10] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=44, num_params=1)
+[01:32:10] [INFO] Executing callback 'UploadPlayerAccount' with 1 parameter...
+[01:32:10] [DEBUG] processing internal specifier 'c'
+[01:32:10] [DEBUG] pushed value '0' onto AMX stack
+[01:32:10] [DEBUG] executing AMX callback with index '44'
+[01:32:10] [DEBUG] cache_get_value_name(0, "Name", 0x03DA5E7C, 1)
+[01:32:10] [ERROR] cache_get_value_name: field 'Name' not found
+[01:32:10] [DEBUG] cache_get_value_name_int(0, "Level", 0x03DA6090)
+[01:32:10] [DEBUG] cache_get_value_name_int: assigned value: '1'
+[01:32:10] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:32:10] [DEBUG] cache_get_value_name(0, "Sex", 0x03DA6024, 1)
+[01:32:10] [DEBUG] cache_get_value_name: assigned value: 'Male'
+[01:32:10] [DEBUG] cache_get_value_name: return value: '1'
+[01:32:10] [DEBUG] cache_get_value_name_int(0, "Skin", 0x03DA6094)
+[01:32:10] [DEBUG] cache_get_value_name_int: assigned value: '137'
+[01:32:10] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:32:10] [DEBUG] cache_get_value_name_int(0, "x", 0x03DA609C)
+[01:32:10] [DEBUG] cache_get_value_name_int: assigned value: '216'
+[01:32:10] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:32:10] [DEBUG] cache_get_value_name_int(0, "y", 0x03DA60A0)
+[01:32:10] [DEBUG] cache_get_value_name_int: assigned value: '-78'
+[01:32:10] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:32:10] [DEBUG] cache_get_value_name_int(0, "z", 0x03DA60A4)
+[01:32:10] [DEBUG] cache_get_value_name_int: assigned value: '1'
+[01:32:10] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:32:10] [DEBUG] cache_get_value_name_int(0, "FaceAngle", 0x03DA60A8)
+[01:32:10] [DEBUG] cache_get_value_name_int: assigned value: '271'
+[01:32:10] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:32:10] [DEBUG] cache_get_value_name_int(0, "AdmLevel", 0x03DA60AC)
+[01:32:10] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:32:10] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:32:10] [DEBUG] cache_get_value_name_int(0, "Health", 0x03DA6088)
+[01:32:10] [DEBUG] cache_get_value_name_int: assigned value: '55'
+[01:32:10] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:32:10] [DEBUG] cache_get_value_name_int(0, "Armor", 0x03DA608C)
+[01:32:10] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:32:10] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:32:10] [DEBUG] AMX callback executed with error '0'
+[01:32:10] [INFO] Callback successfully executed.
+[01:32:26] [DEBUG] mysql_format(1, 0x03E388E0, 512, "UPDATE `users` SET `Level` = '%i', `Skin` = '%i', `x` = '%f', `y` = '%f', `z` = '%f', `FaceAngle` = '%f', `Health` = '%i', `Armor` = '%i' WHERE `Name` = '%s'")
+[01:32:26] [DEBUG] mysql_format: return value: '190'
+[01:32:26] [DEBUG] mysql_tquery(1, "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '0.000000', `y` = '0.000000', `z` = '0.500000', `FaceAngle` = '-0.000000', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'", "", "")
+[01:32:26] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='', format='', params=0x3e388cc, param_offset=5)
+[01:32:26] [DEBUG] CHandle::Execute(this=0x660c98, type=1, query=0x69c540)
+[01:32:26] [DEBUG] CHandle::Execute - return value: true
+[01:32:26] [DEBUG] mysql_tquery: return value: '1'
+[01:32:26] [DEBUG] CConnection::Execute(query=0x69c540, this=0x3f8d020, connection=0x661f40)
+[01:32:26] [DEBUG] CQuery::Execute(this=0x69c540, connection=0x661f40)
+[01:32:26] [INFO] query "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '0.000000', `y` = '0.000000', `z` = '0.500000', `FaceAngle` = '-0.000000', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'" successfully executed within 36.10 milliseconds
+[01:32:26] [DEBUG] CResultSet::Create(connection=0x661f40, query_str='UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '0.000000', `y` = '0.000000', `z` = '0.500000', `FaceAngle` = '-0.000000', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'')
+[01:32:26] [DEBUG] created new resultset '0x69a0e8'
+[01:32:26] [DEBUG] fetched MySQL result '0x0'
+[01:34:40] [INFO] changed log level from 'warning, error' to 'debug, info, warning, error'
+[01:34:40] [DEBUG] mysql_connect("127.0.0.1", "root", "*****", "sampbd", 0)
+[01:34:40] [DEBUG] CHandleManager::Create(this=0x8e7990, host='127.0.0.1', user='root', pass='****', db='sampbd', options=0x8dcd90)
+[01:34:40] [INFO] Creating new connection handle...
+[01:34:40] [WARNING] mysql_connect: no password specified
+[01:34:40] [DEBUG] CConnection::CConnection(this=0x8ed0f0, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x8dcd90)
+[01:34:40] [DEBUG] CConnection::CConnection - new connection = 0x8c1bb8
+[01:34:40] [DEBUG] CConnection::CConnection(this=0x3f82020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x8dcd90)
+[01:34:40] [DEBUG] CConnection::CConnection - new connection = 0x916f28
+[01:34:40] [DEBUG] CThreadedConnection::WorkerFunc(this=0x3f82020, connection=0x3f82020)
+[01:34:40] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x3f82020, connection=0x3f82020)
+[01:34:40] [DEBUG] CConnectionPool::CConnectionPool(size=2, this=0x8ed3f0)
+[01:34:40] [DEBUG] CConnection::CConnection(this=0x415b020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x8dcd90)
+[01:34:40] [DEBUG] CConnection::CConnection - new connection = 0x9135e0
+[01:34:40] [DEBUG] CThreadedConnection::WorkerFunc(this=0x415b020, connection=0x415b020)
+[01:34:40] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x415b020, connection=0x415b020)
+[01:34:40] [DEBUG] CConnection::CConnection(this=0x4323020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x8dcd90)
+[01:34:40] [DEBUG] CConnection::CConnection - new connection = 0x939678
+[01:34:40] [DEBUG] CThreadedConnection::WorkerFunc(this=0x4323020, connection=0x4323020)
+[01:34:40] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x4323020, connection=0x4323020)
+[01:34:40] [INFO] Connection handle with id '1' successfully created.
+[01:34:40] [DEBUG] CHandleManager::Create - new handle = 0x8f5f30
+[01:34:40] [DEBUG] mysql_connect: return value: '1'
+[01:34:40] [DEBUG] mysql_errno(1)
+[01:34:40] [DEBUG] CHandle::GetErrorId(this=0x8f5f30)
+[01:34:40] [DEBUG] CConnection::GetError(this=0x8ed0f0, connection=0x8c1bb8)
+[01:34:40] [DEBUG] CHandle::GetErrorId - return value: true, error id: '0', error msg: ''
+[01:34:40] [DEBUG] mysql_errno: return value: '0'
+[01:35:41] [INFO] changed log level from 'warning, error' to 'debug, info, warning, error'
+[01:35:41] [DEBUG] mysql_connect("127.0.0.1", "root", "*****", "sampbd", 0)
+[01:35:41] [DEBUG] CHandleManager::Create(this=0x608188, host='127.0.0.1', user='root', pass='****', db='sampbd', options=0x5fee10)
+[01:35:41] [INFO] Creating new connection handle...
+[01:35:41] [WARNING] mysql_connect: no password specified
+[01:35:41] [DEBUG] CConnection::CConnection(this=0x60e108, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x5fee10)
+[01:35:41] [DEBUG] CConnection::CConnection - new connection = 0x61e0a8
+[01:35:41] [DEBUG] CConnection::CConnection(this=0x3f9a020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x5fee10)
+[01:35:41] [DEBUG] CConnection::CConnection - new connection = 0x5e2300
+[01:35:41] [DEBUG] CThreadedConnection::WorkerFunc(this=0x3f9a020, connection=0x3f9a020)
+[01:35:41] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x3f9a020, connection=0x3f9a020)
+[01:35:41] [DEBUG] CConnectionPool::CConnectionPool(size=2, this=0x60e0c8)
+[01:35:41] [DEBUG] CConnection::CConnection(this=0x416c020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x5fee10)
+[01:35:41] [DEBUG] CConnection::CConnection - new connection = 0x5e1d38
+[01:35:41] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x416c020, connection=0x416c020)
+[01:35:41] [DEBUG] CThreadedConnection::WorkerFunc(this=0x416c020, connection=0x416c020)
+[01:35:41] [DEBUG] CConnection::CConnection(this=0x4333020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x5fee10)
+[01:35:41] [DEBUG] CConnection::CConnection - new connection = 0x64a698
+[01:35:41] [DEBUG] CThreadedConnection::WorkerFunc(this=0x4333020, connection=0x4333020)
+[01:35:41] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x4333020, connection=0x4333020)
+[01:35:41] [INFO] Connection handle with id '1' successfully created.
+[01:35:41] [DEBUG] CHandleManager::Create - new handle = 0x616678
+[01:35:41] [DEBUG] mysql_connect: return value: '1'
+[01:35:41] [DEBUG] mysql_errno(1)
+[01:35:41] [DEBUG] CHandle::GetErrorId(this=0x616678)
+[01:35:41] [DEBUG] CConnection::GetError(this=0x60e108, connection=0x61e0a8)
+[01:35:41] [DEBUG] CHandle::GetErrorId - return value: true, error id: '0', error msg: ''
+[01:35:41] [DEBUG] mysql_errno: return value: '0'
+[01:36:05] [DEBUG] mysql_format(1, 0x03E468B8, 512, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s' LIMIT 1")
+[01:36:05] [DEBUG] mysql_format: return value: '158'
+[01:36:05] [DEBUG] mysql_tquery(1, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1", "CheckAccount", "i")
+[01:36:05] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='CheckAccount', format='i', params=0x3e4689c, param_offset=5)
+[01:36:05] [DEBUG] CCallback::Create - callback index for 'CheckAccount': 0
+[01:36:05] [DEBUG] processing specifier 'i' with parameter index 0
+[01:36:05] [DEBUG] retrieved and pushed value '0'
+[01:36:05] [INFO] Callback 'CheckAccount' set up for delayed execution.
+[01:36:05] [DEBUG] created delayed callback with 1 parameter
+[01:36:05] [DEBUG] CHandle::Execute(this=0x616678, type=1, query=0x61e828)
+[01:36:05] [DEBUG] CHandle::Execute - return value: true
+[01:36:05] [DEBUG] mysql_tquery: return value: '1'
+[01:36:05] [DEBUG] CConnection::Execute(query=0x61e828, this=0x3f9a020, connection=0x5e2300)
+[01:36:05] [DEBUG] CQuery::Execute(this=0x61e828, connection=0x5e2300)
+[01:36:05] [INFO] query "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1" successfully executed within 0.336 milliseconds
+[01:36:05] [DEBUG] CResultSet::Create(connection=0x5e2300, query_str='SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1')
+[01:36:05] [DEBUG] created new resultset '0x6177e0'
+[01:36:05] [DEBUG] fetched MySQL result '0x652f30'
+[01:36:05] [DEBUG] allocated 132 bytes for PAWN result
+[01:36:05] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=0, num_params=1)
+[01:36:05] [INFO] Executing callback 'CheckAccount' with 1 parameter...
+[01:36:05] [DEBUG] processing internal specifier 'c'
+[01:36:05] [DEBUG] pushed value '0' onto AMX stack
+[01:36:05] [DEBUG] executing AMX callback with index '0'
+[01:36:05] [DEBUG] cache_get_row_count(0x03E4711C)
+[01:36:05] [DEBUG] cache_get_row_count: return value: '1'
+[01:36:05] [DEBUG] cache_get_value_index(0, 0, 0x03DB3F00, 32)
+[01:36:05] [DEBUG] cache_get_value_index: assigned value: 'D941D47EFFC2AB4D74AFDB72C0F874'
+[01:36:05] [DEBUG] cache_get_value_index: return value: '1'
+[01:36:05] [DEBUG] cache_get_value_index(0, 1, 0x03DB4070, 16)
+[01:36:05] [DEBUG] cache_get_value_index: assigned value: '^@IBzg2_dib^_RX'
+[01:36:05] [DEBUG] cache_get_value_index: return value: '1'
+[01:36:05] [DEBUG] AMX callback executed with error '0'
+[01:36:05] [INFO] Callback successfully executed.
+[01:36:14] [DEBUG] mysql_format(1, 0x03E4609C, 512, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s'")
+[01:36:14] [DEBUG] mysql_format: return value: '139'
+[01:36:14] [DEBUG] mysql_tquery(1, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'", "UploadPlayerAccount", "i")
+[01:36:14] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='UploadPlayerAccount', format='i', params=0x3e46084, param_offset=5)
+[01:36:14] [DEBUG] CCallback::Create - callback index for 'UploadPlayerAccount': 44
+[01:36:14] [DEBUG] processing specifier 'i' with parameter index 0
+[01:36:14] [DEBUG] retrieved and pushed value '0'
+[01:36:14] [INFO] Callback 'UploadPlayerAccount' set up for delayed execution.
+[01:36:14] [DEBUG] created delayed callback with 1 parameter
+[01:36:14] [DEBUG] CHandle::Execute(this=0x616678, type=1, query=0x61eeb0)
+[01:36:14] [DEBUG] CHandle::Execute - return value: true
+[01:36:14] [DEBUG] mysql_tquery: return value: '1'
+[01:36:14] [DEBUG] CConnection::Execute(query=0x61eeb0, this=0x3f9a020, connection=0x5e2300)
+[01:36:14] [DEBUG] CQuery::Execute(this=0x61eeb0, connection=0x5e2300)
+[01:36:14] [INFO] query "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'" successfully executed within 0.238 milliseconds
+[01:36:14] [DEBUG] CResultSet::Create(connection=0x5e2300, query_str='SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'')
+[01:36:14] [DEBUG] created new resultset '0x617428'
+[01:36:14] [DEBUG] fetched MySQL result '0x652d10'
+[01:36:14] [DEBUG] allocated 84 bytes for PAWN result
+[01:36:14] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=44, num_params=1)
+[01:36:14] [INFO] Executing callback 'UploadPlayerAccount' with 1 parameter...
+[01:36:14] [DEBUG] processing internal specifier 'c'
+[01:36:14] [DEBUG] pushed value '0' onto AMX stack
+[01:36:14] [DEBUG] executing AMX callback with index '44'
+[01:36:14] [DEBUG] cache_get_value_name(0, "Name", 0x03DB3EA0, 1)
+[01:36:14] [ERROR] cache_get_value_name: field 'Name' not found
+[01:36:14] [DEBUG] cache_get_value_name_int(0, "Level", 0x03DB40B4)
+[01:36:14] [DEBUG] cache_get_value_name_int: assigned value: '1'
+[01:36:14] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:36:14] [DEBUG] cache_get_value_name(0, "Sex", 0x03DB4048, 1)
+[01:36:14] [DEBUG] cache_get_value_name: assigned value: 'Male'
+[01:36:14] [DEBUG] cache_get_value_name: return value: '1'
+[01:36:14] [DEBUG] cache_get_value_name_int(0, "Skin", 0x03DB40B8)
+[01:36:14] [DEBUG] cache_get_value_name_int: assigned value: '137'
+[01:36:14] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:36:14] [DEBUG] cache_get_value_name_float(0, "x", 0x03DB40C0)
+[01:36:14] [DEBUG] cache_get_value_name_float: assigned value: '0'
+[01:36:14] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:36:14] [DEBUG] cache_get_value_name_float(0, "y", 0x03DB40C4)
+[01:36:14] [DEBUG] cache_get_value_name_float: assigned value: '0'
+[01:36:14] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:36:14] [DEBUG] cache_get_value_name_float(0, "z", 0x03DB40C8)
+[01:36:14] [DEBUG] cache_get_value_name_float: assigned value: '0'
+[01:36:14] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:36:14] [DEBUG] cache_get_value_name_float(0, "FaceAngle", 0x03DB40CC)
+[01:36:14] [DEBUG] cache_get_value_name_float: assigned value: '0'
+[01:36:14] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:36:14] [DEBUG] cache_get_value_name_int(0, "AdmLevel", 0x03DB40D0)
+[01:36:14] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:36:14] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:36:14] [DEBUG] cache_get_value_name_int(0, "Health", 0x03DB40AC)
+[01:36:14] [DEBUG] cache_get_value_name_int: assigned value: '55'
+[01:36:14] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:36:14] [DEBUG] cache_get_value_name_int(0, "Armor", 0x03DB40B0)
+[01:36:14] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:36:14] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:36:14] [DEBUG] AMX callback executed with error '0'
+[01:36:14] [INFO] Callback successfully executed.
+[01:36:37] [DEBUG] mysql_format(1, 0x03E46904, 512, "UPDATE `users` SET `Level` = '%i', `Skin` = '%i', `x` = '%f', `y` = '%f', `z` = '%f', `FaceAngle` = '%f', `Health` = '%i', `Armor` = '%i' WHERE `Name` = '%s'")
+[01:36:37] [DEBUG] mysql_format: return value: '195'
+[01:36:37] [DEBUG] mysql_tquery(1, "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '217.939926', `y` = '-79.003166', `z` = '1.578125', `FaceAngle` = '267.879150', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'", "", "")
+[01:36:37] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='', format='', params=0x3e468f0, param_offset=5)
+[01:36:37] [DEBUG] CHandle::Execute(this=0x616678, type=1, query=0x61ee18)
+[01:36:37] [DEBUG] CHandle::Execute - return value: true
+[01:36:37] [DEBUG] mysql_tquery: return value: '1'
+[01:36:37] [DEBUG] CConnection::Execute(query=0x61ee18, this=0x3f9a020, connection=0x5e2300)
+[01:36:37] [DEBUG] CQuery::Execute(this=0x61ee18, connection=0x5e2300)
+[01:36:37] [INFO] query "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '217.939926', `y` = '-79.003166', `z` = '1.578125', `FaceAngle` = '267.879150', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'" successfully executed within 32.961 milliseconds
+[01:36:37] [DEBUG] CResultSet::Create(connection=0x5e2300, query_str='UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '217.939926', `y` = '-79.003166', `z` = '1.578125', `FaceAngle` = '267.879150', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'')
+[01:36:37] [DEBUG] created new resultset '0x617930'
+[01:36:37] [DEBUG] fetched MySQL result '0x0'
+[01:37:02] [DEBUG] mysql_format(1, 0x03E468B8, 512, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s' LIMIT 1")
+[01:37:02] [DEBUG] mysql_format: return value: '158'
+[01:37:02] [DEBUG] mysql_tquery(1, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1", "CheckAccount", "i")
+[01:37:02] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='CheckAccount', format='i', params=0x3e4689c, param_offset=5)
+[01:37:02] [DEBUG] CCallback::Create - callback index for 'CheckAccount': 0
+[01:37:02] [DEBUG] processing specifier 'i' with parameter index 0
+[01:37:02] [DEBUG] retrieved and pushed value '0'
+[01:37:02] [INFO] Callback 'CheckAccount' set up for delayed execution.
+[01:37:02] [DEBUG] created delayed callback with 1 parameter
+[01:37:02] [DEBUG] CHandle::Execute(this=0x616678, type=1, query=0x61efe0)
+[01:37:02] [DEBUG] CHandle::Execute - return value: true
+[01:37:02] [DEBUG] mysql_tquery: return value: '1'
+[01:37:02] [DEBUG] CConnection::Execute(query=0x61efe0, this=0x3f9a020, connection=0x5e2300)
+[01:37:02] [DEBUG] CQuery::Execute(this=0x61efe0, connection=0x5e2300)
+[01:37:02] [INFO] query "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1" successfully executed within 0.425 milliseconds
+[01:37:02] [DEBUG] CResultSet::Create(connection=0x5e2300, query_str='SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1')
+[01:37:02] [DEBUG] created new resultset '0x6177e0'
+[01:37:02] [DEBUG] fetched MySQL result '0x653a58'
+[01:37:02] [DEBUG] allocated 156 bytes for PAWN result
+[01:37:02] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=0, num_params=1)
+[01:37:02] [INFO] Executing callback 'CheckAccount' with 1 parameter...
+[01:37:02] [DEBUG] processing internal specifier 'c'
+[01:37:02] [DEBUG] pushed value '0' onto AMX stack
+[01:37:02] [DEBUG] executing AMX callback with index '0'
+[01:37:02] [DEBUG] cache_get_row_count(0x03E4711C)
+[01:37:02] [DEBUG] cache_get_row_count: return value: '1'
+[01:37:02] [DEBUG] cache_get_value_index(0, 0, 0x03DB3F00, 32)
+[01:37:02] [DEBUG] cache_get_value_index: assigned value: 'D941D47EFFC2AB4D74AFDB72C0F874'
+[01:37:02] [DEBUG] cache_get_value_index: return value: '1'
+[01:37:02] [DEBUG] cache_get_value_index(0, 1, 0x03DB4070, 16)
+[01:37:02] [DEBUG] cache_get_value_index: assigned value: '^@IBzg2_dib^_RX'
+[01:37:02] [DEBUG] cache_get_value_index: return value: '1'
+[01:37:02] [DEBUG] AMX callback executed with error '0'
+[01:37:02] [INFO] Callback successfully executed.
+[01:37:10] [DEBUG] mysql_format(1, 0x03E4609C, 512, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s'")
+[01:37:10] [DEBUG] mysql_format: return value: '139'
+[01:37:10] [DEBUG] mysql_tquery(1, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'", "UploadPlayerAccount", "i")
+[01:37:10] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='UploadPlayerAccount', format='i', params=0x3e46084, param_offset=5)
+[01:37:10] [DEBUG] CCallback::Create - callback index for 'UploadPlayerAccount': 44
+[01:37:10] [DEBUG] processing specifier 'i' with parameter index 0
+[01:37:10] [DEBUG] retrieved and pushed value '0'
+[01:37:10] [INFO] Callback 'UploadPlayerAccount' set up for delayed execution.
+[01:37:10] [DEBUG] created delayed callback with 1 parameter
+[01:37:10] [DEBUG] CHandle::Execute(this=0x616678, type=1, query=0x61ece8)
+[01:37:10] [DEBUG] CHandle::Execute - return value: true
+[01:37:10] [DEBUG] mysql_tquery: return value: '1'
+[01:37:10] [DEBUG] CConnection::Execute(query=0x61ece8, this=0x3f9a020, connection=0x5e2300)
+[01:37:10] [DEBUG] CQuery::Execute(this=0x61ece8, connection=0x5e2300)
+[01:37:10] [INFO] query "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'" successfully executed within 0.273 milliseconds
+[01:37:10] [DEBUG] CResultSet::Create(connection=0x5e2300, query_str='SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'')
+[01:37:10] [DEBUG] created new resultset '0x617498'
+[01:37:10] [DEBUG] fetched MySQL result '0x652fb8'
+[01:37:10] [DEBUG] allocated 108 bytes for PAWN result
+[01:37:10] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=44, num_params=1)
+[01:37:10] [INFO] Executing callback 'UploadPlayerAccount' with 1 parameter...
+[01:37:10] [DEBUG] processing internal specifier 'c'
+[01:37:10] [DEBUG] pushed value '0' onto AMX stack
+[01:37:10] [DEBUG] executing AMX callback with index '44'
+[01:37:10] [DEBUG] cache_get_value_name(0, "Name", 0x03DB3EA0, 1)
+[01:37:10] [ERROR] cache_get_value_name: field 'Name' not found
+[01:37:10] [DEBUG] cache_get_value_name_int(0, "Level", 0x03DB40B4)
+[01:37:10] [DEBUG] cache_get_value_name_int: assigned value: '1'
+[01:37:10] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:37:10] [DEBUG] cache_get_value_name(0, "Sex", 0x03DB4048, 1)
+[01:37:10] [DEBUG] cache_get_value_name: assigned value: 'Male'
+[01:37:10] [DEBUG] cache_get_value_name: return value: '1'
+[01:37:10] [DEBUG] cache_get_value_name_int(0, "Skin", 0x03DB40B8)
+[01:37:10] [DEBUG] cache_get_value_name_int: assigned value: '137'
+[01:37:10] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:37:10] [DEBUG] cache_get_value_name_float(0, "x", 0x03DB40C0)
+[01:37:10] [DEBUG] cache_get_value_name_float: assigned value: '217.94'
+[01:37:10] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:37:10] [DEBUG] cache_get_value_name_float(0, "y", 0x03DB40C4)
+[01:37:10] [DEBUG] cache_get_value_name_float: assigned value: '-79.0032'
+[01:37:10] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:37:10] [DEBUG] cache_get_value_name_float(0, "z", 0x03DB40C8)
+[01:37:10] [DEBUG] cache_get_value_name_float: assigned value: '1.57812'
+[01:37:10] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:37:10] [DEBUG] cache_get_value_name_float(0, "FaceAngle", 0x03DB40CC)
+[01:37:10] [DEBUG] cache_get_value_name_float: assigned value: '267.879'
+[01:37:10] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:37:10] [DEBUG] cache_get_value_name_int(0, "AdmLevel", 0x03DB40D0)
+[01:37:10] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:37:10] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:37:10] [DEBUG] cache_get_value_name_int(0, "Health", 0x03DB40AC)
+[01:37:10] [DEBUG] cache_get_value_name_int: assigned value: '55'
+[01:37:10] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:37:10] [DEBUG] cache_get_value_name_int(0, "Armor", 0x03DB40B0)
+[01:37:10] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:37:10] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:37:10] [DEBUG] AMX callback executed with error '0'
+[01:37:10] [INFO] Callback successfully executed.
+[01:40:03] [DEBUG] mysql_format(1, 0x03E46904, 512, "UPDATE `users` SET `Level` = '%i', `Skin` = '%i', `x` = '%f', `y` = '%f', `z` = '%f', `FaceAngle` = '%f', `Health` = '%i', `Armor` = '%i' WHERE `Name` = '%s'")
+[01:40:03] [DEBUG] mysql_format: return value: '195'
+[01:40:03] [DEBUG] mysql_tquery(1, "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '217.940002', `y` = '-79.003197', `z` = '1.578125', `FaceAngle` = '267.878998', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'", "", "")
+[01:40:03] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='', format='', params=0x3e468f0, param_offset=5)
+[01:40:03] [DEBUG] CHandle::Execute(this=0x616678, type=1, query=0x61f2d8)
+[01:40:03] [DEBUG] CHandle::Execute - return value: true
+[01:40:03] [DEBUG] mysql_tquery: return value: '1'
+[01:40:03] [DEBUG] CConnection::Execute(query=0x61f2d8, this=0x3f9a020, connection=0x5e2300)
+[01:40:03] [DEBUG] CQuery::Execute(this=0x61f2d8, connection=0x5e2300)
+[01:40:03] [INFO] query "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '217.940002', `y` = '-79.003197', `z` = '1.578125', `FaceAngle` = '267.878998', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'" successfully executed within 30.12 milliseconds
+[01:40:03] [DEBUG] CResultSet::Create(connection=0x5e2300, query_str='UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '217.940002', `y` = '-79.003197', `z` = '1.578125', `FaceAngle` = '267.878998', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'')
+[01:40:03] [DEBUG] created new resultset '0x6175e8'
+[01:40:03] [DEBUG] fetched MySQL result '0x0'
+[01:40:14] [INFO] changed log level from 'warning, error' to 'debug, info, warning, error'
+[01:40:14] [DEBUG] mysql_connect("127.0.0.1", "root", "*****", "sampbd", 0)
+[01:40:14] [DEBUG] CHandleManager::Create(this=0x8f4d70, host='127.0.0.1', user='root', pass='****', db='sampbd', options=0x8ea9c0)
+[01:40:14] [INFO] Creating new connection handle...
+[01:40:14] [WARNING] mysql_connect: no password specified
+[01:40:14] [DEBUG] CConnection::CConnection(this=0x8fc5d8, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x8ea9c0)
+[01:40:14] [DEBUG] CConnection::CConnection - new connection = 0x8d0fa8
+[01:40:14] [DEBUG] CConnection::CConnection(this=0x3f81020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x8ea9c0)
+[01:40:14] [DEBUG] CConnection::CConnection - new connection = 0x925fe8
+[01:40:14] [DEBUG] CThreadedConnection::WorkerFunc(this=0x3f81020, connection=0x3f81020)
+[01:40:14] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x3f81020, connection=0x3f81020)
+[01:40:14] [DEBUG] CConnectionPool::CConnectionPool(size=2, this=0x8fc3d8)
+[01:40:14] [DEBUG] CConnection::CConnection(this=0x415e020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x8ea9c0)
+[01:40:14] [DEBUG] CConnection::CConnection - new connection = 0x930cf0
+[01:40:14] [DEBUG] CThreadedConnection::WorkerFunc(this=0x415e020, connection=0x415e020)
+[01:40:14] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x415e020, connection=0x415e020)
+[01:40:14] [DEBUG] CConnection::CConnection(this=0x4320020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x8ea9c0)
+[01:40:14] [DEBUG] CConnection::CConnection - new connection = 0x957b18
+[01:40:14] [DEBUG] CThreadedConnection::WorkerFunc(this=0x4320020, connection=0x4320020)
+[01:40:14] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x4320020, connection=0x4320020)
+[01:40:14] [INFO] Connection handle with id '1' successfully created.
+[01:40:14] [DEBUG] CHandleManager::Create - new handle = 0x904fb8
+[01:40:14] [DEBUG] mysql_connect: return value: '1'
+[01:40:14] [DEBUG] mysql_errno(1)
+[01:40:14] [DEBUG] CHandle::GetErrorId(this=0x904fb8)
+[01:40:14] [DEBUG] CConnection::GetError(this=0x8fc5d8, connection=0x8d0fa8)
+[01:40:14] [DEBUG] CHandle::GetErrorId - return value: true, error id: '0', error msg: ''
+[01:40:14] [DEBUG] mysql_errno: return value: '0'
+[01:40:35] [DEBUG] mysql_format(1, 0x03E3D954, 512, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s' LIMIT 1")
+[01:40:35] [DEBUG] mysql_format: return value: '158'
+[01:40:35] [DEBUG] mysql_tquery(1, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1", "CheckAccount", "i")
+[01:40:35] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='CheckAccount', format='i', params=0x3e3d938, param_offset=5)
+[01:40:35] [DEBUG] CCallback::Create - callback index for 'CheckAccount': 0
+[01:40:35] [DEBUG] processing specifier 'i' with parameter index 0
+[01:40:35] [DEBUG] retrieved and pushed value '0'
+[01:40:35] [INFO] Callback 'CheckAccount' set up for delayed execution.
+[01:40:35] [DEBUG] created delayed callback with 1 parameter
+[01:40:35] [DEBUG] CHandle::Execute(this=0x904fb8, type=1, query=0x960168)
+[01:40:35] [DEBUG] CHandle::Execute - return value: true
+[01:40:35] [DEBUG] mysql_tquery: return value: '1'
+[01:40:35] [DEBUG] CConnection::Execute(query=0x960168, this=0x3f81020, connection=0x925fe8)
+[01:40:35] [DEBUG] CQuery::Execute(this=0x960168, connection=0x925fe8)
+[01:40:35] [INFO] query "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1" successfully executed within 0.397 milliseconds
+[01:40:35] [DEBUG] CResultSet::Create(connection=0x925fe8, query_str='SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1')
+[01:40:35] [DEBUG] created new resultset '0x906df8'
+[01:40:35] [DEBUG] fetched MySQL result '0x9298f0'
+[01:40:35] [DEBUG] allocated 156 bytes for PAWN result
+[01:40:35] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=0, num_params=1)
+[01:40:35] [INFO] Executing callback 'CheckAccount' with 1 parameter...
+[01:40:35] [DEBUG] processing internal specifier 'c'
+[01:40:35] [DEBUG] pushed value '0' onto AMX stack
+[01:40:35] [DEBUG] executing AMX callback with index '0'
+[01:40:35] [DEBUG] cache_get_row_count(0x03E3E1B8)
+[01:40:35] [DEBUG] cache_get_row_count: return value: '1'
+[01:40:35] [DEBUG] cache_get_value_index(0, 0, 0x03DAAF9C, 32)
+[01:40:35] [DEBUG] cache_get_value_index: assigned value: 'D941D47EFFC2AB4D74AFDB72C0F874'
+[01:40:35] [DEBUG] cache_get_value_index: return value: '1'
+[01:40:35] [DEBUG] cache_get_value_index(0, 1, 0x03DAB10C, 16)
+[01:40:35] [DEBUG] cache_get_value_index: assigned value: '^@IBzg2_dib^_RX'
+[01:40:35] [DEBUG] cache_get_value_index: return value: '1'
+[01:40:35] [DEBUG] AMX callback executed with error '0'
+[01:40:35] [INFO] Callback successfully executed.
+[01:40:42] [DEBUG] mysql_format(1, 0x03E3D138, 512, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s'")
+[01:40:42] [DEBUG] mysql_format: return value: '139'
+[01:40:42] [DEBUG] mysql_tquery(1, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'", "UploadPlayerAccount", "i")
+[01:40:42] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='UploadPlayerAccount', format='i', params=0x3e3d120, param_offset=5)
+[01:40:42] [DEBUG] CCallback::Create - callback index for 'UploadPlayerAccount': 44
+[01:40:42] [DEBUG] processing specifier 'i' with parameter index 0
+[01:40:42] [DEBUG] retrieved and pushed value '0'
+[01:40:42] [INFO] Callback 'UploadPlayerAccount' set up for delayed execution.
+[01:40:42] [DEBUG] created delayed callback with 1 parameter
+[01:40:42] [DEBUG] CHandle::Execute(this=0x904fb8, type=1, query=0x960210)
+[01:40:42] [DEBUG] CHandle::Execute - return value: true
+[01:40:42] [DEBUG] mysql_tquery: return value: '1'
+[01:40:42] [DEBUG] CConnection::Execute(query=0x960210, this=0x3f81020, connection=0x925fe8)
+[01:40:42] [DEBUG] CQuery::Execute(this=0x960210, connection=0x925fe8)
+[01:40:42] [INFO] query "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'" successfully executed within 0.222 milliseconds
+[01:40:42] [DEBUG] CResultSet::Create(connection=0x925fe8, query_str='SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'')
+[01:40:42] [DEBUG] created new resultset '0x906928'
+[01:40:42] [DEBUG] fetched MySQL result '0x92a1f8'
+[01:40:42] [DEBUG] allocated 108 bytes for PAWN result
+[01:40:42] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=44, num_params=1)
+[01:40:42] [INFO] Executing callback 'UploadPlayerAccount' with 1 parameter...
+[01:40:42] [DEBUG] processing internal specifier 'c'
+[01:40:42] [DEBUG] pushed value '0' onto AMX stack
+[01:40:42] [DEBUG] executing AMX callback with index '44'
+[01:40:42] [DEBUG] cache_get_value_name(0, "Name", 0x03DAAF3C, 1)
+[01:40:42] [ERROR] cache_get_value_name: field 'Name' not found
+[01:40:42] [DEBUG] cache_get_value_name_int(0, "Level", 0x03DAB150)
+[01:40:42] [DEBUG] cache_get_value_name_int: assigned value: '1'
+[01:40:42] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:40:42] [DEBUG] cache_get_value_name(0, "Sex", 0x03DAB0E4, 1)
+[01:40:42] [DEBUG] cache_get_value_name: assigned value: 'Male'
+[01:40:42] [DEBUG] cache_get_value_name: return value: '1'
+[01:40:42] [DEBUG] cache_get_value_name_int(0, "Skin", 0x03DAB154)
+[01:40:42] [DEBUG] cache_get_value_name_int: assigned value: '137'
+[01:40:42] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:40:42] [DEBUG] cache_get_value_name_float(0, "x", 0x03DAB15C)
+[01:40:42] [DEBUG] cache_get_value_name_float: assigned value: '217.94'
+[01:40:42] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:40:42] [DEBUG] cache_get_value_name_float(0, "y", 0x03DAB160)
+[01:40:42] [DEBUG] cache_get_value_name_float: assigned value: '-79.0032'
+[01:40:42] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:40:42] [DEBUG] cache_get_value_name_float(0, "z", 0x03DAB164)
+[01:40:42] [DEBUG] cache_get_value_name_float: assigned value: '1.57812'
+[01:40:42] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:40:42] [DEBUG] cache_get_value_name_float(0, "FaceAngle", 0x03DAB168)
+[01:40:42] [DEBUG] cache_get_value_name_float: assigned value: '267.879'
+[01:40:42] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:40:42] [DEBUG] cache_get_value_name_int(0, "AdmLevel", 0x03DAB16C)
+[01:40:42] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:40:42] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:40:42] [DEBUG] cache_get_value_name_int(0, "Health", 0x03DAB148)
+[01:40:42] [DEBUG] cache_get_value_name_int: assigned value: '55'
+[01:40:42] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:40:42] [DEBUG] cache_get_value_name_int(0, "Armor", 0x03DAB14C)
+[01:40:42] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:40:42] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:40:42] [DEBUG] AMX callback executed with error '0'
+[01:40:42] [INFO] Callback successfully executed.
+[01:40:52] [DEBUG] mysql_format(1, 0x03E3D9A0, 512, "UPDATE `users` SET `Level` = '%i', `Skin` = '%i', `x` = '%f', `y` = '%f', `z` = '%f', `FaceAngle` = '%f', `Health` = '%i', `Armor` = '%i' WHERE `Name` = '%s'")
+[01:40:52] [DEBUG] mysql_format: return value: '194'
+[01:40:52] [DEBUG] mysql_tquery(1, "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '217.940002', `y` = '-79.003197', `z` = '1.578125', `FaceAngle` = '87.878998', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'", "", "")
+[01:40:52] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='', format='', params=0x3e3d98c, param_offset=5)
+[01:40:52] [DEBUG] CHandle::Execute(this=0x904fb8, type=1, query=0x8f99b8)
+[01:40:52] [DEBUG] CHandle::Execute - return value: true
+[01:40:52] [DEBUG] mysql_tquery: return value: '1'
+[01:40:52] [DEBUG] CConnection::Execute(query=0x8f99b8, this=0x3f81020, connection=0x925fe8)
+[01:40:52] [DEBUG] CQuery::Execute(this=0x8f99b8, connection=0x925fe8)
+[01:40:53] [INFO] query "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '217.940002', `y` = '-79.003197', `z` = '1.578125', `FaceAngle` = '87.878998', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'" successfully executed within 33.696 milliseconds
+[01:40:53] [DEBUG] CResultSet::Create(connection=0x925fe8, query_str='UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '217.940002', `y` = '-79.003197', `z` = '1.578125', `FaceAngle` = '87.878998', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'')
+[01:40:53] [DEBUG] created new resultset '0x906c70'
+[01:40:53] [DEBUG] fetched MySQL result '0x0'
+[01:41:17] [DEBUG] mysql_format(1, 0x03E3D954, 512, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s' LIMIT 1")
+[01:41:17] [DEBUG] mysql_format: return value: '158'
+[01:41:17] [DEBUG] mysql_tquery(1, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1", "CheckAccount", "i")
+[01:41:17] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='CheckAccount', format='i', params=0x3e3d938, param_offset=5)
+[01:41:17] [DEBUG] CCallback::Create - callback index for 'CheckAccount': 0
+[01:41:17] [DEBUG] processing specifier 'i' with parameter index 0
+[01:41:17] [DEBUG] retrieved and pushed value '0'
+[01:41:17] [INFO] Callback 'CheckAccount' set up for delayed execution.
+[01:41:17] [DEBUG] created delayed callback with 1 parameter
+[01:41:17] [DEBUG] CHandle::Execute(this=0x904fb8, type=1, query=0x95edc0)
+[01:41:17] [DEBUG] CHandle::Execute - return value: true
+[01:41:17] [DEBUG] mysql_tquery: return value: '1'
+[01:41:17] [DEBUG] CConnection::Execute(query=0x95edc0, this=0x3f81020, connection=0x925fe8)
+[01:41:17] [DEBUG] CQuery::Execute(this=0x95edc0, connection=0x925fe8)
+[01:41:17] [INFO] query "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1" successfully executed within 0.405 milliseconds
+[01:41:17] [DEBUG] CResultSet::Create(connection=0x925fe8, query_str='SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1')
+[01:41:17] [DEBUG] created new resultset '0x906df8'
+[01:41:17] [DEBUG] fetched MySQL result '0x9298f0'
+[01:41:17] [DEBUG] allocated 156 bytes for PAWN result
+[01:41:17] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=0, num_params=1)
+[01:41:17] [INFO] Executing callback 'CheckAccount' with 1 parameter...
+[01:41:17] [DEBUG] processing internal specifier 'c'
+[01:41:17] [DEBUG] pushed value '0' onto AMX stack
+[01:41:17] [DEBUG] executing AMX callback with index '0'
+[01:41:17] [DEBUG] cache_get_row_count(0x03E3E1B8)
+[01:41:17] [DEBUG] cache_get_row_count: return value: '1'
+[01:41:17] [DEBUG] cache_get_value_index(0, 0, 0x03DAAF9C, 32)
+[01:41:17] [DEBUG] cache_get_value_index: assigned value: 'D941D47EFFC2AB4D74AFDB72C0F874'
+[01:41:17] [DEBUG] cache_get_value_index: return value: '1'
+[01:41:17] [DEBUG] cache_get_value_index(0, 1, 0x03DAB10C, 16)
+[01:41:17] [DEBUG] cache_get_value_index: assigned value: '^@IBzg2_dib^_RX'
+[01:41:17] [DEBUG] cache_get_value_index: return value: '1'
+[01:41:17] [DEBUG] AMX callback executed with error '0'
+[01:41:17] [INFO] Callback successfully executed.
+[01:41:28] [DEBUG] mysql_format(1, 0x03E3D138, 512, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s'")
+[01:41:28] [DEBUG] mysql_format: return value: '139'
+[01:41:28] [DEBUG] mysql_tquery(1, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'", "UploadPlayerAccount", "i")
+[01:41:28] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='UploadPlayerAccount', format='i', params=0x3e3d120, param_offset=5)
+[01:41:28] [DEBUG] CCallback::Create - callback index for 'UploadPlayerAccount': 44
+[01:41:28] [DEBUG] processing specifier 'i' with parameter index 0
+[01:41:28] [DEBUG] retrieved and pushed value '0'
+[01:41:28] [INFO] Callback 'UploadPlayerAccount' set up for delayed execution.
+[01:41:28] [DEBUG] created delayed callback with 1 parameter
+[01:41:28] [DEBUG] CHandle::Execute(this=0x904fb8, type=1, query=0x95ee48)
+[01:41:28] [DEBUG] CHandle::Execute - return value: true
+[01:41:28] [DEBUG] mysql_tquery: return value: '1'
+[01:41:28] [DEBUG] CConnection::Execute(query=0x95ee48, this=0x3f81020, connection=0x925fe8)
+[01:41:28] [DEBUG] CQuery::Execute(this=0x95ee48, connection=0x925fe8)
+[01:41:28] [INFO] query "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'" successfully executed within 0.234 milliseconds
+[01:41:28] [DEBUG] CResultSet::Create(connection=0x925fe8, query_str='SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'')
+[01:41:28] [DEBUG] created new resultset '0x906d50'
+[01:41:28] [DEBUG] fetched MySQL result '0x929ca8'
+[01:41:28] [DEBUG] allocated 108 bytes for PAWN result
+[01:41:28] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=44, num_params=1)
+[01:41:28] [INFO] Executing callback 'UploadPlayerAccount' with 1 parameter...
+[01:41:28] [DEBUG] processing internal specifier 'c'
+[01:41:28] [DEBUG] pushed value '0' onto AMX stack
+[01:41:28] [DEBUG] executing AMX callback with index '44'
+[01:41:28] [DEBUG] cache_get_value_name(0, "Name", 0x03DAAF3C, 1)
+[01:41:28] [ERROR] cache_get_value_name: field 'Name' not found
+[01:41:28] [DEBUG] cache_get_value_name_int(0, "Level", 0x03DAB150)
+[01:41:28] [DEBUG] cache_get_value_name_int: assigned value: '1'
+[01:41:28] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:41:28] [DEBUG] cache_get_value_name(0, "Sex", 0x03DAB0E4, 1)
+[01:41:28] [DEBUG] cache_get_value_name: assigned value: 'Male'
+[01:41:28] [DEBUG] cache_get_value_name: return value: '1'
+[01:41:28] [DEBUG] cache_get_value_name_int(0, "Skin", 0x03DAB154)
+[01:41:28] [DEBUG] cache_get_value_name_int: assigned value: '137'
+[01:41:28] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:41:28] [DEBUG] cache_get_value_name_float(0, "x", 0x03DAB15C)
+[01:41:28] [DEBUG] cache_get_value_name_float: assigned value: '217.94'
+[01:41:28] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:41:28] [DEBUG] cache_get_value_name_float(0, "y", 0x03DAB160)
+[01:41:28] [DEBUG] cache_get_value_name_float: assigned value: '-79.0032'
+[01:41:28] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:41:28] [DEBUG] cache_get_value_name_float(0, "z", 0x03DAB164)
+[01:41:28] [DEBUG] cache_get_value_name_float: assigned value: '1.57812'
+[01:41:28] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:41:28] [DEBUG] cache_get_value_name_float(0, "FaceAngle", 0x03DAB168)
+[01:41:28] [DEBUG] cache_get_value_name_float: assigned value: '87.879'
+[01:41:28] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:41:28] [DEBUG] cache_get_value_name_int(0, "AdmLevel", 0x03DAB16C)
+[01:41:28] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:41:28] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:41:28] [DEBUG] cache_get_value_name_int(0, "Health", 0x03DAB148)
+[01:41:28] [DEBUG] cache_get_value_name_int: assigned value: '55'
+[01:41:28] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:41:28] [DEBUG] cache_get_value_name_int(0, "Armor", 0x03DAB14C)
+[01:41:28] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:41:28] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:41:28] [DEBUG] AMX callback executed with error '0'
+[01:41:28] [INFO] Callback successfully executed.
+[01:41:54] [DEBUG] mysql_format(1, 0x03E3D9A0, 512, "UPDATE `users` SET `Level` = '%i', `Skin` = '%i', `x` = '%f', `y` = '%f', `z` = '%f', `FaceAngle` = '%f', `Health` = '%i', `Armor` = '%i' WHERE `Name` = '%s'")
+[01:41:54] [DEBUG] mysql_format: return value: '194'
+[01:41:54] [DEBUG] mysql_tquery(1, "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '217.746918', `y` = '-78.815765', `z` = '1.578125', `FaceAngle` = '87.879120', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'", "", "")
+[01:41:54] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='', format='', params=0x3e3d98c, param_offset=5)
+[01:41:54] [DEBUG] CHandle::Execute(this=0x904fb8, type=1, query=0x8f99b8)
+[01:41:54] [DEBUG] CHandle::Execute - return value: true
+[01:41:54] [DEBUG] mysql_tquery: return value: '1'
+[01:41:54] [DEBUG] CConnection::Execute(query=0x8f99b8, this=0x3f81020, connection=0x925fe8)
+[01:41:54] [DEBUG] CQuery::Execute(this=0x8f99b8, connection=0x925fe8)
+[01:41:54] [INFO] query "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '217.746918', `y` = '-78.815765', `z` = '1.578125', `FaceAngle` = '87.879120', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'" successfully executed within 31.448 milliseconds
+[01:41:54] [DEBUG] CResultSet::Create(connection=0x925fe8, query_str='UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '217.746918', `y` = '-78.815765', `z` = '1.578125', `FaceAngle` = '87.879120', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'')
+[01:41:54] [DEBUG] created new resultset '0x9068f0'
+[01:41:54] [DEBUG] fetched MySQL result '0x0'
+[01:42:15] [INFO] changed log level from 'warning, error' to 'debug, info, warning, error'
+[01:42:15] [DEBUG] mysql_connect("127.0.0.1", "root", "*****", "sampbd", 0)
+[01:42:15] [DEBUG] CHandleManager::Create(this=0x6f8948, host='127.0.0.1', user='root', pass='****', db='sampbd', options=0x6ecb48)
+[01:42:15] [INFO] Creating new connection handle...
+[01:42:15] [WARNING] mysql_connect: no password specified
+[01:42:15] [DEBUG] CConnection::CConnection(this=0x6fddb0, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x6ecb48)
+[01:42:15] [DEBUG] CConnection::CConnection - new connection = 0x6d13b0
+[01:42:15] [DEBUG] CConnection::CConnection(this=0x3ff1020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x6ecb48)
+[01:42:15] [DEBUG] CConnection::CConnection - new connection = 0x6d2410
+[01:42:15] [DEBUG] CThreadedConnection::WorkerFunc(this=0x3ff1020, connection=0x3ff1020)
+[01:42:15] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x3ff1020, connection=0x3ff1020)
+[01:42:15] [DEBUG] CConnectionPool::CConnectionPool(size=2, this=0x6fddf0)
+[01:42:15] [DEBUG] CConnection::CConnection(this=0x418f020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x6ecb48)
+[01:42:15] [DEBUG] CConnection::CConnection - new connection = 0x7266d0
+[01:42:15] [DEBUG] CThreadedConnection::WorkerFunc(this=0x418f020, connection=0x418f020)
+[01:42:15] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x418f020, connection=0x418f020)
+[01:42:15] [DEBUG] CConnection::CConnection(this=0x4361020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x6ecb48)
+[01:42:15] [DEBUG] CConnection::CConnection - new connection = 0x7581d8
+[01:42:15] [DEBUG] CThreadedConnection::WorkerFunc(this=0x4361020, connection=0x4361020)
+[01:42:15] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x4361020, connection=0x4361020)
+[01:42:15] [INFO] Connection handle with id '1' successfully created.
+[01:42:15] [DEBUG] CHandleManager::Create - new handle = 0x706968
+[01:42:15] [DEBUG] mysql_connect: return value: '1'
+[01:42:15] [DEBUG] mysql_errno(1)
+[01:42:15] [DEBUG] CHandle::GetErrorId(this=0x706968)
+[01:42:15] [DEBUG] CConnection::GetError(this=0x6fddb0, connection=0x6d13b0)
+[01:42:15] [DEBUG] CHandle::GetErrorId - return value: true, error id: '0', error msg: ''
+[01:42:15] [DEBUG] mysql_errno: return value: '0'
+[01:42:34] [DEBUG] mysql_format(1, 0x03EED8F0, 512, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s' LIMIT 1")
+[01:42:34] [DEBUG] mysql_format: return value: '158'
+[01:42:34] [DEBUG] mysql_tquery(1, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1", "CheckAccount", "i")
+[01:42:34] [DEBUG] CCallback::Create(amx=0x2c0ad58, name='CheckAccount', format='i', params=0x3eed8d4, param_offset=5)
+[01:42:34] [DEBUG] CCallback::Create - callback index for 'CheckAccount': 0
+[01:42:34] [DEBUG] processing specifier 'i' with parameter index 0
+[01:42:34] [DEBUG] retrieved and pushed value '0'
+[01:42:34] [INFO] Callback 'CheckAccount' set up for delayed execution.
+[01:42:34] [DEBUG] created delayed callback with 1 parameter
+[01:42:34] [DEBUG] CHandle::Execute(this=0x706968, type=1, query=0x707dc8)
+[01:42:34] [DEBUG] CHandle::Execute - return value: true
+[01:42:34] [DEBUG] mysql_tquery: return value: '1'
+[01:42:34] [DEBUG] CConnection::Execute(query=0x707dc8, this=0x3ff1020, connection=0x6d2410)
+[01:42:34] [DEBUG] CQuery::Execute(this=0x707dc8, connection=0x6d2410)
+[01:42:34] [INFO] query "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1" successfully executed within 0.439 milliseconds
+[01:42:34] [DEBUG] CResultSet::Create(connection=0x6d2410, query_str='SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1')
+[01:42:34] [DEBUG] created new resultset '0x707858'
+[01:42:34] [DEBUG] fetched MySQL result '0x72db90'
+[01:42:34] [DEBUG] allocated 156 bytes for PAWN result
+[01:42:34] [DEBUG] CCallback::Execute(amx=0x2c0ad58, index=0, num_params=1)
+[01:42:34] [INFO] Executing callback 'CheckAccount' with 1 parameter...
+[01:42:34] [DEBUG] processing internal specifier 'c'
+[01:42:34] [DEBUG] pushed value '0' onto AMX stack
+[01:42:34] [DEBUG] executing AMX callback with index '0'
+[01:42:34] [DEBUG] cache_get_row_count(0x03EEE154)
+[01:42:34] [DEBUG] cache_get_row_count: return value: '1'
+[01:42:34] [DEBUG] cache_get_value_index(0, 0, 0x03E5AF38, 32)
+[01:42:34] [DEBUG] cache_get_value_index: assigned value: 'D941D47EFFC2AB4D74AFDB72C0F874'
+[01:42:34] [DEBUG] cache_get_value_index: return value: '1'
+[01:42:34] [DEBUG] cache_get_value_index(0, 1, 0x03E5B0A8, 16)
+[01:42:34] [DEBUG] cache_get_value_index: assigned value: '^@IBzg2_dib^_RX'
+[01:42:34] [DEBUG] cache_get_value_index: return value: '1'
+[01:42:34] [DEBUG] AMX callback executed with error '0'
+[01:42:34] [INFO] Callback successfully executed.
+[01:42:41] [DEBUG] mysql_format(1, 0x03EED0D4, 512, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s'")
+[01:42:41] [DEBUG] mysql_format: return value: '139'
+[01:42:41] [DEBUG] mysql_tquery(1, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'", "UploadPlayerAccount", "i")
+[01:42:41] [DEBUG] CCallback::Create(amx=0x2c0ad58, name='UploadPlayerAccount', format='i', params=0x3eed0bc, param_offset=5)
+[01:42:41] [DEBUG] CCallback::Create - callback index for 'UploadPlayerAccount': 44
+[01:42:41] [DEBUG] processing specifier 'i' with parameter index 0
+[01:42:41] [DEBUG] retrieved and pushed value '0'
+[01:42:41] [INFO] Callback 'UploadPlayerAccount' set up for delayed execution.
+[01:42:41] [DEBUG] created delayed callback with 1 parameter
+[01:42:41] [DEBUG] CHandle::Execute(this=0x706968, type=1, query=0x7713e8)
+[01:42:41] [DEBUG] CHandle::Execute - return value: true
+[01:42:41] [DEBUG] mysql_tquery: return value: '1'
+[01:42:41] [DEBUG] CConnection::Execute(query=0x7713e8, this=0x3ff1020, connection=0x6d2410)
+[01:42:41] [DEBUG] CQuery::Execute(this=0x7713e8, connection=0x6d2410)
+[01:42:41] [INFO] query "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'" successfully executed within 0.237 milliseconds
+[01:42:41] [DEBUG] CResultSet::Create(connection=0x6d2410, query_str='SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'')
+[01:42:41] [DEBUG] created new resultset '0x707858'
+[01:42:41] [DEBUG] fetched MySQL result '0x72d5b8'
+[01:42:41] [DEBUG] allocated 108 bytes for PAWN result
+[01:42:41] [DEBUG] CCallback::Execute(amx=0x2c0ad58, index=44, num_params=1)
+[01:42:41] [INFO] Executing callback 'UploadPlayerAccount' with 1 parameter...
+[01:42:41] [DEBUG] processing internal specifier 'c'
+[01:42:41] [DEBUG] pushed value '0' onto AMX stack
+[01:42:41] [DEBUG] executing AMX callback with index '44'
+[01:42:41] [DEBUG] cache_get_value_name(0, "Name", 0x03E5AED8, 1)
+[01:42:41] [ERROR] cache_get_value_name: field 'Name' not found
+[01:42:41] [DEBUG] cache_get_value_name_int(0, "Level", 0x03E5B0EC)
+[01:42:41] [DEBUG] cache_get_value_name_int: assigned value: '1'
+[01:42:41] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:42:41] [DEBUG] cache_get_value_name(0, "Sex", 0x03E5B080, 1)
+[01:42:41] [DEBUG] cache_get_value_name: assigned value: 'Male'
+[01:42:41] [DEBUG] cache_get_value_name: return value: '1'
+[01:42:41] [DEBUG] cache_get_value_name_int(0, "Skin", 0x03E5B0F0)
+[01:42:41] [DEBUG] cache_get_value_name_int: assigned value: '137'
+[01:42:41] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:42:41] [DEBUG] cache_get_value_name_float(0, "x", 0x03E5B0F8)
+[01:42:41] [DEBUG] cache_get_value_name_float: assigned value: '217.747'
+[01:42:41] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:42:41] [DEBUG] cache_get_value_name_float(0, "y", 0x03E5B0FC)
+[01:42:41] [DEBUG] cache_get_value_name_float: assigned value: '-78.8158'
+[01:42:41] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:42:41] [DEBUG] cache_get_value_name_float(0, "z", 0x03E5B100)
+[01:42:41] [DEBUG] cache_get_value_name_float: assigned value: '1.57812'
+[01:42:41] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:42:41] [DEBUG] cache_get_value_name_float(0, "FaceAngle", 0x03E5B104)
+[01:42:41] [DEBUG] cache_get_value_name_float: assigned value: '87.8791'
+[01:42:41] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:42:41] [DEBUG] cache_get_value_name_int(0, "AdmLevel", 0x03E5B108)
+[01:42:41] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:42:41] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:42:41] [DEBUG] cache_get_value_name_int(0, "Health", 0x03E5B0E4)
+[01:42:41] [DEBUG] cache_get_value_name_int: assigned value: '55'
+[01:42:41] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:42:41] [DEBUG] cache_get_value_name_int(0, "Armor", 0x03E5B0E8)
+[01:42:41] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:42:41] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:42:41] [DEBUG] AMX callback executed with error '0'
+[01:42:41] [INFO] Callback successfully executed.
+[01:42:49] [DEBUG] mysql_format(1, 0x03EED93C, 512, "UPDATE `users` SET `Level` = '%i', `Skin` = '%i', `x` = '%f', `y` = '%f', `z` = '%f', `FaceAngle` = '%f', `Health` = '%i', `Armor` = '%i' WHERE `Name` = '%s'")
+[01:42:49] [DEBUG] mysql_format: return value: '195'
+[01:42:49] [DEBUG] mysql_tquery(1, "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '218.511337', `y` = '-79.437805', `z` = '1.578125', `FaceAngle` = '451.639191', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'", "", "")
+[01:42:49] [DEBUG] CCallback::Create(amx=0x2c0ad58, name='', format='', params=0x3eed928, param_offset=5)
+[01:42:49] [DEBUG] CHandle::Execute(this=0x706968, type=1, query=0x770108)
+[01:42:49] [DEBUG] CHandle::Execute - return value: true
+[01:42:49] [DEBUG] mysql_tquery: return value: '1'
+[01:42:49] [DEBUG] CConnection::Execute(query=0x770108, this=0x3ff1020, connection=0x6d2410)
+[01:42:49] [DEBUG] CQuery::Execute(this=0x770108, connection=0x6d2410)
+[01:42:50] [INFO] query "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '218.511337', `y` = '-79.437805', `z` = '1.578125', `FaceAngle` = '451.639191', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'" successfully executed within 30.36 milliseconds
+[01:42:50] [DEBUG] CResultSet::Create(connection=0x6d2410, query_str='UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '218.511337', `y` = '-79.437805', `z` = '1.578125', `FaceAngle` = '451.639191', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'')
+[01:42:50] [DEBUG] created new resultset '0x707ba0'
+[01:42:50] [DEBUG] fetched MySQL result '0x0'
+[01:43:14] [DEBUG] mysql_format(1, 0x03EED8F0, 512, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s' LIMIT 1")
+[01:43:14] [DEBUG] mysql_format: return value: '158'
+[01:43:14] [DEBUG] mysql_tquery(1, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1", "CheckAccount", "i")
+[01:43:14] [DEBUG] CCallback::Create(amx=0x2c0ad58, name='CheckAccount', format='i', params=0x3eed8d4, param_offset=5)
+[01:43:14] [DEBUG] CCallback::Create - callback index for 'CheckAccount': 0
+[01:43:14] [DEBUG] processing specifier 'i' with parameter index 0
+[01:43:14] [DEBUG] retrieved and pushed value '0'
+[01:43:14] [INFO] Callback 'CheckAccount' set up for delayed execution.
+[01:43:14] [DEBUG] created delayed callback with 1 parameter
+[01:43:14] [DEBUG] CHandle::Execute(this=0x706968, type=1, query=0x772ed8)
+[01:43:14] [DEBUG] CHandle::Execute - return value: true
+[01:43:14] [DEBUG] mysql_tquery: return value: '1'
+[01:43:14] [DEBUG] CConnection::Execute(query=0x772ed8, this=0x3ff1020, connection=0x6d2410)
+[01:43:14] [DEBUG] CQuery::Execute(this=0x772ed8, connection=0x6d2410)
+[01:43:14] [INFO] query "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1" successfully executed within 0.351 milliseconds
+[01:43:14] [DEBUG] CResultSet::Create(connection=0x6d2410, query_str='SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1')
+[01:43:14] [DEBUG] created new resultset '0x7077e8'
+[01:43:14] [DEBUG] fetched MySQL result '0x72d5b8'
+[01:43:14] [DEBUG] allocated 156 bytes for PAWN result
+[01:43:14] [DEBUG] CCallback::Execute(amx=0x2c0ad58, index=0, num_params=1)
+[01:43:14] [INFO] Executing callback 'CheckAccount' with 1 parameter...
+[01:43:14] [DEBUG] processing internal specifier 'c'
+[01:43:14] [DEBUG] pushed value '0' onto AMX stack
+[01:43:14] [DEBUG] executing AMX callback with index '0'
+[01:43:14] [DEBUG] cache_get_row_count(0x03EEE154)
+[01:43:14] [DEBUG] cache_get_row_count: return value: '1'
+[01:43:14] [DEBUG] cache_get_value_index(0, 0, 0x03E5AF38, 32)
+[01:43:14] [DEBUG] cache_get_value_index: assigned value: 'D941D47EFFC2AB4D74AFDB72C0F874'
+[01:43:14] [DEBUG] cache_get_value_index: return value: '1'
+[01:43:14] [DEBUG] cache_get_value_index(0, 1, 0x03E5B0A8, 16)
+[01:43:14] [DEBUG] cache_get_value_index: assigned value: '^@IBzg2_dib^_RX'
+[01:43:14] [DEBUG] cache_get_value_index: return value: '1'
+[01:43:14] [DEBUG] AMX callback executed with error '0'
+[01:43:14] [INFO] Callback successfully executed.
+[01:43:22] [DEBUG] mysql_format(1, 0x03EED0D4, 512, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s'")
+[01:43:22] [DEBUG] mysql_format: return value: '139'
+[01:43:22] [DEBUG] mysql_tquery(1, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'", "UploadPlayerAccount", "i")
+[01:43:22] [DEBUG] CCallback::Create(amx=0x2c0ad58, name='UploadPlayerAccount', format='i', params=0x3eed0bc, param_offset=5)
+[01:43:22] [DEBUG] CCallback::Create - callback index for 'UploadPlayerAccount': 44
+[01:43:22] [DEBUG] processing specifier 'i' with parameter index 0
+[01:43:22] [DEBUG] retrieved and pushed value '0'
+[01:43:22] [INFO] Callback 'UploadPlayerAccount' set up for delayed execution.
+[01:43:22] [DEBUG] created delayed callback with 1 parameter
+[01:43:22] [DEBUG] CHandle::Execute(this=0x706968, type=1, query=0x6eed98)
+[01:43:22] [DEBUG] CHandle::Execute - return value: true
+[01:43:22] [DEBUG] mysql_tquery: return value: '1'
+[01:43:22] [DEBUG] CConnection::Execute(query=0x6eed98, this=0x3ff1020, connection=0x6d2410)
+[01:43:22] [DEBUG] CQuery::Execute(this=0x6eed98, connection=0x6d2410)
+[01:43:22] [INFO] query "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'" successfully executed within 0.254 milliseconds
+[01:43:22] [DEBUG] CResultSet::Create(connection=0x6d2410, query_str='SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'')
+[01:43:22] [DEBUG] created new resultset '0x7078c8'
+[01:43:22] [DEBUG] fetched MySQL result '0x72d750'
+[01:43:22] [DEBUG] allocated 108 bytes for PAWN result
+[01:43:22] [DEBUG] CCallback::Execute(amx=0x2c0ad58, index=44, num_params=1)
+[01:43:22] [INFO] Executing callback 'UploadPlayerAccount' with 1 parameter...
+[01:43:22] [DEBUG] processing internal specifier 'c'
+[01:43:22] [DEBUG] pushed value '0' onto AMX stack
+[01:43:22] [DEBUG] executing AMX callback with index '44'
+[01:43:22] [DEBUG] cache_get_value_name(0, "Name", 0x03E5AED8, 1)
+[01:43:22] [ERROR] cache_get_value_name: field 'Name' not found
+[01:43:22] [DEBUG] cache_get_value_name_int(0, "Level", 0x03E5B0EC)
+[01:43:22] [DEBUG] cache_get_value_name_int: assigned value: '1'
+[01:43:22] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:43:22] [DEBUG] cache_get_value_name(0, "Sex", 0x03E5B080, 1)
+[01:43:22] [DEBUG] cache_get_value_name: assigned value: 'Male'
+[01:43:22] [DEBUG] cache_get_value_name: return value: '1'
+[01:43:22] [DEBUG] cache_get_value_name_int(0, "Skin", 0x03E5B0F0)
+[01:43:22] [DEBUG] cache_get_value_name_int: assigned value: '137'
+[01:43:22] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:43:22] [DEBUG] cache_get_value_name_float(0, "x", 0x03E5B0F8)
+[01:43:22] [DEBUG] cache_get_value_name_float: assigned value: '218.511'
+[01:43:22] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:43:22] [DEBUG] cache_get_value_name_float(0, "y", 0x03E5B0FC)
+[01:43:22] [DEBUG] cache_get_value_name_float: assigned value: '-79.4378'
+[01:43:22] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:43:22] [DEBUG] cache_get_value_name_float(0, "z", 0x03E5B100)
+[01:43:22] [DEBUG] cache_get_value_name_float: assigned value: '1.57812'
+[01:43:22] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:43:22] [DEBUG] cache_get_value_name_float(0, "FaceAngle", 0x03E5B104)
+[01:43:22] [DEBUG] cache_get_value_name_float: assigned value: '451.639'
+[01:43:22] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:43:22] [DEBUG] cache_get_value_name_int(0, "AdmLevel", 0x03E5B108)
+[01:43:22] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:43:22] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:43:22] [DEBUG] cache_get_value_name_int(0, "Health", 0x03E5B0E4)
+[01:43:22] [DEBUG] cache_get_value_name_int: assigned value: '55'
+[01:43:22] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:43:22] [DEBUG] cache_get_value_name_int(0, "Armor", 0x03E5B0E8)
+[01:43:22] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:43:22] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:43:22] [DEBUG] AMX callback executed with error '0'
+[01:43:22] [INFO] Callback successfully executed.
+[01:43:38] [DEBUG] mysql_format(1, 0x03EED93C, 512, "UPDATE `users` SET `Level` = '%i', `Skin` = '%i', `x` = '%f', `y` = '%f', `z` = '%f', `FaceAngle` = '%f', `Health` = '%i', `Armor` = '%i' WHERE `Name` = '%s'")
+[01:43:38] [DEBUG] mysql_format: return value: '195'
+[01:43:38] [DEBUG] mysql_tquery(1, "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '220.563431', `y` = '-79.605110', `z` = '1.578125', `FaceAngle` = '454.145874', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'", "", "")
+[01:43:38] [DEBUG] CCallback::Create(amx=0x2c0ad58, name='', format='', params=0x3eed928, param_offset=5)
+[01:43:38] [DEBUG] CHandle::Execute(this=0x706968, type=1, query=0x6ee970)
+[01:43:38] [DEBUG] CHandle::Execute - return value: true
+[01:43:38] [DEBUG] mysql_tquery: return value: '1'
+[01:43:38] [DEBUG] CConnection::Execute(query=0x6ee970, this=0x3ff1020, connection=0x6d2410)
+[01:43:38] [DEBUG] CQuery::Execute(this=0x6ee970, connection=0x6d2410)
+[01:43:38] [INFO] query "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '220.563431', `y` = '-79.605110', `z` = '1.578125', `FaceAngle` = '454.145874', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'" successfully executed within 29.657 milliseconds
+[01:43:38] [DEBUG] CResultSet::Create(connection=0x6d2410, query_str='UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '220.563431', `y` = '-79.605110', `z` = '1.578125', `FaceAngle` = '454.145874', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'')
+[01:43:38] [DEBUG] created new resultset '0x707b68'
+[01:43:38] [DEBUG] fetched MySQL result '0x0'
+[01:44:49] [INFO] changed log level from 'warning, error' to 'debug, info, warning, error'
+[01:44:49] [DEBUG] mysql_connect("127.0.0.1", "root", "*****", "sampbd", 0)
+[01:44:49] [DEBUG] CHandleManager::Create(this=0x596ee0, host='127.0.0.1', user='root', pass='****', db='sampbd', options=0x58c3d8)
+[01:44:49] [INFO] Creating new connection handle...
+[01:44:49] [WARNING] mysql_connect: no password specified
+[01:44:49] [DEBUG] CConnection::CConnection(this=0x59d748, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x58c3d8)
+[01:44:49] [DEBUG] CConnection::CConnection - new connection = 0x5717b0
+[01:44:49] [DEBUG] CConnection::CConnection(this=0x3fab020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x58c3d8)
+[01:44:49] [DEBUG] CConnection::CConnection - new connection = 0x5c8078
+[01:44:49] [DEBUG] CThreadedConnection::WorkerFunc(this=0x3fab020, connection=0x3fab020)
+[01:44:49] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x3fab020, connection=0x3fab020)
+[01:44:49] [DEBUG] CConnectionPool::CConnectionPool(size=2, this=0x59d448)
+[01:44:49] [DEBUG] CConnection::CConnection(this=0x4176020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x58c3d8)
+[01:44:49] [DEBUG] CConnection::CConnection - new connection = 0x5d1460
+[01:44:49] [DEBUG] CThreadedConnection::WorkerFunc(this=0x4176020, connection=0x4176020)
+[01:44:49] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x4176020, connection=0x4176020)
+[01:44:49] [DEBUG] CConnection::CConnection(this=0x434d020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x58c3d8)
+[01:44:49] [DEBUG] CConnection::CConnection - new connection = 0x5e9848
+[01:44:49] [DEBUG] CThreadedConnection::WorkerFunc(this=0x434d020, connection=0x434d020)
+[01:44:49] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x434d020, connection=0x434d020)
+[01:44:49] [INFO] Connection handle with id '1' successfully created.
+[01:44:49] [DEBUG] CHandleManager::Create - new handle = 0x5a44f8
+[01:44:49] [DEBUG] mysql_connect: return value: '1'
+[01:44:49] [DEBUG] mysql_errno(1)
+[01:44:49] [DEBUG] CHandle::GetErrorId(this=0x5a44f8)
+[01:44:49] [DEBUG] CConnection::GetError(this=0x59d748, connection=0x5717b0)
+[01:44:49] [DEBUG] CHandle::GetErrorId - return value: true, error id: '0', error msg: ''
+[01:44:49] [DEBUG] mysql_errno: return value: '0'
+[01:45:09] [DEBUG] mysql_format(1, 0x03E5493C, 512, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s' LIMIT 1")
+[01:45:09] [DEBUG] mysql_format: return value: '158'
+[01:45:09] [DEBUG] mysql_tquery(1, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1", "CheckAccount", "i")
+[01:45:09] [DEBUG] CCallback::Create(amx=0x2b2ad58, name='CheckAccount', format='i', params=0x3e54920, param_offset=5)
+[01:45:09] [DEBUG] CCallback::Create - callback index for 'CheckAccount': 0
+[01:45:09] [DEBUG] processing specifier 'i' with parameter index 0
+[01:45:09] [DEBUG] retrieved and pushed value '0'
+[01:45:09] [INFO] Callback 'CheckAccount' set up for delayed execution.
+[01:45:09] [DEBUG] created delayed callback with 1 parameter
+[01:45:09] [DEBUG] CHandle::Execute(this=0x5a44f8, type=1, query=0x5f3a40)
+[01:45:09] [DEBUG] CHandle::Execute - return value: true
+[01:45:09] [DEBUG] mysql_tquery: return value: '1'
+[01:45:09] [DEBUG] CConnection::Execute(query=0x5f3a40, this=0x3fab020, connection=0x5c8078)
+[01:45:09] [DEBUG] CQuery::Execute(this=0x5f3a40, connection=0x5c8078)
+[01:45:09] [INFO] query "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1" successfully executed within 0.475 milliseconds
+[01:45:09] [DEBUG] CResultSet::Create(connection=0x5c8078, query_str='SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1')
+[01:45:09] [DEBUG] created new resultset '0x5a5920'
+[01:45:09] [DEBUG] fetched MySQL result '0x5c3230'
+[01:45:09] [DEBUG] allocated 156 bytes for PAWN result
+[01:45:09] [DEBUG] CCallback::Execute(amx=0x2b2ad58, index=0, num_params=1)
+[01:45:09] [INFO] Executing callback 'CheckAccount' with 1 parameter...
+[01:45:09] [DEBUG] processing internal specifier 'c'
+[01:45:09] [DEBUG] pushed value '0' onto AMX stack
+[01:45:09] [DEBUG] executing AMX callback with index '0'
+[01:45:09] [DEBUG] cache_get_row_count(0x03E551A0)
+[01:45:09] [DEBUG] cache_get_row_count: return value: '1'
+[01:45:09] [DEBUG] cache_get_value_index(0, 0, 0x03DC1F84, 32)
+[01:45:09] [DEBUG] cache_get_value_index: assigned value: 'D941D47EFFC2AB4D74AFDB72C0F874'
+[01:45:09] [DEBUG] cache_get_value_index: return value: '1'
+[01:45:09] [DEBUG] cache_get_value_index(0, 1, 0x03DC20F4, 16)
+[01:45:09] [DEBUG] cache_get_value_index: assigned value: '^@IBzg2_dib^_RX'
+[01:45:09] [DEBUG] cache_get_value_index: return value: '1'
+[01:45:09] [DEBUG] AMX callback executed with error '0'
+[01:45:09] [INFO] Callback successfully executed.
+[01:45:18] [DEBUG] mysql_format(1, 0x03E54120, 512, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s'")
+[01:45:18] [DEBUG] mysql_format: return value: '139'
+[01:45:18] [DEBUG] mysql_tquery(1, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'", "UploadPlayerAccount", "i")
+[01:45:18] [DEBUG] CCallback::Create(amx=0x2b2ad58, name='UploadPlayerAccount', format='i', params=0x3e54108, param_offset=5)
+[01:45:18] [DEBUG] CCallback::Create - callback index for 'UploadPlayerAccount': 44
+[01:45:18] [DEBUG] processing specifier 'i' with parameter index 0
+[01:45:18] [DEBUG] retrieved and pushed value '0'
+[01:45:18] [INFO] Callback 'UploadPlayerAccount' set up for delayed execution.
+[01:45:18] [DEBUG] created delayed callback with 1 parameter
+[01:45:18] [DEBUG] CHandle::Execute(this=0x5a44f8, type=1, query=0x5f3ad8)
+[01:45:18] [DEBUG] CHandle::Execute - return value: true
+[01:45:18] [DEBUG] mysql_tquery: return value: '1'
+[01:45:18] [DEBUG] CConnection::Execute(query=0x5f3ad8, this=0x3fab020, connection=0x5c8078)
+[01:45:18] [DEBUG] CQuery::Execute(this=0x5f3ad8, connection=0x5c8078)
+[01:45:18] [INFO] query "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'" successfully executed within 0.228 milliseconds
+[01:45:18] [DEBUG] CResultSet::Create(connection=0x5c8078, query_str='SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'')
+[01:45:18] [DEBUG] created new resultset '0x5a58b0'
+[01:45:18] [DEBUG] fetched MySQL result '0x5c2ac0'
+[01:45:18] [DEBUG] allocated 108 bytes for PAWN result
+[01:45:18] [DEBUG] CCallback::Execute(amx=0x2b2ad58, index=44, num_params=1)
+[01:45:18] [INFO] Executing callback 'UploadPlayerAccount' with 1 parameter...
+[01:45:18] [DEBUG] processing internal specifier 'c'
+[01:45:18] [DEBUG] pushed value '0' onto AMX stack
+[01:45:18] [DEBUG] executing AMX callback with index '44'
+[01:45:18] [DEBUG] cache_get_value_name(0, "Name", 0x03DC1F24, 1)
+[01:45:18] [ERROR] cache_get_value_name: field 'Name' not found
+[01:45:18] [DEBUG] cache_get_value_name_int(0, "Level", 0x03DC2138)
+[01:45:18] [DEBUG] cache_get_value_name_int: assigned value: '1'
+[01:45:18] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:45:18] [DEBUG] cache_get_value_name(0, "Sex", 0x03DC20CC, 1)
+[01:45:18] [DEBUG] cache_get_value_name: assigned value: 'Male'
+[01:45:18] [DEBUG] cache_get_value_name: return value: '1'
+[01:45:18] [DEBUG] cache_get_value_name_int(0, "Skin", 0x03DC213C)
+[01:45:18] [DEBUG] cache_get_value_name_int: assigned value: '137'
+[01:45:18] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:45:18] [DEBUG] cache_get_value_name_float(0, "x", 0x03DC2144)
+[01:45:18] [DEBUG] cache_get_value_name_float: assigned value: '220.563'
+[01:45:18] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:45:18] [DEBUG] cache_get_value_name_float(0, "y", 0x03DC2148)
+[01:45:18] [DEBUG] cache_get_value_name_float: assigned value: '-79.6051'
+[01:45:18] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:45:18] [DEBUG] cache_get_value_name_float(0, "z", 0x03DC214C)
+[01:45:18] [DEBUG] cache_get_value_name_float: assigned value: '1.57812'
+[01:45:18] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:45:18] [DEBUG] cache_get_value_name_float(0, "FaceAngle", 0x03DC2150)
+[01:45:18] [DEBUG] cache_get_value_name_float: assigned value: '454.146'
+[01:45:18] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:45:18] [DEBUG] cache_get_value_name_int(0, "AdmLevel", 0x03DC2154)
+[01:45:18] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:45:18] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:45:18] [DEBUG] cache_get_value_name_int(0, "Health", 0x03DC2130)
+[01:45:18] [DEBUG] cache_get_value_name_int: assigned value: '55'
+[01:45:18] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:45:18] [DEBUG] cache_get_value_name_int(0, "Armor", 0x03DC2134)
+[01:45:18] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:45:18] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:45:18] [DEBUG] AMX callback executed with error '0'
+[01:45:18] [INFO] Callback successfully executed.
+[01:45:27] [DEBUG] mysql_format(1, 0x03E54988, 512, "UPDATE `users` SET `Level` = '%i', `Skin` = '%i', `x` = '%f', `y` = '%f', `z` = '%f', `FaceAngle` = '%f', `Health` = '%i', `Armor` = '%i' WHERE `Name` = '%s'")
+[01:45:27] [DEBUG] mysql_format: return value: '195'
+[01:45:27] [DEBUG] mysql_tquery(1, "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '220.728317', `y` = '-79.392021', `z` = '1.578125', `FaceAngle` = '270.385834', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'", "", "")
+[01:45:27] [DEBUG] CCallback::Create(amx=0x2b2ad58, name='', format='', params=0x3e54974, param_offset=5)
+[01:45:27] [DEBUG] CHandle::Execute(this=0x5a44f8, type=1, query=0x5c6fa8)
+[01:45:27] [DEBUG] CHandle::Execute - return value: true
+[01:45:27] [DEBUG] mysql_tquery: return value: '1'
+[01:45:27] [DEBUG] CConnection::Execute(query=0x5c6fa8, this=0x3fab020, connection=0x5c8078)
+[01:45:27] [DEBUG] CQuery::Execute(this=0x5c6fa8, connection=0x5c8078)
+[01:45:27] [INFO] query "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '220.728317', `y` = '-79.392021', `z` = '1.578125', `FaceAngle` = '270.385834', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'" successfully executed within 30.984 milliseconds
+[01:45:27] [DEBUG] CResultSet::Create(connection=0x5c8078, query_str='UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '220.728317', `y` = '-79.392021', `z` = '1.578125', `FaceAngle` = '270.385834', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'')
+[01:45:27] [DEBUG] created new resultset '0x5a5840'
+[01:45:27] [DEBUG] fetched MySQL result '0x0'
+[01:45:51] [DEBUG] mysql_format(1, 0x03E5493C, 512, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s' LIMIT 1")
+[01:45:51] [DEBUG] mysql_format: return value: '158'
+[01:45:51] [DEBUG] mysql_tquery(1, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1", "CheckAccount", "i")
+[01:45:51] [DEBUG] CCallback::Create(amx=0x2b2ad58, name='CheckAccount', format='i', params=0x3e54920, param_offset=5)
+[01:45:51] [DEBUG] CCallback::Create - callback index for 'CheckAccount': 0
+[01:45:51] [DEBUG] processing specifier 'i' with parameter index 0
+[01:45:51] [DEBUG] retrieved and pushed value '0'
+[01:45:51] [INFO] Callback 'CheckAccount' set up for delayed execution.
+[01:45:51] [DEBUG] created delayed callback with 1 parameter
+[01:45:51] [DEBUG] CHandle::Execute(this=0x5a44f8, type=1, query=0x5d1380)
+[01:45:51] [DEBUG] CHandle::Execute - return value: true
+[01:45:51] [DEBUG] mysql_tquery: return value: '1'
+[01:45:51] [DEBUG] CConnection::Execute(query=0x5d1380, this=0x3fab020, connection=0x5c8078)
+[01:45:51] [DEBUG] CQuery::Execute(this=0x5d1380, connection=0x5c8078)
+[01:45:51] [INFO] query "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1" successfully executed within 0.347 milliseconds
+[01:45:51] [DEBUG] CResultSet::Create(connection=0x5c8078, query_str='SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1')
+[01:45:51] [DEBUG] created new resultset '0x5a5920'
+[01:45:51] [DEBUG] fetched MySQL result '0x5c3230'
+[01:45:51] [DEBUG] allocated 156 bytes for PAWN result
+[01:45:51] [DEBUG] CCallback::Execute(amx=0x2b2ad58, index=0, num_params=1)
+[01:45:51] [INFO] Executing callback 'CheckAccount' with 1 parameter...
+[01:45:51] [DEBUG] processing internal specifier 'c'
+[01:45:51] [DEBUG] pushed value '0' onto AMX stack
+[01:45:51] [DEBUG] executing AMX callback with index '0'
+[01:45:51] [DEBUG] cache_get_row_count(0x03E551A0)
+[01:45:51] [DEBUG] cache_get_row_count: return value: '1'
+[01:45:51] [DEBUG] cache_get_value_index(0, 0, 0x03DC1F84, 32)
+[01:45:51] [DEBUG] cache_get_value_index: assigned value: 'D941D47EFFC2AB4D74AFDB72C0F874'
+[01:45:51] [DEBUG] cache_get_value_index: return value: '1'
+[01:45:51] [DEBUG] cache_get_value_index(0, 1, 0x03DC20F4, 16)
+[01:45:51] [DEBUG] cache_get_value_index: assigned value: '^@IBzg2_dib^_RX'
+[01:45:51] [DEBUG] cache_get_value_index: return value: '1'
+[01:45:51] [DEBUG] AMX callback executed with error '0'
+[01:45:51] [INFO] Callback successfully executed.
+[01:45:59] [DEBUG] mysql_format(1, 0x03E54120, 512, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s'")
+[01:45:59] [DEBUG] mysql_format: return value: '139'
+[01:45:59] [DEBUG] mysql_tquery(1, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'", "UploadPlayerAccount", "i")
+[01:45:59] [DEBUG] CCallback::Create(amx=0x2b2ad58, name='UploadPlayerAccount', format='i', params=0x3e54108, param_offset=5)
+[01:45:59] [DEBUG] CCallback::Create - callback index for 'UploadPlayerAccount': 44
+[01:45:59] [DEBUG] processing specifier 'i' with parameter index 0
+[01:45:59] [DEBUG] retrieved and pushed value '0'
+[01:45:59] [INFO] Callback 'UploadPlayerAccount' set up for delayed execution.
+[01:45:59] [DEBUG] created delayed callback with 1 parameter
+[01:45:59] [DEBUG] CHandle::Execute(this=0x5a44f8, type=1, query=0x5f8d68)
+[01:45:59] [DEBUG] CHandle::Execute - return value: true
+[01:45:59] [DEBUG] mysql_tquery: return value: '1'
+[01:45:59] [DEBUG] CConnection::Execute(query=0x5f8d68, this=0x3fab020, connection=0x5c8078)
+[01:45:59] [DEBUG] CQuery::Execute(this=0x5f8d68, connection=0x5c8078)
+[01:45:59] [INFO] query "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'" successfully executed within 0.298 milliseconds
+[01:45:59] [DEBUG] CResultSet::Create(connection=0x5c8078, query_str='SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'')
+[01:45:59] [DEBUG] created new resultset '0x5a53a8'
+[01:45:59] [DEBUG] fetched MySQL result '0x5c3808'
+[01:45:59] [DEBUG] allocated 108 bytes for PAWN result
+[01:45:59] [DEBUG] CCallback::Execute(amx=0x2b2ad58, index=44, num_params=1)
+[01:45:59] [INFO] Executing callback 'UploadPlayerAccount' with 1 parameter...
+[01:45:59] [DEBUG] processing internal specifier 'c'
+[01:45:59] [DEBUG] pushed value '0' onto AMX stack
+[01:45:59] [DEBUG] executing AMX callback with index '44'
+[01:45:59] [DEBUG] cache_get_value_name(0, "Name", 0x03DC1F24, 1)
+[01:45:59] [ERROR] cache_get_value_name: field 'Name' not found
+[01:45:59] [DEBUG] cache_get_value_name_int(0, "Level", 0x03DC2138)
+[01:45:59] [DEBUG] cache_get_value_name_int: assigned value: '1'
+[01:45:59] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:45:59] [DEBUG] cache_get_value_name(0, "Sex", 0x03DC20CC, 1)
+[01:45:59] [DEBUG] cache_get_value_name: assigned value: 'Male'
+[01:45:59] [DEBUG] cache_get_value_name: return value: '1'
+[01:45:59] [DEBUG] cache_get_value_name_int(0, "Skin", 0x03DC213C)
+[01:45:59] [DEBUG] cache_get_value_name_int: assigned value: '137'
+[01:45:59] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:45:59] [DEBUG] cache_get_value_name_float(0, "x", 0x03DC2144)
+[01:45:59] [DEBUG] cache_get_value_name_float: assigned value: '220.728'
+[01:45:59] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:45:59] [DEBUG] cache_get_value_name_float(0, "y", 0x03DC2148)
+[01:45:59] [DEBUG] cache_get_value_name_float: assigned value: '-79.392'
+[01:45:59] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:45:59] [DEBUG] cache_get_value_name_float(0, "z", 0x03DC214C)
+[01:45:59] [DEBUG] cache_get_value_name_float: assigned value: '1.57812'
+[01:45:59] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:45:59] [DEBUG] cache_get_value_name_float(0, "FaceAngle", 0x03DC2150)
+[01:45:59] [DEBUG] cache_get_value_name_float: assigned value: '270.386'
+[01:45:59] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:45:59] [DEBUG] cache_get_value_name_int(0, "AdmLevel", 0x03DC2154)
+[01:45:59] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:45:59] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:45:59] [DEBUG] cache_get_value_name_int(0, "Health", 0x03DC2130)
+[01:45:59] [DEBUG] cache_get_value_name_int: assigned value: '55'
+[01:45:59] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:45:59] [DEBUG] cache_get_value_name_int(0, "Armor", 0x03DC2134)
+[01:45:59] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:45:59] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:45:59] [DEBUG] AMX callback executed with error '0'
+[01:45:59] [INFO] Callback successfully executed.
+[01:46:49] [INFO] changed log level from 'warning, error' to 'debug, info, warning, error'
+[01:46:49] [DEBUG] mysql_connect("127.0.0.1", "root", "*****", "sampbd", 0)
+[01:46:49] [DEBUG] CHandleManager::Create(this=0x858098, host='127.0.0.1', user='root', pass='****', db='sampbd', options=0x84d428)
+[01:46:49] [INFO] Creating new connection handle...
+[01:46:49] [WARNING] mysql_connect: no password specified
+[01:46:49] [DEBUG] CConnection::CConnection(this=0x85f048, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x84d428)
+[01:46:49] [DEBUG] CConnection::CConnection - new connection = 0x86faf8
+[01:46:49] [DEBUG] CConnection::CConnection(this=0x3f83020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x84d428)
+[01:46:49] [DEBUG] CConnection::CConnection - new connection = 0x831e48
+[01:46:49] [DEBUG] CThreadedConnection::WorkerFunc(this=0x3f83020, connection=0x3f83020)
+[01:46:49] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x3f83020, connection=0x3f83020)
+[01:46:49] [DEBUG] CConnectionPool::CConnectionPool(size=2, this=0x85ef88)
+[01:46:49] [DEBUG] CConnection::CConnection(this=0x4155020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x84d428)
+[01:46:49] [DEBUG] CConnection::CConnection - new connection = 0x896268
+[01:46:49] [DEBUG] CThreadedConnection::WorkerFunc(this=0x4155020, connection=0x4155020)
+[01:46:49] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x4155020, connection=0x4155020)
+[01:46:49] [DEBUG] CConnection::CConnection(this=0x4323020, host='127.0.0.1', user='root', passw='****', db='sampbd', options=0x84d428)
+[01:46:49] [DEBUG] CConnection::CConnection - new connection = 0x8a0568
+[01:46:49] [DEBUG] CThreadedConnection::WorkerFunc(this=0x4323020, connection=0x4323020)
+[01:46:49] [DEBUG] CThreadedConnection::CThreadedConnection(this=0x4323020, connection=0x4323020)
+[01:46:49] [INFO] Connection handle with id '1' successfully created.
+[01:46:49] [DEBUG] CHandleManager::Create - new handle = 0x867d68
+[01:46:49] [DEBUG] mysql_connect: return value: '1'
+[01:46:49] [DEBUG] mysql_errno(1)
+[01:46:49] [DEBUG] CHandle::GetErrorId(this=0x867d68)
+[01:46:49] [DEBUG] CConnection::GetError(this=0x85f048, connection=0x86faf8)
+[01:46:49] [DEBUG] CHandle::GetErrorId - return value: true, error id: '0', error msg: ''
+[01:46:49] [DEBUG] mysql_errno: return value: '0'
+[01:47:01] [DEBUG] mysql_format(1, 0x03E388D8, 512, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s' LIMIT 1")
+[01:47:01] [DEBUG] mysql_format: return value: '158'
+[01:47:01] [DEBUG] mysql_tquery(1, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1", "CheckAccount", "i")
+[01:47:01] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='CheckAccount', format='i', params=0x3e388bc, param_offset=5)
+[01:47:01] [DEBUG] CCallback::Create - callback index for 'CheckAccount': 0
+[01:47:01] [DEBUG] processing specifier 'i' with parameter index 0
+[01:47:01] [DEBUG] retrieved and pushed value '0'
+[01:47:01] [INFO] Callback 'CheckAccount' set up for delayed execution.
+[01:47:01] [DEBUG] created delayed callback with 1 parameter
+[01:47:01] [DEBUG] CHandle::Execute(this=0x867d68, type=1, query=0x871948)
+[01:47:01] [DEBUG] CHandle::Execute - return value: true
+[01:47:01] [DEBUG] mysql_tquery: return value: '1'
+[01:47:01] [DEBUG] CConnection::Execute(query=0x871948, this=0x3f83020, connection=0x831e48)
+[01:47:01] [DEBUG] CQuery::Execute(this=0x871948, connection=0x831e48)
+[01:47:01] [INFO] query "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1" successfully executed within 0.416 milliseconds
+[01:47:01] [DEBUG] CResultSet::Create(connection=0x831e48, query_str='SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1')
+[01:47:01] [DEBUG] created new resultset '0x869858'
+[01:47:01] [DEBUG] fetched MySQL result '0x830fe0'
+[01:47:01] [DEBUG] allocated 156 bytes for PAWN result
+[01:47:01] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=0, num_params=1)
+[01:47:01] [INFO] Executing callback 'CheckAccount' with 1 parameter...
+[01:47:01] [DEBUG] processing internal specifier 'c'
+[01:47:01] [DEBUG] pushed value '0' onto AMX stack
+[01:47:01] [DEBUG] executing AMX callback with index '0'
+[01:47:01] [DEBUG] cache_get_row_count(0x03E3913C)
+[01:47:01] [DEBUG] cache_get_row_count: return value: '1'
+[01:47:01] [DEBUG] cache_get_value_index(0, 0, 0x03DA5F20, 32)
+[01:47:01] [DEBUG] cache_get_value_index: assigned value: 'D941D47EFFC2AB4D74AFDB72C0F874'
+[01:47:01] [DEBUG] cache_get_value_index: return value: '1'
+[01:47:01] [DEBUG] cache_get_value_index(0, 1, 0x03DA6090, 16)
+[01:47:01] [DEBUG] cache_get_value_index: assigned value: '^@IBzg2_dib^_RX'
+[01:47:01] [DEBUG] cache_get_value_index: return value: '1'
+[01:47:01] [DEBUG] AMX callback executed with error '0'
+[01:47:01] [INFO] Callback successfully executed.
+[01:47:09] [DEBUG] mysql_format(1, 0x03E380BC, 512, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s'")
+[01:47:09] [DEBUG] mysql_format: return value: '139'
+[01:47:09] [DEBUG] mysql_tquery(1, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'", "UploadPlayerAccount", "i")
+[01:47:09] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='UploadPlayerAccount', format='i', params=0x3e380a4, param_offset=5)
+[01:47:09] [DEBUG] CCallback::Create - callback index for 'UploadPlayerAccount': 44
+[01:47:09] [DEBUG] processing specifier 'i' with parameter index 0
+[01:47:09] [DEBUG] retrieved and pushed value '0'
+[01:47:09] [INFO] Callback 'UploadPlayerAccount' set up for delayed execution.
+[01:47:09] [DEBUG] created delayed callback with 1 parameter
+[01:47:09] [DEBUG] CHandle::Execute(this=0x867d68, type=1, query=0x871228)
+[01:47:09] [DEBUG] CHandle::Execute - return value: true
+[01:47:09] [DEBUG] mysql_tquery: return value: '1'
+[01:47:09] [DEBUG] CConnection::Execute(query=0x871228, this=0x3f83020, connection=0x831e48)
+[01:47:09] [DEBUG] CQuery::Execute(this=0x871228, connection=0x831e48)
+[01:47:09] [INFO] query "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'" successfully executed within 0.234 milliseconds
+[01:47:09] [DEBUG] CResultSet::Create(connection=0x831e48, query_str='SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'')
+[01:47:09] [DEBUG] created new resultset '0x869628'
+[01:47:09] [DEBUG] fetched MySQL result '0x830dc0'
+[01:47:09] [DEBUG] allocated 108 bytes for PAWN result
+[01:47:09] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=44, num_params=1)
+[01:47:09] [INFO] Executing callback 'UploadPlayerAccount' with 1 parameter...
+[01:47:09] [DEBUG] processing internal specifier 'c'
+[01:47:09] [DEBUG] pushed value '0' onto AMX stack
+[01:47:09] [DEBUG] executing AMX callback with index '44'
+[01:47:09] [DEBUG] cache_get_value_name(0, "Name", 0x03DA5EC0, 1)
+[01:47:09] [ERROR] cache_get_value_name: field 'Name' not found
+[01:47:09] [DEBUG] cache_get_value_name_int(0, "Level", 0x03DA60D4)
+[01:47:09] [DEBUG] cache_get_value_name_int: assigned value: '1'
+[01:47:09] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:47:09] [DEBUG] cache_get_value_name(0, "Sex", 0x03DA6068, 1)
+[01:47:09] [DEBUG] cache_get_value_name: assigned value: 'Male'
+[01:47:09] [DEBUG] cache_get_value_name: return value: '1'
+[01:47:09] [DEBUG] cache_get_value_name_int(0, "Skin", 0x03DA60D8)
+[01:47:09] [DEBUG] cache_get_value_name_int: assigned value: '137'
+[01:47:09] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:47:09] [DEBUG] cache_get_value_name_float(0, "x", 0x03DA60E0)
+[01:47:09] [DEBUG] cache_get_value_name_float: assigned value: '220.728'
+[01:47:09] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:47:09] [DEBUG] cache_get_value_name_float(0, "y", 0x03DA60E4)
+[01:47:09] [DEBUG] cache_get_value_name_float: assigned value: '-79.392'
+[01:47:09] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:47:09] [DEBUG] cache_get_value_name_float(0, "z", 0x03DA60E8)
+[01:47:09] [DEBUG] cache_get_value_name_float: assigned value: '1.57812'
+[01:47:09] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:47:09] [DEBUG] cache_get_value_name_float(0, "FaceAngle", 0x03DA60EC)
+[01:47:09] [DEBUG] cache_get_value_name_float: assigned value: '270.386'
+[01:47:09] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:47:09] [DEBUG] cache_get_value_name_int(0, "AdmLevel", 0x03DA60F0)
+[01:47:09] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:47:09] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:47:09] [DEBUG] cache_get_value_name_int(0, "Health", 0x03DA60CC)
+[01:47:09] [DEBUG] cache_get_value_name_int: assigned value: '55'
+[01:47:09] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:47:09] [DEBUG] cache_get_value_name_int(0, "Armor", 0x03DA60D0)
+[01:47:09] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:47:09] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:47:09] [DEBUG] AMX callback executed with error '0'
+[01:47:09] [INFO] Callback successfully executed.
+[01:47:22] [DEBUG] mysql_format(1, 0x03E38924, 512, "UPDATE `users` SET `Level` = '%i', `Skin` = '%i', `x` = '%f', `y` = '%f', `z` = '%f', `FaceAngle` = '%f', `Health` = '%i', `Armor` = '%i' WHERE `Name` = '%s'")
+[01:47:22] [DEBUG] mysql_format: return value: '195'
+[01:47:22] [DEBUG] mysql_tquery(1, "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '219.610184', `y` = '-79.192314', `z` = '1.578125', `FaceAngle` = '268.505768', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'", "", "")
+[01:47:22] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='', format='', params=0x3e38910, param_offset=5)
+[01:47:22] [DEBUG] CHandle::Execute(this=0x867d68, type=1, query=0x871948)
+[01:47:22] [DEBUG] CHandle::Execute - return value: true
+[01:47:22] [DEBUG] mysql_tquery: return value: '1'
+[01:47:22] [DEBUG] CConnection::Execute(query=0x871948, this=0x3f83020, connection=0x831e48)
+[01:47:22] [DEBUG] CQuery::Execute(this=0x871948, connection=0x831e48)
+[01:47:22] [INFO] query "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '219.610184', `y` = '-79.192314', `z` = '1.578125', `FaceAngle` = '268.505768', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'" successfully executed within 19.357 milliseconds
+[01:47:22] [DEBUG] CResultSet::Create(connection=0x831e48, query_str='UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '219.610184', `y` = '-79.192314', `z` = '1.578125', `FaceAngle` = '268.505768', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'')
+[01:47:22] [DEBUG] created new resultset '0x869628'
+[01:47:22] [DEBUG] fetched MySQL result '0x0'
+[01:47:48] [DEBUG] mysql_format(1, 0x03E388D8, 512, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s' LIMIT 1")
+[01:47:48] [DEBUG] mysql_format: return value: '158'
+[01:47:48] [DEBUG] mysql_tquery(1, "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1", "CheckAccount", "i")
+[01:47:48] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='CheckAccount', format='i', params=0x3e388bc, param_offset=5)
+[01:47:48] [DEBUG] CCallback::Create - callback index for 'CheckAccount': 0
+[01:47:48] [DEBUG] processing specifier 'i' with parameter index 0
+[01:47:48] [DEBUG] retrieved and pushed value '0'
+[01:47:48] [INFO] Callback 'CheckAccount' set up for delayed execution.
+[01:47:48] [DEBUG] created delayed callback with 1 parameter
+[01:47:48] [DEBUG] CHandle::Execute(this=0x867d68, type=1, query=0x8713f0)
+[01:47:48] [DEBUG] CHandle::Execute - return value: true
+[01:47:48] [DEBUG] mysql_tquery: return value: '1'
+[01:47:48] [DEBUG] CConnection::Execute(query=0x8713f0, this=0x3f83020, connection=0x831e48)
+[01:47:48] [DEBUG] CQuery::Execute(this=0x8713f0, connection=0x831e48)
+[01:47:48] [INFO] query "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1" successfully executed within 0.378 milliseconds
+[01:47:48] [DEBUG] CResultSet::Create(connection=0x831e48, query_str='SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone' LIMIT 1')
+[01:47:48] [DEBUG] created new resultset '0x8697b0'
+[01:47:48] [DEBUG] fetched MySQL result '0x830d38'
+[01:47:48] [DEBUG] allocated 156 bytes for PAWN result
+[01:47:48] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=0, num_params=1)
+[01:47:48] [INFO] Executing callback 'CheckAccount' with 1 parameter...
+[01:47:48] [DEBUG] processing internal specifier 'c'
+[01:47:48] [DEBUG] pushed value '0' onto AMX stack
+[01:47:48] [DEBUG] executing AMX callback with index '0'
+[01:47:48] [DEBUG] cache_get_row_count(0x03E3913C)
+[01:47:48] [DEBUG] cache_get_row_count: return value: '1'
+[01:47:48] [DEBUG] cache_get_value_index(0, 0, 0x03DA5F20, 32)
+[01:47:48] [DEBUG] cache_get_value_index: assigned value: 'D941D47EFFC2AB4D74AFDB72C0F874'
+[01:47:48] [DEBUG] cache_get_value_index: return value: '1'
+[01:47:48] [DEBUG] cache_get_value_index(0, 1, 0x03DA6090, 16)
+[01:47:48] [DEBUG] cache_get_value_index: assigned value: '^@IBzg2_dib^_RX'
+[01:47:48] [DEBUG] cache_get_value_index: return value: '1'
+[01:47:48] [DEBUG] AMX callback executed with error '0'
+[01:47:48] [INFO] Callback successfully executed.
+[01:47:56] [DEBUG] mysql_format(1, 0x03E380BC, 512, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s'")
+[01:47:56] [DEBUG] mysql_format: return value: '139'
+[01:47:56] [DEBUG] mysql_tquery(1, "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'", "UploadPlayerAccount", "i")
+[01:47:56] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='UploadPlayerAccount', format='i', params=0x3e380a4, param_offset=5)
+[01:47:56] [DEBUG] CCallback::Create - callback index for 'UploadPlayerAccount': 44
+[01:47:56] [DEBUG] processing specifier 'i' with parameter index 0
+[01:47:56] [DEBUG] retrieved and pushed value '0'
+[01:47:56] [INFO] Callback 'UploadPlayerAccount' set up for delayed execution.
+[01:47:56] [DEBUG] created delayed callback with 1 parameter
+[01:47:56] [DEBUG] CHandle::Execute(this=0x867d68, type=1, query=0x871d70)
+[01:47:56] [DEBUG] CHandle::Execute - return value: true
+[01:47:56] [DEBUG] mysql_tquery: return value: '1'
+[01:47:56] [DEBUG] CConnection::Execute(query=0x871d70, this=0x3f83020, connection=0x831e48)
+[01:47:56] [DEBUG] CQuery::Execute(this=0x871d70, connection=0x831e48)
+[01:47:56] [INFO] query "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'" successfully executed within 0.218 milliseconds
+[01:47:56] [DEBUG] CResultSet::Create(connection=0x831e48, query_str='SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = 'Vlad_Capone'')
+[01:47:56] [DEBUG] created new resultset '0x869628'
+[01:47:56] [DEBUG] fetched MySQL result '0x831178'
+[01:47:56] [DEBUG] allocated 108 bytes for PAWN result
+[01:47:56] [DEBUG] CCallback::Execute(amx=0x2b1ad58, index=44, num_params=1)
+[01:47:56] [INFO] Executing callback 'UploadPlayerAccount' with 1 parameter...
+[01:47:56] [DEBUG] processing internal specifier 'c'
+[01:47:56] [DEBUG] pushed value '0' onto AMX stack
+[01:47:56] [DEBUG] executing AMX callback with index '44'
+[01:47:56] [DEBUG] cache_get_value_name(0, "Name", 0x03DA5EC0, 1)
+[01:47:56] [ERROR] cache_get_value_name: field 'Name' not found
+[01:47:56] [DEBUG] cache_get_value_name_int(0, "Level", 0x03DA60D4)
+[01:47:56] [DEBUG] cache_get_value_name_int: assigned value: '1'
+[01:47:56] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:47:56] [DEBUG] cache_get_value_name(0, "Sex", 0x03DA6068, 1)
+[01:47:56] [DEBUG] cache_get_value_name: assigned value: 'Male'
+[01:47:56] [DEBUG] cache_get_value_name: return value: '1'
+[01:47:56] [DEBUG] cache_get_value_name_int(0, "Skin", 0x03DA60D8)
+[01:47:56] [DEBUG] cache_get_value_name_int: assigned value: '137'
+[01:47:56] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:47:56] [DEBUG] cache_get_value_name_float(0, "x", 0x03DA60E0)
+[01:47:56] [DEBUG] cache_get_value_name_float: assigned value: '219.61'
+[01:47:56] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:47:56] [DEBUG] cache_get_value_name_float(0, "y", 0x03DA60E4)
+[01:47:56] [DEBUG] cache_get_value_name_float: assigned value: '-79.1923'
+[01:47:56] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:47:56] [DEBUG] cache_get_value_name_float(0, "z", 0x03DA60E8)
+[01:47:56] [DEBUG] cache_get_value_name_float: assigned value: '1.57812'
+[01:47:56] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:47:56] [DEBUG] cache_get_value_name_float(0, "FaceAngle", 0x03DA60EC)
+[01:47:56] [DEBUG] cache_get_value_name_float: assigned value: '268.506'
+[01:47:56] [DEBUG] cache_get_value_name_float: return value: '1'
+[01:47:56] [DEBUG] cache_get_value_name_int(0, "AdmLevel", 0x03DA60F0)
+[01:47:56] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:47:56] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:47:56] [DEBUG] cache_get_value_name_int(0, "Health", 0x03DA60CC)
+[01:47:56] [DEBUG] cache_get_value_name_int: assigned value: '55'
+[01:47:56] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:47:56] [DEBUG] cache_get_value_name_int(0, "Armor", 0x03DA60D0)
+[01:47:56] [DEBUG] cache_get_value_name_int: assigned value: '0'
+[01:47:56] [DEBUG] cache_get_value_name_int: return value: '1'
+[01:47:56] [DEBUG] AMX callback executed with error '0'
+[01:47:56] [INFO] Callback successfully executed.
+[01:48:46] [DEBUG] mysql_format(1, 0x03E38924, 512, "UPDATE `users` SET `Level` = '%i', `Skin` = '%i', `x` = '%f', `y` = '%f', `z` = '%f', `FaceAngle` = '%f', `Health` = '%i', `Armor` = '%i' WHERE `Name` = '%s'")
+[01:48:46] [DEBUG] mysql_format: return value: '195'
+[01:48:46] [DEBUG] mysql_tquery(1, "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '219.610001', `y` = '-79.192299', `z` = '1.578125', `FaceAngle` = '358.506042', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'", "", "")
+[01:48:46] [DEBUG] CCallback::Create(amx=0x2b1ad58, name='', format='', params=0x3e38910, param_offset=5)
+[01:48:46] [DEBUG] CHandle::Execute(this=0x867d68, type=1, query=0x871818)
+[01:48:46] [DEBUG] CHandle::Execute - return value: true
+[01:48:46] [DEBUG] mysql_tquery: return value: '1'
+[01:48:46] [DEBUG] CConnection::Execute(query=0x871818, this=0x3f83020, connection=0x831e48)
+[01:48:46] [DEBUG] CQuery::Execute(this=0x871818, connection=0x831e48)
+[01:48:46] [INFO] query "UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '219.610001', `y` = '-79.192299', `z` = '1.578125', `FaceAngle` = '358.506042', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'" successfully executed within 32.706 milliseconds
+[01:48:46] [DEBUG] CResultSet::Create(connection=0x831e48, query_str='UPDATE `users` SET `Level` = '1', `Skin` = '137', `x` = '219.610001', `y` = '-79.192299', `z` = '1.578125', `FaceAngle` = '358.506042', `Health` = '55', `Armor` = '0' WHERE `Name` = 'Vlad_Capone'')
+[01:48:46] [DEBUG] created new resultset '0x8697b0'
+[01:48:46] [DEBUG] fetched MySQL result '0x0'
