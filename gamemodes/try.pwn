@@ -32,8 +32,12 @@ enum pInfo
 	pPassword[31],
 	pEmail[51],
 	pSex[10],
+	pSalt[15],
+	pHealth,
+	pArmor,
 	pLevel,
 	pSkin,
+	Cache:pData,
 	Float:posX,
 	Float:posY,
 	Float:posZ,
@@ -71,6 +75,7 @@ main()
 
 public OnGameModeInit()
 {
+	mysql_log(ALL);
 	database = mysql_connect ("127.0.0.1", "root", "", "sampbd"); //подкл к бд
 	SetGameModeText("newAlpha");
 	DisableInteriorEnterExits();
@@ -97,10 +102,9 @@ public OnGameModeExit()
 public OnPlayerConnect(playerid)
 {
 	GetPlayerName(playerid, playerInfo[playerid][pName], MAX_PLAYER_NAME+1);
-	new query[512];
-	mysql_format(database, query, sizeof(query), "SELECT `Password`, `salt` FROM `users` WHERE `Name`='%e'", playerInfo[playerid][pName]);
+		new query[512], str;
+	mysql_format(database, query, sizeof(query), "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s' LIMIT 1", playerInfo[playerid][pName]);
 	mysql_tquery(database, query, "CheckAccount", "i", playerid);
-
 //SetTimerEx("CheckName", 50, false, "i", playerid);
 //new string[255];
 //if(mysql_errno() !=0) return SendClientMessage(playerid, -1, "Подключение к БД не удалось. Переподключение...");
@@ -111,17 +115,23 @@ public OnPlayerConnect(playerid)
 public OnPlayerDisconnect(playerid, reason)
 {
 //if(gPlayerLogged [playerid] == 1){
-SaveAccount(playerid);
+//SaveAccount(playerid);
 //}
 	return 1;
 }
 
 public OnPlayerSpawn(playerid)
 {
-			SetPlayerSkin(playerid, playerInfo[playerid][pSkin]);
-			SetPlayerPos(playerid, playerInfo[playerid][posX], playerInfo[playerid][posY], playerInfo[playerid][posZ]);
-			SetPlayerFacingAngle(playerid, playerInfo[playerid][FaceAngle]);
-			SetPlayerScore(playerid, playerInfo[playerid][pLevel]);
+		//	SetPlayerSkin(playerid, playerInfo[playerid][pSkin]);
+		//	SetPlayerPos(playerid, playerInfo[playerid][posX], playerInfo[playerid][posY], playerInfo[playerid][posZ]);
+		//	SetPlayerFacingAngle(playerid, playerInfo[playerid][FaceAngle]);
+		//	SetPlayerScore(playerid, playerInfo[playerid][pLevel]);
+		SetPlayerScore(playerid, playerInfo[playerid][pLevel]);
+		SetPlayerSkin(playerid, playerInfo[playerid][pSkin]);
+		SetPlayerPos(playerid, playerInfo[playerid][posX], playerInfo[playerid][posY], playerInfo[playerid][posZ]);
+		SetPlayerFacingAngle(playerid, playerInfo[playerid][FaceAngle]);
+		SetPlayerHealth(playerid, playerInfo[playerid][pHealth]);
+		SetPlayerArmour(playerid, playerInfo[playerid][pArmor]);
 			
 	return 1;
 }
@@ -469,12 +479,10 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				else
 				{
 					ShowPlayerDialog(playerid, MAIL_DIALOG_CREATE, DIALOG_STYLE_INPUT, "Создание аккаунта", "Введите ваш E-mail.\nОн необходим для восстановления доступа к аккаунту.", "Принять", "Назад");
-					//strmid(playerInfo[playerid][pPassword], inputtext, 0, strlen(inputtext), 31);
-					for(new i = 0; i < 14; i++)
+					for(new i = 0; i < 15; i++)
 					{
 						salt[i] = random(79) + 44;
 					}
-					salt[14] = 3;
 					SHA256_PassHash(inputtext, salt, playerInfo[playerid][pPassword], 30);
 				}
 			}
@@ -495,13 +503,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				if(!response)
 				{
 					SendClientMessage(playerid, 0x008000, "Ок - вы женщина");
-					strmid(playerInfo[playerid][pSex], "Female", 0, 5, 9);
+					strmid(playerInfo[playerid][pSex], "Female", 0, 6, 10);
 					playerInfo[playerid][pSkin] = 77;
 				}
 				else
 				{
 					SendClientMessage(playerid, 0x008000, "Ок - вы мужчина");
-					strmid(playerInfo[playerid][pSex], "Male", 0, 3, 9);
+					strmid(playerInfo[playerid][pSex], "Male", 0, 4, 10);
 					playerInfo[playerid][pSkin] = 137;
 				}
 				playerInfo[playerid][pLevel] = 1;
@@ -509,12 +517,42 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
  				playerInfo[playerid][posY] = -1159;
 				playerInfo[playerid][posZ] = 25;
  				playerInfo[playerid][FaceAngle] = 10;
+				playerInfo[playerid][pHealth] = 55;
 				CreateNewAccount(playerid);
 				return 1;
 			}
 			case PASSWORD_DIALOG_LOGIN:
 			{
-				
+				if(!response)
+				{
+					SendClientMessage(playerid, 0x008000, "Вы были отключены. Для выхода введите /(q)uit");
+					kick(playerid);
+					return 1;
+				}
+				else
+				{
+					new hash[31], try, string[512];
+					try = 3;
+					SHA256_PassHash(inputtext, playerInfo[playerid][pSalt], hash, 30);
+					if (!strcmp(hash, playerInfo[playerid][pPassword]))
+					{
+						new query[512];
+						mysql_format(database, query, sizeof(query), "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s'", playerInfo[playerid][pName]);
+						mysql_tquery(database, query, "UploadPlayerAccount", "i", playerid);
+						return 1;
+					}
+					else
+					{
+						try = try - 1;
+						if (try <= 0)
+						{
+							kick(playerid);
+							return 1;
+						}
+						SendClientMessage(playerid, -1, "Неправильный пароль, осталось попыток: %i", try);
+						return 1;
+					}
+				}
 			}
 		}
 return 0;
@@ -558,50 +596,27 @@ new query_string[512] = "UPDATE `users` SET";
 }
 
 
-
-
-
-
-stock ShowPlayerLoginDialog (playerid, dialogid = 0, login = 0)
-{
-if (!login)
-{
-ShowPlayerDialog(playerid, dialogid, DIALOG_STYLE_INPUT, "Регистрация",
-		"Этот аккаунт не зарегистрирован\nЗарегистрируйтесь, чтобы зайти.\n\tВведите пароль.", "Далее", "Выход");
-return 1;
-}
-else
-{
-ShowPlayerDialog(playerid, dialogid, DIALOG_STYLE_INPUT, "Вход",
-		"Этот аккаунт зарегистрирован\nАвторизуйтесь, чтобы зайти.", "Далее", "Выход");
-
-}
-}
-
-
-
-
-
 stock CreateNewAccount(playerid)
 {
   	      new string[512], str[MAX_PLAYER_NAME+144], textMail[512];
 	      mysql_format(database, string, sizeof(string),
-		  "INSERT INTO `users` (`Name`, `Password`,`salt`, `Email`, `Level`, `Sex`, `Skin`) VALUES \
-		  ('%s', '%s', '%s', '%s', '%d', '%s', '%d')",
+		  "INSERT INTO `users` (`Name`, `Password`,`salt`, `Email`, `Level`, `Sex`, `Skin`, `Health`, `Armor`) VALUES \
+		  ('%s', '%s', '%s', '%s', '%d', '%s', '%d', '%d', '%d')",
 		  playerInfo[playerid][pName],
 		  playerInfo[playerid][pPassword],
 		  salt,
 		  playerInfo[playerid][pEmail],
 		  playerInfo[playerid][pLevel],
 		  playerInfo[playerid][pSex],
-		  playerInfo[playerid][pSkin]);
+		  playerInfo[playerid][pSkin],
+		  playerInfo[playerid][pHealth],
+		  playerInfo[playerid][pArmor]);
 		  mysql_tquery(database, string);
-		  gPlayerLogged[playerid] = 1;
 		  //format(textMail, sizeof(textMail), "Поздравляем, ваш %s аккаунт успешно зарегистрирован!", playerInfo[playerid][pName]);
 		  //SendMail(playerInfo[playerid][pEmail], "Alice@example.com", "Регистрация", "Аккаунт зарегистрирован!", textMail);
 		  format(string, sizeof(str), "Аккаунт %s успешно зарегистрирован. Приятной игры!", playerInfo[playerid][pName]);
 		  SendClientMessage(playerid, -1, string);
-		  return true;
+		  return 1;
 }
 
 
@@ -633,62 +648,41 @@ mysql_tquery(database, string, "FindPlayer", "i", playerid);
 return 1;
 }
 
-public UploadPlayerAccount(playerid, inputtext[])
+forward public UploadPlayerAccount(playerid);
+
+public UploadPlayerAccount(playerid)
 {
-	new rows;
-	cache_get_row_count(rows);
-	if(!rows)
-	{
-		new string[150];
-		new g = GetPVarInt(playerid, "playertryes");
-		SetPVarInt(playerid, "playertryes", g+1);
-		if(g == 3) ShowPlayerDialog(playerid, 0, DIALOG_STYLE_MSGBOX, "Оповещение", "Превышен лимит на ввод пароля.\n Для выхода введите /q", "OK", "");
-		format(string, sizeof(string), "{FFFFFF}Вы ввели не правильный пароль: {FF0000}%s\n{FFFFFF}Осталось попыток: {FF0000}%d\n\n{FFFFFF}Повторите попытку", inputtext, 3-g);
-		ShowPlayerDialog(playerid, 4, DIALOG_STYLE_INPUT, "Авторизация", string, "Войти", "Выйти");
-	}
-	else
-	{
 		cache_get_value_name_int(0, "Level", playerInfo[playerid][pLevel]);
-		cache_get_value_name_int(0, "Sex", playerInfo[playerid][pSex]);
+		cache_get_value_name(0, "Sex", playerInfo[playerid][pSex]);
 		cache_get_value_name_int(0, "Skin", playerInfo[playerid][pSkin]);
-		cache_get_value_name_int(0, "X", playerInfo[playerid][posX]);
-		cache_get_value_name_int(0, "Y", playerInfo[playerid][posY]);
-		cache_get_value_name_int(0, "Z", playerInfo[playerid][posZ]);
+		cache_get_value_name_int(0, "x", playerInfo[playerid][posX]);
+		cache_get_value_name_int(0, "y", playerInfo[playerid][posY]);
+		cache_get_value_name_int(0, "z", playerInfo[playerid][posZ]);
 		cache_get_value_name_int(0, "FaceAngle", playerInfo[playerid][FaceAngle]);
 		cache_get_value_name_int(0, "AdmLevel", playerInfo[playerid][AdmLevel]);
-		gPlayerLogged[playerid] = 1;
-		SendClientMessage(playerid, -1, "Вы авторизовались");
-	//	SpawnPlayer(playerid);
-}
+		cache_get_value_name_int(0, "Health", playerInfo[playerid][pHealth]);
+		cache_get_value_name_int(0, "Armor", playerInfo[playerid][pArmor]);
+	return 1;
+
 }
 
 forward public CheckAccount(playerid);
 
 public CheckAccount(playerid)
-{
-	
-	if (cache_get_row_count(database))
-	{
-		cache_get_value_index(0, 0, playerInfo[playerid][pPassword], 31);
-		cache_get_value_index(0, 1, salt, 15);
-		ShowPlayerDialog(playerid, PASSWORD_DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Вход", "Аккаунт зарегестрирован!\nВведите пароль!", "Принять", "Выход");
-	}
-	else
+{	
+	if (cache_num_rows() != 1)
 	{
 		ShowPlayerDialog(playerid, PASSWORD_DIALOG_CREATE, DIALOG_STYLE_INPUT, "Создание аккаунта", "Вы не зарегестрированы!\nПридумайте пароль для вашего аккаунта!", "Принять", "Выход");
 	}
-
+	else
+	{
+		new string [512];
+		cache_get_value_index(0, 0, playerInfo[playerid][pPassword], 32);
+		cache_get_value_index(0, 1, playerInfo[playerid][pSalt], 16);
+		ShowPlayerDialog(playerid, PASSWORD_DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Вход", "Аккаунт зарегестрирован!\nВведите пароль!", "Принять", "Выход");
+	}
+return 1;
 }
-
-
-stock spawnPlayer (playerid)
-{
-		SetPlayerSkin(playerid, playerInfo[playerid][pSkin]);
-		SetPlayerPos(playerid, playerInfo[playerid][posX], playerInfo[playerid][posY], playerInfo[playerid][posZ]);
-		SetPlayerFacingAngle(playerid, playerInfo[playerid][FaceAngle]);
-		SetPlayerScore(playerid, playerInfo[playerid][pLevel]);
-}
-
 
 public frac (playerid, newFrac)
 {
