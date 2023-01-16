@@ -154,6 +154,40 @@ public OnPlayerCommandText(playerid, cmdtext[])
 
 
 
+	if (!strcmp("/tp", cmdtext, true, 3))
+	{
+		if(!cmdtext[3]) return SendClientMessage(playerid, 0x403a3a, "/tp [название города (ls/sf/lv)]");
+		new string[128];
+		format(string, sizeof(string), "%s", cmdtext[4]);
+		if (!strcmp("ls", string, true, 2))
+		{
+			SetPlayerPos(playerid, 2228.646240, -1159.558105, 25.793945);
+			return 1;
+		} 
+		else if (!strcmp("sf", string, true, 2))
+		{
+			SetPlayerPos(playerid, -1606.838867, 723.189208, 12.209245);
+			return 1;
+		}
+		else if (!strcmp("lv", string, true, 2))
+		{
+			SetPlayerPos(playerid, 1676.521240, 1484.023437, 10.770408);
+			return 1;
+		}
+		else
+		{
+			SendClientMessage(playerid, 0x403a3a, "Такого города нет (нужен ls/sf/lv)");
+			return 1;
+		}
+		
+	}
+
+	if (!strcmp ("/goto", cmdtext, true, 5))
+	{
+		if(!cmdtext[5]) return SendClientMessage(playerid, 0x403a3a, "/goto [id игрока]");
+	}
+
+
 			if(!strcmp("/cuff", cmdtext, true))
 				{
 				new giveplayerid, tmp[255], idx, pId;
@@ -187,7 +221,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 
 	if (!strcmp(cmdtext, "/veh", true, 4))
 		{
-	// проверка уровня админка, пока без нее т.к. проще тестиравать (нет бд)
+	// проверка уровня админка, пока без нее т.к. проще тестировать (нет бд)
 	//		if(playerInfo[playerid][AdmLevel] != 5)
 	//			{
 	//			SendClientMessage(playerid, 0xCDC5BF, "Вы неуполномочены использовать эту команду!");
@@ -221,7 +255,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 			if (car <=20)
 			{
 			GetPlayerPos(playerid, x, y, z);
-			vehicles [car] = CreateVehicle(carid, x+5, y+5, z, 0, color1, color2, -1);
+			vehicles [car] = CreateVehicle(carid, x, y, z, 0, color1, color2, -1);
 			new string[255];
 			format(string, sizeof(string), "Create vehicle id %i", car);
    			SendClientMessage(playerid, -1, string);
@@ -238,10 +272,10 @@ public OnPlayerCommandText(playerid, cmdtext[])
 			    if (car>1)
     			{
 				DestroyVehicle(vehicles[car-1]);
+				car--;
 				new string [255];
 				format(string, sizeof(string), "Destroy vehicle id %i", car);
 				SendClientMessage(playerid, -1, string);
-				car--;
 				return 1;
 				} else
 			SendClientMessage(playerid, -1, "Cars not spayned");
@@ -319,11 +353,6 @@ public OnPlayerCommandText(playerid, cmdtext[])
 				frac (playerid, newFrac);
 				return 1;
 				}
-			if(!strcmp("/check", cmdtext, true))
-			{
-			GameModeExit();
-			return 1;
-			}
 			
 return 0;
 }
@@ -340,6 +369,9 @@ public OnPlayerExitVehicle(playerid, vehicleid)
 
 public OnPlayerStateChange(playerid, newstate, oldstate)
 {
+	new str = GetPlayerVehicleID(playerid), strg[512];
+	format(strg, sizeof(strg), "%s", str);
+	SendClientMessage(playerid, -1, strg);
 	return 1;
 }
 
@@ -506,9 +538,9 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					playerInfo[playerid][pSkin] = 137;
 				}
 				playerInfo[playerid][pLevel] = 1;
- 				playerInfo[playerid][posX] = 2229;
- 				playerInfo[playerid][posY] = -1159;
-				playerInfo[playerid][posZ] = 25;
+ 				playerInfo[playerid][posX] = 2228.646240;
+ 				playerInfo[playerid][posY] = -1159.558105;
+				playerInfo[playerid][posZ] = 25.793945;
  				playerInfo[playerid][FaceAngle] = 10;
 				playerInfo[playerid][pHealth] = 55;
 				playerInfo[playerid][logged] = 1;
