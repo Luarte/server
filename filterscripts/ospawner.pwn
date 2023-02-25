@@ -394,7 +394,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	new cmd[256+1];
 	new	idx;
 
-	if(!IsPlayerAdmin(playerid)) return 0;
+	//if(!IsPlayerAdmin(playerid)) return 0;
 	
 	cmd = strtok(cmdtext, idx);
 

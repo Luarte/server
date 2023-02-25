@@ -3,8 +3,9 @@
 #include <sscanf2>
 #define MAILER_URL "localhost/mailer.php"
 #include <mailer>
+#include <loadobjects>
 new i, car = 1;
-new a[60], name[255], vehicles[20], salt[15];
+new a[60], name[255], vehicles[20], salt[15], gateStatus = 0;
 new	Float:x, Float:y, Float:z;
 
 
@@ -22,10 +23,9 @@ enum
 	MAIL_DIALOG_CREATE,
 	SEX_DIALOG_CREATE,
 	PASSWORD_DIALOG_LOGIN
-
 }
 
-//******************************************************Массив для записи позиции игрока (доработать)********************************************
+//******************************************************Массив для записи информации игрока********************************************
 enum pInfo
 {
 	pName [MAX_PLAYER_NAME],
@@ -35,6 +35,7 @@ enum pInfo
 	pSalt[15],
 	pHealth,
 	pArmor,
+	pMoney,
 	pLevel,
 	pSkin,
 	Cache:pData,
@@ -46,7 +47,10 @@ enum pInfo
 	pFrac,
 	pRank,
 	pGang,
-	logged
+	logged,
+	pBan,
+	pBanReason[255],
+	pInterior
 }
 //***********************************************************************************************************************************************
 new playerInfo [MAX_PLAYERS][pInfo]; //переменная обращающаяся к массиву информации игрока
@@ -75,12 +79,14 @@ main()
 
 public OnGameModeInit()
 {
+	LoadMap();
+//	policesf =	AddStaticPickup(19197, 1, -1593.4, 716.20001, -5, -1);
+//	ulicha = AddStaticPickup(19197, 1, 214.218, 121.816, 999.0156, 10);
 	mysql_log(ALL);
 	database = mysql_connect ("127.0.0.1", "root", "", "sampbd"); //подкл к бд
+	mysql_set_charset("cp1251", database);
 	SetGameModeText("newAlpha");
 	DisableInteriorEnterExits();
-//	AddPlayerClass(0, 1958.3783, 1343.1572, 15.3746, 269.1425, 0, 0, 0, 0, 0, 0);
- //i = GangZoneCreate(1958.3783, 1343.1572, 15.3746, 269.1425);
 	
 	return 1;
 }
@@ -103,8 +109,8 @@ public OnPlayerConnect(playerid)
 {
 	GetPlayerName(playerid, playerInfo[playerid][pName], MAX_PLAYER_NAME+1);
 		new query[512], str;
-	mysql_format(database, query, sizeof(query), "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s' LIMIT 1", playerInfo[playerid][pName]);
-	mysql_tquery(database, query, "CheckAccount", "i", playerid);
+	mysql_format(database, query, sizeof(query), "SELECT `Password`, `salt`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor`, `Ban`, `BanReason` FROM `users` WHERE `Name` = '%s' LIMIT 1", playerInfo[playerid][pName]);
+	mysql_tquery(database, query, "CheckAccount");
 	return 1;
 }
 
@@ -125,7 +131,8 @@ public OnPlayerSpawn(playerid)
 		SetPlayerFacingAngle(playerid, playerInfo[playerid][FaceAngle]);
 		SetPlayerHealth(playerid, playerInfo[playerid][pHealth]);
 		SetPlayerArmour(playerid, playerInfo[playerid][pArmor]);
-			
+		GivePlayerMoney(playerid, playerInfo[playerid][pMoney]);
+		SetPlayerInterior(playerid, playerInfo[playerid][pInterior]);
 	return 1;
 }
 
@@ -152,10 +159,21 @@ public OnPlayerText(playerid, text[])
 public OnPlayerCommandText(playerid, cmdtext[])
 {
 
+//	if(!strcmp("/commands", cmdtext, true, 9))
+//	{
+//		new string[4];
+//		format(string[1], sizeof(string), "/tp [название города (ls/sf/lv)] - телепортирование в города\n/goto [id игрока] - телепортирование к игроку\n/cuff [id игрока] - надеть наручники (доработать дистанцию)\n");
+//		format(string[2], sizeof(string), "/uncuff [id игрока] - снять наручники (доработать дистанцию)\n/pos - получить текущую позицию\n/veh [carid][color1][color2] - создать машину\n");
+//		format(string[3], sizeof(string), "/dsveh - удалить машину\n/giverank [playerid][Rank] - присвоить ранг\n/asetrank [playerid][Rank] - присвоить ранг (админка)\n/asetfrac [playerid[fracid] - присвоить фракцию (админка)");
+//		ShowPlayerDialog(playerid, 1, DIALOG_STYLE_LIST, "Список всех команд на сервере", string, "Закрыть", "");
+//		return 1;
+//	}
+
 
 
 	if (!strcmp("/tp", cmdtext, true, 3))
 	{
+		if(!playerInfo[playerid][logged]) return SendClientMessage(playerid, -1, "Вы не авторизованы!");
 		if(!cmdtext[3]) return SendClientMessage(playerid, 0x403a3a, "/tp [название города (ls/sf/lv)]");
 		new string[128];
 		format(string, sizeof(string), "%s", cmdtext[4]);
@@ -182,29 +200,40 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		
 	}
 
-	if (!strcmp ("/goto", cmdtext, true, 5))
+	if (!strcmp ("/goto", cmdtext, true, 4))
 	{
+		if(!playerInfo[playerid][logged]) return SendClientMessage(playerid, -1, "Вы не авторизованы!");
 		if(!cmdtext[5]) return SendClientMessage(playerid, 0x403a3a, "/goto [id игрока]");
+		return 1;
 	}
 
 
-			if(!strcmp("/cuff", cmdtext, true))
-				{
-				new giveplayerid, tmp[255], idx, pId;
-				tmp = strtok(cmdtext, idx);
-				giveplayerid = strval(tmp);
-				
-			//	sscanf(cmdtext, "{s}s", pId);
-				TogglePlayerControllable(giveplayerid, 0);
-				return 1;
-				}
-			if(!strcmp("/uncuff", cmdtext, true))
-			    {
-			    new pId;
-			    sscanf(cmdtext, "{s}i", pId);
-			    TogglePlayerControllable(pId, 1);
-			    return 1;
-				}
+	if(!strcmp("/cuff", cmdtext, true, 5))
+	{
+		if(!playerInfo[playerid][logged]) return SendClientMessage(playerid, -1, "Вы не авторизованы!");
+		if(!cmdtext[5]) return SendClientMessage(playerid, -1, "/cuff [id игрока]");
+		new pId, x, y, z;
+		sscanf(cmdtext, "{s}i", pId);
+		if(!IsPlayerConnected(pId)) return SendClientMessage(playerid, -1, "Игрок не подключен!");
+		GetPlayerPos(pId, x, y, z);
+		if(!IsPlayerInRangeOfPoint(playerid, 10, x, y, z))
+		{
+		TogglePlayerControllable(pId, 0);
+		}
+		else
+		{ 
+			SendClientMessage(playerid, -1, "Игрок не рядом с вами!");
+		}
+		return 1;
+	}
+	if(!strcmp("/uncuff", cmdtext, true))
+	{
+		if(!playerInfo[playerid][logged]) return SendClientMessage(playerid, -1, "Вы не авторизованы!");
+		new pId;
+		sscanf(cmdtext, "{s}i", pId);
+		TogglePlayerControllable(pId, 1);
+		return 1;
+	}
 
 
 
@@ -212,6 +241,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 //	new cmd[50];
 	if (!strcmp("/pos", cmdtext, true))
 		{
+		if(!playerInfo[playerid][logged]) return SendClientMessage(playerid, -1, "Вы не авторизованы!");
 		GetPlayerPos(playerid, x, y, z);
 		new position[255];
 		format(position, sizeof(position), "%f, %f, %f", x, y, z);
@@ -221,12 +251,13 @@ public OnPlayerCommandText(playerid, cmdtext[])
 
 	if (!strcmp(cmdtext, "/veh", true, 4))
 		{
+		if(!playerInfo[playerid][logged]) return SendClientMessage(playerid, -1, "Вы не авторизованы!");
 	// проверка уровня админка, пока без нее т.к. проще тестировать (нет бд)
-	//		if(playerInfo[playerid][AdmLevel] != 5)
-	//			{
-	//			SendClientMessage(playerid, 0xCDC5BF, "Вы неуполномочены использовать эту команду!");
-	//			return 1;
- 	//			}
+			if(playerInfo[playerid][AdmLevel] >= 5)
+				{
+				SendClientMessage(playerid, 0xCDC5BF, "Вы неуполномочены использовать эту команду!");
+				return 1;
+ 				}
  		new carid, color1, color2, string[255];
 		sscanf(cmdtext, "{s}iii", carid, color1, color2);
 		
@@ -266,6 +297,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 			}
 		if (!strcmp(cmdtext, "/dsveh", true, 6))
 			{
+			if(!playerInfo[playerid][logged]) return SendClientMessage(playerid, -1, "Вы не авторизованы!");
 			new count;
 			sscanf(cmdtext, "{s}i", count);
 			if(!count){
@@ -301,23 +333,40 @@ public OnPlayerCommandText(playerid, cmdtext[])
    			return 1;
 			}
 			
-//  		if (!strcmp(cmdtext, "/banex", true, 6))
-//  			{
-//			new pId, reason, string [255];
-//			sscanf(cmdtext, "{s}is", pId, reason);
-//			format(string, sizeof(string), "Причина бана: %s", reason);
-//			if (!pId || !reason)
-//				{
-//				SendClientMessage(playerid, -1, "Введите команду в формате /banex [playerid] [reason]");
-//				return 1;
-//				}
-//
-//			BanEx(pId, string);
-//			return 1;
-//		  	}
+  		if (!strcmp(cmdtext, "/permban", true, 7))
+  			{
+				if(!playerInfo[playerid][logged]) return SendClientMessage(playerid, -1, "Вы не авторизованы!");
+				if (!cmdtext[8]) return SendClientMessage(playerid, -1, "Формат команды: /permban [playerid][Причина]");
+				new pId, reas[255], query[255], message[255], announcement[255];
+				sscanf(cmdtext, "{s}is", pId, reas);
+				if (!strlen(reas)) return SendClientMessage(playerid, -1, "Формат команды: /permban [playerid][Причина]");
+				mysql_format(database, query, sizeof(query), "UPDATE `users` SET `Ban` = %i, `BanReason` = '%s' WHERE `Name` = '%s' LIMIT 1", 1, reas, playerInfo[pId][pName]);
+				mysql_tquery(database, query);
+				format(announcement, sizeof(announcement), "[ban] Админ %s, забанил игрока %s. Причина: %s", playerInfo[playerid][pName], playerInfo[pId][pName], reas);
+				format(message, sizeof(message), "Вы забанены на сервере. Причина: %s", reas);
+				SendClientMessage(pId, -1, message);
+				print(announcement);
+				SetTimerEx("kck", 10, 0, "%i", pId);
+			return 1;
+		  	}
+
+		if (!strcmp(cmdtext, "/unban", true, 5))
+  			{
+				if(!playerInfo[playerid][logged]) return SendClientMessage(playerid, -1, "Вы не авторизованы!");
+				if (!cmdtext[6]) return SendClientMessage(playerid, -1, "Формат команды: /unban [playername]");
+				new query[255], announcement[255], name[MAX_PLAYER_NAME], adm[MAX_PLAYER_NAME];
+				sscanf(cmdtext[7], "s", name);
+				mysql_format(database, query, sizeof(query), "UPDATE `users` SET `Ban` = %i, `BanReason` = NULL WHERE `Name` = '%s' LIMIT 1", 0, name);
+				mysql_tquery(database, query);
+				format(announcement, sizeof(announcement), "[unban] Админ %s разбанил игрока %s", playerInfo[playerid][pName], name);
+				print(announcement);
+				SendClientMessage(playerid, -1, announcement);
+			return 1;
+		  	}
 
 			if (!strcmp(cmdtext, "/giverank", true, 9))
 				{
+				if(!playerInfo[playerid][logged]) return SendClientMessage(playerid, -1, "Вы не авторизованы!");
 				new id, newRank, string [255];
 				if (playerInfo[playerid][pFrac] >= 0 || playerInfo[playerid][pRank] < 9)
 			    {
@@ -336,6 +385,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 				}
 			if (!strcmp(cmdtext, "/asetrank", true, 8))
 				{
+				if(!playerInfo[playerid][logged]) return SendClientMessage(playerid, -1, "Вы не авторизованы!");
 				new newRank, string [255];
 				sscanf (cmdtext, "{s}i", newRank);
 				format(string, sizeof(string), "Присвоен ранг %i", newRank);
@@ -345,6 +395,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 				}
 			if(!strcmp(cmdtext, "/asetfrac", true, 9))
 				{
+				if(!playerInfo[playerid][logged]) return SendClientMessage(playerid, -1, "Вы не авторизованы!");
 				new newFrac, string[255];
 				sscanf(cmdtext, "{s}i", newFrac);
 				format(string, sizeof(string), "Присвоена фракция %i", newFrac);
@@ -353,6 +404,12 @@ public OnPlayerCommandText(playerid, cmdtext[])
 				frac (playerid, newFrac);
 				return 1;
 				}
+			if(!strcmp(cmdtext, "/open", true, 4))
+			{
+					if(!playerInfo[playerid][logged]) return SendClientMessage(playerid, -1, "Вы не авторизованы!");
+					MoveObject(Police[0][0], -1572.2201953130, 658.7998046875, 6.9, 0.02, 180, 180, 90);
+					return 1;
+			}
 			
 return 0;
 }
@@ -369,9 +426,9 @@ public OnPlayerExitVehicle(playerid, vehicleid)
 
 public OnPlayerStateChange(playerid, newstate, oldstate)
 {
-	new str = GetPlayerVehicleID(playerid), strg[512];
-	format(strg, sizeof(strg), "%s", str);
-	SendClientMessage(playerid, -1, strg);
+//	new str = GetPlayerVehicleID(playerid), strg[512];
+//	format(strg, sizeof(strg), "%s", str);
+//	SendClientMessage(playerid, -1, strg);
 	return 1;
 }
 
@@ -417,6 +474,17 @@ public OnPlayerObjectMoved(playerid, objectid)
 
 public OnPlayerPickUpPickup(playerid, pickupid)
 {
+//	if (pickupid == policesf)
+//	{
+//		SetPlayerInterior(playerid, 10);
+//		SetPlayerPos(playerid, 246.06, 108.97, 1003.21);
+//		SendClientMessage(playerid, -1, "Вы встали на пикап policesf");
+//	}
+//	if (pickupid == ulicha)
+//	{
+//		SetPlayerInterior(playerid, 0);
+//		SetPlayerPos(playerid, -1595.4, 716.20001, -5);
+//	}
 	return 1;
 }
 
@@ -452,6 +520,11 @@ public OnPlayerInteriorChange(playerid, newinteriorid, oldinteriorid)
 
 public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 {
+
+
+
+
+
 	return 1;
 }
 
@@ -563,7 +636,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					if (!strcmp(hash, playerInfo[playerid][pPassword]))
 					{
 						new query[512];
-						mysql_format(database, query, sizeof(query), "SELECT `Level`, `Sex`, `Level`, `Skin`, `x`, `y`, `z`, `FaceAngle`, `AdmLevel`, `Health`, `Armor` FROM `users` WHERE `Name` = '%s'", playerInfo[playerid][pName]);
+						mysql_format(database, query, sizeof(query), "SELECT * FROM `users` WHERE `Name` = '%s'", playerInfo[playerid][pName]);
 						mysql_tquery(database, query, "UploadPlayerAccount", "i", playerid);
 						return 1;
 					}
@@ -598,7 +671,10 @@ Kick(playerid);
 return 1;
 }
 
-
+public OnPlayerClickMap(playerid, Float:fX, Float:fY, Float:fZ)
+{
+	SetPlayerPos(playerid, fX, fY, fZ);
+}
 
 
 
@@ -606,9 +682,10 @@ stock SaveAccount(playerid)
 {
 GetPlayerPos(playerid, playerInfo[playerid][posX], playerInfo[playerid][posY], playerInfo[playerid][posZ]);
 GetPlayerFacingAngle(playerid, playerInfo[playerid][FaceAngle]);
+playerInfo[playerid][pMoney] = GetPlayerMoney(playerid);
 new query_string[512];
 
-		mysql_format(database, query_string, sizeof(query_string), "UPDATE `users` SET `Level` = '%i', `Skin` = '%i', `x` = '%f', `y` = '%f', `z` = '%f', `FaceAngle` = '%f', `Health` = '%i', `Armor` = '%i' WHERE `Name` = '%s'",
+		mysql_format(database, query_string, sizeof(query_string), "UPDATE `users` SET `Level` = '%i', `Skin` = '%i', `x` = '%f', `y` = '%f', `z` = '%f', `FaceAngle` = '%f', `Health` = '%i', `Armor` = '%i', `Money` = '%i', `Interior` = '%i' WHERE `Name` = '%s'",
 																	playerInfo[playerid][pLevel],
 																	playerInfo[playerid][pSkin],
 																	playerInfo[playerid][posX],
@@ -617,6 +694,8 @@ new query_string[512];
 																	playerInfo[playerid][FaceAngle],
 																	playerInfo[playerid][pHealth],
 																	playerInfo[playerid][pArmor],
+																	playerInfo[playerid][pMoney],
+																	playerInfo[playerid][pInterior],
 																	playerInfo[playerid][pName]);
 		mysql_tquery(database, query_string);
 }
@@ -678,7 +757,6 @@ forward public UploadPlayerAccount(playerid);
 
 public UploadPlayerAccount(playerid)
 {
-		cache_get_value_name(0, "Name", playerInfo[playerid][pName]);
 		cache_get_value_name_int(0, "Level", playerInfo[playerid][pLevel]);
 		cache_get_value_name(0, "Sex", playerInfo[playerid][pSex]);
 		cache_get_value_name_int(0, "Skin", playerInfo[playerid][pSkin]);
@@ -689,6 +767,10 @@ public UploadPlayerAccount(playerid)
 		cache_get_value_name_int(0, "AdmLevel", playerInfo[playerid][AdmLevel]);
 		cache_get_value_name_int(0, "Health", playerInfo[playerid][pHealth]);
 		cache_get_value_name_int(0, "Armor", playerInfo[playerid][pArmor]);
+		cache_get_value_name_int(0, "Money", playerInfo[playerid][pMoney]);
+		cache_get_value_name_int(0, "Frac", playerInfo[playerid][pFrac]);
+		cache_get_value_name_int(0, "Rank", playerInfo[playerid][pRank]);
+		cache_get_value_name_int(0, "Interior", playerInfo[playerid][pInterior]);
 		playerInfo[playerid][logged] = 1;
 	return 1;
 
@@ -704,9 +786,21 @@ public CheckAccount(playerid)
 	}
 	else
 	{
-		new string [512];
+		
 		cache_get_value_index(0, 0, playerInfo[playerid][pPassword], 32);
 		cache_get_value_index(0, 1, playerInfo[playerid][pSalt], 16);
+		cache_get_value_name_int(0, "Ban", playerInfo[playerid][pBan]);
+		
+		if (playerInfo[playerid][pBan] == 1)
+		{
+			new string [512], reason[255];
+			cache_get_value_name(0, "BanReason", reason);
+			format(string, sizeof(string), "Вы забанены на сервере. Причина: %s", reason);
+			SendClientMessage(playerid, -1, string);
+			SetTimerEx("kck", 10, 0, "i", playerid);
+			//kick(playerid);
+			return 1;
+		}
 		ShowPlayerDialog(playerid, PASSWORD_DIALOG_LOGIN, DIALOG_STYLE_PASSWORD, "Вход", "Аккаунт зарегестрирован!\nВведите пароль!", "Принять", "Выход");
 	}
 return 1;
@@ -771,27 +865,12 @@ public frac (playerid, newFrac)
 	}
 }
 
+forward public kck(playerid);
 
-stock strtok(const string[], &index)
+public kck (playerid)
 {
-        new length = strlen(string);
-        while ((index < length) && (string[index] <= ' '))
-        {
-                index++;
-        }
-
-        new offset = index;
-        new result[20];
-        while ((index < length) && (string[index] > ' ') && ((index - offset) < (sizeof(result) - 1)))
-        {
-                result[index - offset] = string[index];
-                index++;
-        }
-        result[index - offset] = EOS;
-        return result;
+	kick(playerid);
 }
-
-
 
 
 

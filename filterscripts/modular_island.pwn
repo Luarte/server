@@ -25,7 +25,7 @@
 // to enable a simple teleport command (/mi) which teleports the player to
 // the modular island in SF.
 
-/*
+
 public OnPlayerCommandText(playerid, cmdtext[])
 {
 	// Check command text
@@ -51,7 +51,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	// Exit here (return 0 as the command was not handled in this filterscript)
 	return 0;
 }
-*/
+
 
 public OnFilterScriptInit()
 {
